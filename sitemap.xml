@@ -5,8 +5,10 @@
     <loc>https://lumpsumcalculators.in/</loc>
   </url>
 
-  <url>
-    <loc>https://lumpsumcalculators.in/de/zinseszinsrechner/</loc>
-  </url>
+<url>
+  <loc>https://lumpsumcalculators.in/de/zinseszinsrechner/</loc>
+  <lastmod>2026-01-16</lastmod>
+  <priority>0.9</priority>
+</url>
 
 </urlset>
