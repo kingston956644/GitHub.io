@@ -23,1453 +23,371 @@
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="https://lumpsumcalculators.in/og-image.webp">
 
-<link rel="icon" href="/favicon.ico">
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Header */
-.header {
-    background: linear-gradient(135deg, #002244 0%, #1e40af 100%);      
-    color: #fff;
-    padding: 12px 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.menu-btn {
-    font-size: 26px;
-    cursor: pointer;
-}
-
-/* Sidebar Menu */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -260px;
-    width: 260px;
-    height: 100%;
-    background: #ffffff;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-    transition: 0.3s;
-    z-index: 1000;
-}
-
-.sidebar.open {
-    right: 0;
-}
-
-.sidebar-header {
-    background: #002244;
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.close-btn {
-    font-size: 22px;
-    cursor: pointer;
-}
-
-.sidebar a {
-    display: block;
-    padding: 14px 18px;
-    text-decoration: none;
-    color: #333;
-    border-bottom: 1px solid #eee;
-}
-
-.sidebar a:hover {
-    background: #f2f4ff;
-}
-
-/* Overlay */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.4);
-    display: none;
-    z-index: 999;
-}
-
-.overlay.show {
-    display: block;
-}
-:root {
-    --primary: #003366;
-    --primary-light: #E3F2FD;
-    --secondary: #DD0000;
-    --accent: #FFCC00;
-    --light-gray: #f8f9fa;
-    --medium-gray: #e9ecef;
-    --dark-gray: #495057;
-    --text: #212529;
-    --success: #28a745;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --border: 1px solid #dee2e6;
-}
-
-body {
-    background-color: var(--light-gray);
-    color: var(--text);
-    line-height: 1.6;
-    padding: 0px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-header {
-    background: linear-gradient(135deg, var(--primary) 0%, #002244 100%);
-    color: white;
-    padding: 30px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    text-align: center;
-    box-shadow: var(--shadow);
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.subtitle {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-@media (min-width: 992px) {
-    main {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.card {
-    background: white;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: var(--shadow);
-    border: var(--border);
-}
-
-.card-title {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--primary-light);
-    font-weight: 600;
-}
-
-.input-group {
-    margin-bottom: 25px;
-}
-
-.input-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--dark-gray);
-}
-
-.input-value {
-    font-weight: 700;
-    color: var(--primary);
-    font-size: 1.1rem;
-}
-
-.input-hint {
-    font-size: 0.85rem;
-    color: #6c757d;
-    margin-top: 4px;
-    font-style: italic;
-}
-
-input[type="number"], 
-input[type="text"],
-select {
-    width: 100%;
-    padding: 14px;
-    border: 2px solid var(--medium-gray);
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: white;
-}
-
-input[type="number"]:focus,
-select:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
-}
-
-input[type="range"] {
-    width: 100%;
-    margin: 15px 0;
-    -webkit-appearance: none;
-    height: 6px;
-    background: var(--medium-gray);
-    border-radius: 3px;
-    outline: none;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 24px;
-    height: 24px;
-    background: var(--primary);
-    border-radius: 50%;
-    cursor: pointer;
-    border: 3px solid white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-input[type="range"]::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
-    background: var(--primary);
-    border-radius: 50%;
-    cursor: pointer;
-    border: 3px solid white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.product-options {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 15px;
-}
-
-@media (min-width: 576px) {
-    .product-options {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-.product-option {
-    padding: 12px;
-    border: 2px solid var(--medium-gray);
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: white;
-}
-
-.product-option:hover {
-    border-color: var(--primary);
-    transform: translateY(-2px);
-}
-
-.product-option.active {
-    background: var(--primary);
-    color: white;
-    border-color: var(--primary);
-}
-
-.product-name {
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.product-rate {
-    font-size: 0.8rem;
-    opacity: 0.8;
-    margin-top: 4px;
-}
-
-.result-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin: 30px 0;
-}
-
-.result-card {
-    background: linear-gradient(135deg, var(--primary-light) 0%, #bbdefb 100%);
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    border: var(--border);
-}
-
-.result-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--dark-gray);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.result-value {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--primary);
-}
-
-.chart-container {
-    height: 300px;
-    margin: 30px 0;
-    position: relative;
-}
-
-.controls {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.btn {
-    flex: 1;
-    padding: 16px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.btn-primary {
-    background: var(--primary);
-    color: white;
-}
-
-.btn-primary:hover {
-    background: #002244;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
-}
-
-.btn-secondary {
-    background: white;
-    color: var(--primary);
-    border: 2px solid var(--primary);
-}
-
-.btn-secondary:hover {
-    background: var(--primary-light);
-    transform: translateY(-2px);
-}
-
-.results-table {
-    overflow-x: auto;
-    margin-top: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    font-size: 0.9rem;
-}
-
-thead {
-    background: var(--primary);
-    color: white;
-}
-
-th, td {
-    padding: 12px 15px;
-    text-align: right;
-    border-bottom: 1px solid var(--medium-gray);
-}
-
-th:first-child, td:first-child {
-    text-align: left;
-    font-weight: 600;
-}
-
-tbody tr:hover {
-    background-color: var(--primary-light);
-}
-
-.total-row {
-    font-weight: 700;
-    background-color: var(--primary-light);
-}
-
-.footer-note {
-    background: var(--primary-light);
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: #0c4a6e;
-    line-height: 1.6;
-}
-
-.footer-note strong {
-    color: var(--primary);
-}
-
-/* Graph Styles */
-.graph-wrapper {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 30px;
-    box-shadow: var(--shadow);
-}
-
-.graph-title {
-    font-size: 1.2rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.graph-labels {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: var(--dark-gray);
-}
-
-.graph-bar-container {
-    height: 30px;
-    background: var(--medium-gray);
-    border-radius: 6px;
-    overflow: hidden;
-    margin: 10px 0;
-    position: relative;
-}
-
-.graph-bar-invested {
-    height: 100%;
-    background: var(--primary);
-    position: absolute;
-    left: 0;
-    transition: width 0.5s ease;
-}
-
-.graph-bar-interest {
-    height: 100%;
-    background: var(--secondary);
-    position: absolute;
-    left: 0;
-    transition: width 0.5s ease;
-}
-
-.graph-legend {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-}
-
-.legend-color {
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-}
-
-.legend-color.invested {
-    background: var(--primary);
-}
-
-.legend-color.interest {
-    background: var(--secondary);
-}
-
-/* Loading Animation */
-.loading {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(0, 51, 102, 0.3);
-    border-radius: 50%;
-    border-top-color: var(--primary);
-    animation: spin 1s ease-in-out infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-/* Dropdown Styling */
-select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23003366' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1em;
-    padding-right: 2.5rem;
-}
-
-/* Pie Chart Container */
-.pie-chart-container {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 20px;
-    position: relative;
-}
-
-.pie-chart {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    transform: rotate(-90deg);
-}
-
-.pie-slice {
-    fill: none;
-    stroke-width: 32;
-    stroke-linecap: round;
-}
-
-.pie-slice.invested {
-    stroke: var(--primary);
-}
-
-.pie-slice.interest {
-    stroke: var(--secondary);
-}
-
-.pie-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.pie-total {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-.pie-label {
-    font-size: 0.8rem;
-    color: var(--dark-gray);
-}
-
-/* Dropdown Highlight */
-select:focus {
-    border-color: var(--primary);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
-}
-
-/* Responsive Design - Mobile Optimized */
-@media (max-width: 768px) {
-    body {
-        padding: 0px;
-        line-height: 1.4;
-    }
-    
-    header {
-        padding: 12px;
-        margin-bottom: 12px;
-        border-radius: 8px;
-    }
-    
-    h1 {
-        font-size: 1.4rem;
-        margin-bottom: 5px;
-    }
-    
-    .subtitle {
-        font-size: 0.8rem;
-        line-height: 1.3;
-    }
-    
-    main {
-        gap: 12px;
-        margin-bottom: 15px;
-    }
-    
-    .card {
-        padding: 12px;
-        border-radius: 8px;
-    }
-    
-    .card-title {
-        font-size: 1.1rem;
-        margin-bottom: 12px;
-        padding-bottom: 8px;
-    }
-    
-    .input-group {
-        margin-bottom: 12px;
-    }
-    
-    .input-label {
-        margin-bottom: 5px;
-        font-size: 0.9rem;
-    }
-    
-    .input-value {
-        font-size: 0.95rem;
-    }
-    
-    .input-hint {
-        font-size: 0.7rem;
-        margin-top: 2px;
-    }
-    
-    input[type="number"], 
-    input[type="text"],
-    select {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
-    
-    input[type="range"] {
-        margin: 8px 0;
-    }
-    
-    .product-options {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
-    
-    .product-option {
-        padding: 8px;
-    }
-    
-    .product-name {
-        font-size: 0.8rem;
-    }
-    
-    .product-rate {
-        font-size: 0.7rem;
-    }
-    
-    .result-grid {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        margin: 15px 0;
-    }
-    
-    .result-card {
-        padding: 10px;
-    }
-    
-    .result-label {
-        font-size: 0.75rem;
-        margin-bottom: 6px;
-    }
-    
-    .result-value {
-        font-size: 1.2rem;
-    }
-    
-    .chart-container {
-        height: 180px;
-        margin: 15px 0;
-    }
-    
-    .controls {
-        flex-direction: column;
-        gap: 8px;
-        margin-top: 12px;
-    }
-    
-    .btn {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-    }
-    
-    .graph-wrapper {
-        padding: 12px;
-        margin-top: 12px;
-    }
-    
-    .graph-title {
-        font-size: 0.95rem;
-        margin-bottom: 12px;
-    }
-    
-    .pie-chart-container {
-        width: 140px;
-        height: 140px;
-        margin-bottom: 12px;
-    }
-    
-    .pie-total {
-        font-size: 1rem;
-    }
-    
-    .pie-label {
-        font-size: 0.7rem;
-    }
-    
-    .graph-legend {
-        gap: 12px;
-        margin-top: 12px;
-        font-size: 0.8rem;
-    }
-    
-    .legend-color {
-        width: 12px;
-        height: 12px;
-    }
-    
-    table {
-        font-size: 0.75rem;
-    }
-    
-    th, td {
-        padding: 6px 4px;
-    }
-    
-    .footer-note {
-        padding: 12px;
-        margin-top: 12px;
-        font-size: 0.8rem;
-    }
-    
-    .results-table {
-        margin-top: 12px;
-    }
-}
-</style>
+<link rel="icon" href="/favicon.ico">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --success: #10b981;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --radius: 16px;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); margin: 0; padding-bottom: 100px; }
+
+        /* --- Navbar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1e293b; font-weight: 700; font-size: 1.4rem; }
+        .nav-logo img { height: 32px; width: 32px; border-radius: 50%; }
+        .nav-actions { display: flex; align-items: center; gap: 20px; }
+        .search-icon, .menu-icon { cursor: pointer; display: flex; align-items: center; }
+
+        /* --- Side Menu --- */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100%;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: 0.3s ease;
+            z-index: 2000;
+            padding: 2rem 1.5rem;
+        }
+        .side-menu.active { right: 0; }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: none;
+            z-index: 1500;
+        }
+        .menu-overlay.active { display: block; }
+        .menu-close { text-align: right; font-size: 1.5rem; cursor: pointer; margin-bottom: 2rem; }
+        .menu-link { display: block; padding: 12px 0; color: #1e293b; text-decoration: none; font-weight: 600; border-bottom: 1px solid #f1f5f9; }
+
+        /* Container & Grid */
+        .container { max-width: 700px; margin: 0 auto; padding: 1.5rem; }
+        .hero-text { text-align: center; padding: 2rem 0; }
+
+        .input-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            margin-bottom: 1.2rem;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+        }
+        .label-group { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        label { font-weight: 600; font-size: 0.95rem; }
+        
+        .input-val { 
+            font-size: 1.1rem; 
+            font-weight: 700; 
+            color: var(--primary); 
+            background: #eff6ff; 
+            padding: 4px 12px; 
+            border-radius: 8px; 
+            border: none;
+            width: 120px;
+            text-align: right;
+            outline: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input[type="range"] { width: 100%; margin: 10px 0; accent-color: var(--primary); }
+        select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 1rem; background: white; }
+
+        #results-section { display: none; margin-top: 2rem; }
+        .viz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+        @media (max-width: 600px) { .viz-grid { grid-template-columns: 1fr; } }
+
+        .result-card { background: white; padding: 1.5rem; border-radius: var(--radius); text-align: center; box-shadow: var(--shadow); }
+        .chart-card { background: white; padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 1.5rem; }
+        .donut-container { max-width: 200px; margin: 0 auto; }
+        h3 { margin-top: 2rem; font-size: 1.2rem; border-left: 4px solid var(--primary); padding-left: 10px; }
+
+        .table-container { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); margin-top: 1rem; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        th { background: #1e293b; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #f1f5f9; }
+        tr.total-row { background: #f8fafc; font-weight: 700; }
+
+        .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; padding: 1.2rem; background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); border-top: 1px solid #e2e8f0; z-index: 100; text-align: center; }
+        .btn-primary { background: var(--primary); color: white; border: none; width: 100%; max-width: 500px; padding: 1rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px 0 rgba(37,99,235,0.39); }
+    </style>
 </head>
 <body>
 
-<!-- Header -->
-<div class="header">
-    <div class="logo">
-        💰 Lumpsum Calculator
+    <nav class="navbar">
+        <a href="#" class="nav-logo">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAnFBMVEUaO5IaO5MaPJUaPJYaPJcaPJgQN5EIMpIAL5EAKY4AAIcpQZduda+Ki7yUlcIAAIkwP5ebn8bp6vL///+VmcIpPpkOMpRLU5/h4+xATZ8bPZgAFYrEx9uzutQAI5CLjr3c3Or29/klLpBOWaSipskAJ5EAC4tVXaPz9fjJzt4vOJYAAHwAHo6rsNBiba6Ag7d2erBOYaZjZahESJh1z7UdAAABW0lEQVR4AYSSBZLDMBAEY2aUmRnC8P+/3QoCKro2u4VTe8AIgAiQm0SQAYVJ4B8pqJoOaIpIpfyVqmFatuO6jm15hsL31PwgRIwwipO3JP3SDP2Q5YqsFKznoawQR91IxVsKRsTLVpeJBEds13VhzyZtS4kOC2iG0XimaQ6pXfVZbTfjNIMlblmnjPTZ9uh4Wsa2Q9VZIj2FgVvMpengftXonPoFcdxuqFsThcmKl1MyntyaDatq3P4rL6/hfqYLUq/zfaeb6MPqOl8fsJdVlYk0su5m+usTSOclCusU1bkuM1njMKspCi57iMNJ5rMqMynwuU4Qjii9pdoO6SXcetT3Wxf48U2XiGNzbpfnqXylr8E82TWqz+K3TPSAJJftHc3QTqSvFOZpQx/Cm8EX2Dm/V9mGp7zY0iwyxySEdDYx3qyK4JgsvtUHTxHzLduvFOHiZfE3VElGNEkALa8qhJXImN0AAAAASUVORK5CYII=" alt="Logo"> 
+            Lumpsum
+        </a>
+        <div class="nav-actions">
+            <div class="search-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-close" onclick="toggleMenu()">✕</div>
+        <a href="https://www.lumpsumcalculators.in" class="menu-link">Startseite</a>
+        <a href="#" class="menu-link">Rechner</a>
+        <a href="#" class="menu-link">Investitionen</a>
+        <a href="#" class="menu-link">Profil</a>
+        <a href="#" class="menu-link">Einstellungen</a>
     </div>
-    <div class="menu-btn" onclick="openMenu()">☰</div>
-</div>
-
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-    <div class="sidebar-header">
-        <span>Menu</span>
-        <span class="close-btn" onclick="closeMenu()">✕</span>
-    </div>
-
-    <a href="https://www.lumpsumcalculators.in/">🏠 Home</a>
-    <a href="#">📊 Lumpsum Calculator</a>
-    <a href="#">📈 SIP Calculator</a>
-    <a href="#">🎯 Goal Planning</a>
-    <a href="#">📘 Learn More</a>
-    <a href="#">ℹ️ About Us</a>
-    <a href="#">📞 Contact</a>
-    <a href="#">⚙️ Settings</a>
-</div>
-
-<!-- Overlay -->
-<div class="overlay" id="overlay" onclick="closeMenu()"></div>
-
+  
 <header>
-    
     <h1>Zinseszinsrechner</h1>
-    <p class="subtitle">Berechnen Sie Ihr Endkapital mit Zinseszins-Effekt. Ideal für Sparpläne, Festgeld, ETFs und andere Anlageformen in Deutschland.</p>
 </header>
+       
+       
 
-<main>
-    <!-- Input Section -->
-    <div class="card">
-        <h2 class="card-title">💰 Eingabeparameter</h2>
-        
-        <div class="input-group">
-            <div class="input-label">
-                <label for="initialCapital">Anfangskapital (€)</label>
-                <span class="input-value" id="initialCapitalValue">5.000 €</span>
+        <div class="input-card">
+            <div class="label-group">
+                <label>Startkapital (€)</label>
+                <input type="text" class="input-val" id="val-initial" value="5000">
             </div>
-            <input type="range" id="initialCapitalSlider" min="0" max="200000" step="1000" value="5000">
-            <input type="number" id="initialCapital" min="0" step="1000" value="5000">
-            <div class="input-hint">Einmalanlage zu Beginn der Laufzeit</div>
+            <input type="range" id="input-initial" min="0" max="100000" step="500" value="5000">
         </div>
-        
-        <div class="input-group">
-            <div class="input-label">
-                <label for="monthlyDeposit">Monatliche Sparrate (€)</label>
-                <span class="input-value" id="monthlyDepositValue">100 €</span>
+
+        <div class="input-card">
+            <div class="label-group">
+                <label>Monatliche Sparrate (€)</label>
+                <input type="text" class="input-val" id="val-monthly" value="100">
             </div>
-            <input type="range" id="monthlyDepositSlider" min="0" max="5000" step="50" value="100">
-            <input type="number" id="monthlyDeposit" min="0" step="50" value="100">
-            <div class="input-hint">Regelmäßige monatliche Einzahlung</div>
+            <input type="range" id="input-monthly" min="0" max="5000" step="50" value="100">
         </div>
-        
-        <div class="input-group">
-            <div class="input-label">
-                <label for="duration">Spardauer / Anlagezeitraum (Jahre)</label>
-                <span class="input-value" id="durationValue">10 Jahre</span>
+
+        <div class="input-card">
+            <div class="label-group">
+                <label>Anlagedauer (Jahre)</label>
+                <input type="text" class="input-val" id="val-years" value="10">
             </div>
-            <input type="range" id="durationSlider" min="1" max="40" value="10">
-            <input type="number" id="duration" min="1" max="50" value="10">
-            <div class="input-hint">Gesamtdauer der Anlage in Jahren</div>
+            <input type="range" id="input-years" min="1" max="40" step="1" value="10">
         </div>
-        
-        <div class="input-group">
-            <div class="input-label">
-                <label for="interestRate">Jährlicher Zinssatz (%)</label>
-                <span class="input-value" id="interestRateValue">5,00 %</span>
+
+        <div class="input-card">
+            <div class="label-group">
+                <label>Jährlicher Zinssatz (%)</label>
+                <input type="text" class="input-val" id="val-rate" value="5">
             </div>
-            <input type="range" id="interestRateSlider" min="0.1" max="15" step="0.1" value="5">
-            <input type="number" id="interestRate" min="0" max="20" step="0.1" value="5">
-            <div class="input-hint">Jährliche Rendite in Prozent</div>
+            <input type="range" id="input-rate" min="1" max="15" step="0.1" value="5">
         </div>
-        
-        <div class="input-group">
-            <div class="input-label">
-                <label for="payoutInterval">Ausschüttungsintervall</label>
-            </div>
-            <select id="payoutInterval">
-                <option value="monthly">monatlich</option>
-                <option value="quarterly">quartalsweise</option>
-                <option value="yearly">jährlich</option>
+
+        <div class="input-card">
+            <label style="display:block; margin-bottom:10px;">Zinsintervall</label>
+            <select id="input-interval">
+                <option value="12">Monatlich</option>
+                <option value="4">Quartalsweise</option>
+                <option value="1">Jährlich</option>
             </select>
-            <div class="input-hint">Wie oft werden Zinsen gutgeschrieben und reinvestiert?</div>
         </div>
-        
-        <div class="input-group">
-            <div class="input-label">
-                <label>Deutsche Anlageprodukte</label>
-            </div>
-            <div class="product-options">
-                <div class="product-option" data-rate="0.5" data-name="Tagesgeld">
-                    <div class="product-name">Tagesgeld</div>
-                    <div class="product-rate">0,5% p.a.</div>
+
+        <div id="results-section">
+            <div class="viz-grid">
+                <div class="result-card">
+                    <div class="donut-container"><canvas id="donutChart"></canvas></div>
                 </div>
-                <div class="product-option" data-rate="4.0" data-name="Festgeld">
-                    <div class="product-name">Festgeld</div>
-                    <div class="product-rate">4,0% p.a.</div>
-                </div>
-                <div class="product-option active" data-rate="5.0" data-name="ETF Sparplan">
-                    <div class="product-name">ETF Sparplan</div>
-                    <div class="product-rate">5,0% p.a.</div>
-                </div>
-                <div class="product-option" data-rate="8.0" data-name="Aktien">
-                    <div class="product-name">Aktien</div>
-                    <div class="product-rate">8,0% p.a.</div>
+                <div class="result-card" style="display:flex; flex-direction:column; justify-content:center; gap:15px;">
+                    <div><small>ENDKAPITAL</small><h2 id="res-total" style="color:var(--primary); margin:5px 0;">0 €</h2></div>
+                    <div><small>EINGEZAHLT</small><h2 id="res-invested" style="color:var(--text-main); margin:5px 0;">0 €</h2></div>
+                    <div><small>GESAMT-ZINSEN</small><h2 id="res-interest" style="color:var(--success); margin:5px 0;">0 €</h2></div>
                 </div>
             </div>
-        </div>
-        
-        <div class="controls">
-            <button class="btn btn-primary" id="calculateBtn">
-                <span>📊 Berechnen</span>
-            </button>
-            <button class="btn btn-secondary" id="resetBtn">
-                <span>🔄 Zurücksetzen</span>
-            </button>
-        </div>
-    </div>
-    
-    <!-- Results Section -->
-    <div class="card">
-        <h2 class="card-title">📈 Berechnungsergebnisse</h2>
-        
-        <div class="result-grid">
-            <div class="result-card">
-                <div class="result-label">Endkapital</div>
-                <div class="result-value" id="finalCapital">23.828 €</div>
+
+            <h3>Wachstum im Zeitverlauf</h3>
+            <div class="chart-card">
+                <canvas id="lineChart"></canvas>
             </div>
-            <div class="result-card">
-                <div class="result-label">Gesamte Einzahlungen</div>
-                <div class="result-value" id="totalDeposits">17.000 €</div>
+
+            <h3>Jährlicher Zuwachs</h3>
+            <div class="chart-card">
+                <canvas id="barChart"></canvas>
             </div>
-            <div class="result-card">
-                <div class="result-label">Zinserträge</div>
-                <div class="result-value" id="totalInterest">6.828 €</div>
+
+            <h3>Detaillierte Jahresübersicht</h3>
+            <div class="table-container">
+                <table id="annual-table">
+                    <thead>
+                        <tr>
+                            <th>Jahr</th>
+                            <th>Startkapital</th>
+                            <th>Einzahlungen</th>
+                            <th>Zinsen</th>
+                            <th>Endkapital</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
             </div>
         </div>
-        
-        <div class="chart-container">
-            <div class="graph-title">Vermögensentwicklung über die Zeit</div>
-            <div id="yearlyGraph">
-                <!-- Graph will be generated by JavaScript -->
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin: 25px 0; padding: 20px; background: var(--primary-light); border-radius: 10px;">
-            <p style="font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); font-weight: 600;">
-                Zusammenfassung Ihrer Anlage
-            </p>
-            <p style="font-size: 0.95rem; color: var(--dark-gray);">
-                Wenn du über <span id="summaryYears">10 Jahre</span>, monatlich <span id="summaryMonthly">100€</span> 
-                zu <span id="summaryRate">5%</span> investierst, kommst du am Ende auf ein 
-                <strong>Endkapital von <span id="summaryFinal">23.828€</span></strong>. 
-                Diese setzen sich zusammen aus <strong><span id="summaryDeposits">17.000€</span> Einzahlungen</strong> 
-                und <strong><span id="summaryInterest">6.828€</span> an Zinsen</strong>.
-            </p>
-        </div>
     </div>
-</main>
 
-<!-- Results Table -->
-<div class="card">
-    <h2 class="card-title">📊 Jahresweise Übersicht</h2>
-    <div class="results-table">
-        <table id="resultsTable">
-            <thead>
-                <tr>
-                    <th>Jahr</th>
-                    <th>Anfangskapital</th>
-                    <th>Jahreseinzahlungen</th>
-                    <th>Zinsertrag</th>
-                    <th>Endkapital</th>
-                </tr>
-            </thead>
-            <tbody id="tableBody">
-                <!-- Will be populated by JavaScript -->
-            </tbody>
-        </table>
+    <div class="sticky-cta">
+        <button class="btn-primary" onclick="calculate()">Jetzt berechnen</button>
     </div>
-</div>
+    <h2>Zinseszinsrechner – Zinseszins & Endkapital berechnen</h2>
+    <p class="subtitle">Beim Investieren hilft der Zinseszinseffekt dabei, Vermögen langfristig zu steigern. Mit zunehmender Laufzeit wachsen die Erträge immer stärker. Unser Zinseszinsrechner zeigt Ihnen übersichtlich, wie sich Zinseszins, Zinsertrag und Endkapital über einen frei wählbaren Anlagezeitraum entwickeln.</p>
 
-<!-- Diagramm Section -->
-<div class="graph-wrapper">
-    <h2 class="graph-title">Diagramm - Vermögensaufteilung</h2>
-    
-    <!-- SVG Pie Chart -->
-    <div class="pie-chart-container">
-        <svg class="pie-chart" viewBox="0 0 32 32">
-            <circle class="pie-slice invested" r="16" cx="16" cy="16" stroke-dasharray="0 100"></circle>
-            <circle class="pie-slice interest" r="16" cx="16" cy="16" stroke-dasharray="0 100"></circle>
-        </svg>
-        <div class="pie-center">
-            <div class="pie-total" id="pieTotal">23.828€</div>
-            <div class="pie-label">Endkapital</div>
-        </div>
-    </div>
-    
-    <div class="graph-bar-container">
-        <div class="graph-bar-invested" id="barInvested" style="width: 71.4%;"></div>
-        <div class="graph-bar-interest" id="barInterest" style="width: 28.6%; left: 71.4%;"></div>
-    </div>
-    
-    <div class="graph-labels">
-        <div id="labelMin">0 €</div>
-        <div id="labelMid">11.900 €</div>
-        <div id="labelMax">23.828 €</div>
-    </div>
-    
-    <div class="graph-legend">
-        <div class="legend-item">
-            <div class="legend-color invested"></div>
-            <span id="legendInvested">Einzahlungen (71,4%)</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color interest"></div>
-            <span id="legendInterest">Zinserträge (28,6%)</span>
-        </div>
-    </div>
-</div>
+    <script>
+        function toggleMenu() {
+            document.getElementById('sideMenu').classList.toggle('active');
+            document.getElementById('overlay').classList.toggle('active');
+        }
 
-<div class="footer-note">
-    <strong>⚠️ Hinweis:</strong> Dieser Rechner dient zu Informationszwecken und stellt keine Finanzberatung dar. 
-    Die Berechnungen basieren auf konstanten Zinssätzen und berücksichtigen keine Inflation, Gebühren oder steuerliche Besonderheiten 
-    (wie den Sparer-Pauschbetrag). Bei Aktien und ETFs besteht das Risiko des Kapitalverlusts.
-</div>
-
-<script>
-    function openMenu() {
-    document.getElementById("sidebar").classList.add("open");
-    document.getElementById("overlay").classList.add("show");
-}
-
-function closeMenu() {
-    document.getElementById("sidebar").classList.remove("open");
-    document.getElementById("overlay").classList.remove("show");
-}
-// DOM Elements
-const elements = {
-    // Input elements
-    initialCapital: document.getElementById('initialCapital'),
-    initialCapitalSlider: document.getElementById('initialCapitalSlider'),
-    monthlyDeposit: document.getElementById('monthlyDeposit'),
-    monthlyDepositSlider: document.getElementById('monthlyDepositSlider'),
-    duration: document.getElementById('duration'),
-    durationSlider: document.getElementById('durationSlider'),
-    interestRate: document.getElementById('interestRate'),
-    interestRateSlider: document.getElementById('interestRateSlider'),
-    payoutInterval: document.getElementById('payoutInterval'),
-    
-    // Display elements
-    initialCapitalValue: document.getElementById('initialCapitalValue'),
-    monthlyDepositValue: document.getElementById('monthlyDepositValue'),
-    durationValue: document.getElementById('durationValue'),
-    interestRateValue: document.getElementById('interestRateValue'),
-    
-    // Result elements
-    finalCapital: document.getElementById('finalCapital'),
-    totalDeposits: document.getElementById('totalDeposits'),
-    totalInterest: document.getElementById('totalInterest'),
-    
-    // Summary elements
-    summaryYears: document.getElementById('summaryYears'),
-    summaryMonthly: document.getElementById('summaryMonthly'),
-    summaryRate: document.getElementById('summaryRate'),
-    summaryFinal: document.getElementById('summaryFinal'),
-    summaryDeposits: document.getElementById('summaryDeposits'),
-    summaryInterest: document.getElementById('summaryInterest'),
-    
-    // Table
-    tableBody: document.getElementById('tableBody'),
-    
-    // Graph elements
-    yearlyGraph: document.getElementById('yearlyGraph'),
-    
-    // Diagramm elements
-    pieTotal: document.getElementById('pieTotal'),
-    barInvested: document.getElementById('barInvested'),
-    barInterest: document.getElementById('barInterest'),
-    labelMin: document.getElementById('labelMin'),
-    labelMid: document.getElementById('labelMid'),
-    labelMax: document.getElementById('labelMax'),
-    legendInvested: document.getElementById('legendInvested'),
-    legendInterest: document.getElementById('legendInterest'),
-    
-    // Buttons
-    calculateBtn: document.getElementById('calculateBtn'),
-    resetBtn: document.getElementById('resetBtn'),
-    
-    // Pie chart SVG elements
-    pieSliceInvested: document.querySelector('.pie-slice.invested'),
-    pieSliceInterest: document.querySelector('.pie-slice.interest')
-};
-
-// Formatting functions
-const formatCurrency = (value) => {
-    return new Intl.NumberFormat('de-DE', {
-        minimumFractionDigits: 0,
-        maximumFractionDigits: 0
-    }).format(value) + ' €';
-};
-
-const formatPercent = (value) => {
-    return new Intl.NumberFormat('de-DE', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    }).format(value) + ' %';
-};
-
-// Initialize the calculator
-function initCalculator() {
-    // Sync sliders with inputs
-    function syncInputs(inputId, sliderId, displayId, formatter = formatCurrency) {
-        const input = elements[inputId];
-        const slider = elements[sliderId];
-        const display = elements[displayId];
+        const ids = ['initial', 'monthly', 'years', 'rate'];
         
-        const updateDisplay = () => {
-            if (formatter === formatCurrency) {
-                display.textContent = formatter(parseFloat(input.value));
-            } else {
-                display.textContent = formatter(parseFloat(input.value));
-            }
-        };
-        
-        input.addEventListener('input', () => {
-            slider.value = input.value;
-            updateDisplay();
-            calculateCompoundInterest(); // Recalculate on change
-        });
-        
-        slider.addEventListener('input', () => {
-            input.value = slider.value;
-            updateDisplay();
-            calculateCompoundInterest(); // Recalculate on change
-        });
-        
-        updateDisplay();
-    }
-    
-    // Sync all inputs
-    syncInputs('initialCapital', 'initialCapitalSlider', 'initialCapitalValue');
-    syncInputs('monthlyDeposit', 'monthlyDepositSlider', 'monthlyDepositValue');
-    syncInputs('duration', 'durationSlider', 'durationValue', (val) => val + ' Jahre');
-    syncInputs('interestRate', 'interestRateSlider', 'interestRateValue', formatPercent);
-    
-    // Product options
-    document.querySelectorAll('.product-option').forEach(option => {
-        option.addEventListener('click', function() {
-            document.querySelectorAll('.product-option').forEach(opt => {
-                opt.classList.remove('active');
+        ids.forEach(id => {
+            const range = document.getElementById(`input-${id}`);
+            const text = document.getElementById(`val-${id}`);
+
+            range.addEventListener('input', () => { text.value = range.value; });
+
+            text.addEventListener('input', () => {
+                let val = parseFloat(text.value.replace(/[^0-9.]/g, ''));
+                if (!isNaN(val)) { range.value = val; }
             });
-            this.classList.add('active');
-            const rate = parseFloat(this.dataset.rate);
-            elements.interestRate.value = rate;
-            elements.interestRateSlider.value = rate;
-            elements.interestRateValue.textContent = formatPercent(rate);
-            calculateCompoundInterest();
         });
-    });
-    
-    // Calculate compound interest with payout interval consideration
-    function calculateCompoundInterest() {
-        const P = parseFloat(elements.initialCapital.value) || 0;
-        const PMT = parseFloat(elements.monthlyDeposit.value) || 0;
-        const r = parseFloat(elements.interestRate.value) / 100 || 0;
-        const t = parseFloat(elements.duration.value) || 1;
-        const payoutInterval = elements.payoutInterval.value;
-        
-        let futureValue, totalDeposits, totalInterest;
-        
-        // Get compounding frequency based on payout interval
-        let n, periodsPerYear;
-        switch(payoutInterval) {
-            case 'monthly':
-                n = 12;
-                periodsPerYear = 12;
-                break;
-            case 'quarterly':
-                n = 4;
-                periodsPerYear = 4;
-                break;
-            case 'yearly':
-                n = 1;
-                periodsPerYear = 1;
-                break;
-            default:
-                n = 12;
-                periodsPerYear = 12;
-        }
-        
-        const totalPeriods = t * n;
-        const periodRate = r / n;
-        
-        if (PMT > 0) {
-            // Calculate payment per period based on monthly deposit
-            const paymentPerPeriod = PMT * (12 / periodsPerYear);
-            
-            // Future value of initial investment
-            const fvInitial = P * Math.pow(1 + periodRate, totalPeriods);
-            
-            // Future value of periodic contributions (annuity)
-            let fvAnnuity;
-            if (periodRate > 0) {
-                fvAnnuity = paymentPerPeriod * ((Math.pow(1 + periodRate, totalPeriods) - 1) / periodRate);
-            } else {
-                fvAnnuity = paymentPerPeriod * totalPeriods;
-            }
-            
-            futureValue = fvInitial + fvAnnuity;
-            totalDeposits = P + (paymentPerPeriod * totalPeriods);
-        } else {
-            // Simple compound interest
-            futureValue = P * Math.pow(1 + periodRate, totalPeriods);
-            totalDeposits = P;
-        }
-        
-        totalInterest = futureValue - totalDeposits;
-        
-        // Update results
-        elements.finalCapital.textContent = formatCurrency(Math.round(futureValue));
-        elements.totalDeposits.textContent = formatCurrency(totalDeposits);
-        elements.totalInterest.textContent = formatCurrency(Math.round(totalInterest));
-        
-        // Update summary
-        updateSummary(P, PMT, r, t, futureValue, totalDeposits, totalInterest);
-        
-        // Generate table
-        generateTable(P, PMT, r, t, payoutInterval);
-        
-        // Generate graph
-        generateYearlyGraph(P, PMT, r, t, payoutInterval);
-        
-        // Update diagramm
-        updateDiagramm(totalDeposits, totalInterest, futureValue);
-    }
-    
-    // Update summary section
-    function updateSummary(P, PMT, r, t, futureValue, totalDeposits, totalInterest) {
-        elements.summaryYears.textContent = t + ' Jahre';
-        elements.summaryMonthly.textContent = formatCurrency(PMT);
-        elements.summaryRate.textContent = (r * 100).toFixed(2).replace('.', ',') + '%';
-        elements.summaryFinal.textContent = formatCurrency(Math.round(futureValue));
-        elements.summaryDeposits.textContent = formatCurrency(totalDeposits);
-        elements.summaryInterest.textContent = formatCurrency(Math.round(totalInterest));
-    }
-    
-    // Generate results table
-    function generateTable(P, PMT, r, t, payoutInterval) {
-        const tableBody = elements.tableBody;
-        tableBody.innerHTML = '';
-        
-        // Get compounding frequency
-        let periodsPerYear;
-        switch(payoutInterval) {
-            case 'monthly':
-                periodsPerYear = 12;
-                break;
-            case 'quarterly':
-                periodsPerYear = 4;
-                break;
-            case 'yearly':
-                periodsPerYear = 1;
-                break;
-            default:
-                periodsPerYear = 12;
-        }
-        
-        const periodRate = r / periodsPerYear;
-        const paymentPerPeriod = PMT * (12 / periodsPerYear);
-        let currentBalance = P;
-        
-        // Group by years
-        for (let year = 1; year <= t; year++) {
-            let yearStartBalance = currentBalance;
-            let yearInterest = 0;
-            let yearDeposits = paymentPerPeriod * periodsPerYear;
-            
-            // Calculate for each period in this year
-            for (let period = 1; period <= periodsPerYear; period++) {
-                const periodInterest = currentBalance * periodRate;
-                yearInterest += periodInterest;
-                currentBalance += periodInterest + paymentPerPeriod;
-            }
-            
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${year}</td>
-                <td>${formatCurrency(Math.round(yearStartBalance))}</td>
-                <td>${formatCurrency(Math.round(yearDeposits))}</td>
-                <td>${formatCurrency(Math.round(yearInterest))}</td>
-                <td>${formatCurrency(Math.round(currentBalance))}</td>
-            `;
-            tableBody.appendChild(row);
-        }
-        
-        // Add total row
-        const totalRow = document.createElement('tr');
-        totalRow.className = 'total-row';
-        totalRow.innerHTML = `
-            <td><strong>Gesamt</strong></td>
-            <td>-</td>
-            <td><strong>${formatCurrency(Math.round(P + (PMT * 12 * t)))}</strong></td>
-            <td><strong>${formatCurrency(Math.round(currentBalance - P - (PMT * 12 * t)))}</strong></td>
-            <td><strong>${formatCurrency(Math.round(currentBalance))}</strong></td>
-        `;
-        tableBody.appendChild(totalRow);
-    }
-    
-    // Generate yearly graph
-    function generateYearlyGraph(P, PMT, r, t, payoutInterval) {
-        const graphContainer = elements.yearlyGraph;
-        graphContainer.innerHTML = '';
-        
-        // Create SVG for graph
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        svg.setAttribute("width", "100%");
-        svg.setAttribute("height", "250");
-        svg.setAttribute("viewBox", "0 0 800 250");
-        
-        // Get compounding frequency
-        let periodsPerYear;
-        switch(payoutInterval) {
-            case 'monthly':
-                periodsPerYear = 12;
-                break;
-            case 'quarterly':
-                periodsPerYear = 4;
-                break;
-            case 'yearly':
-                periodsPerYear = 1;
-                break;
-            default:
-                periodsPerYear = 12;
-        }
-        
-        const periodRate = r / periodsPerYear;
-        const paymentPerPeriod = PMT * (12 / periodsPerYear);
-        
-        // Calculate yearly balances
-        let balances = [P];
-        let currentBalance = P;
-        
-        for (let year = 1; year <= t; year++) {
-            // Calculate for each period in this year
-            for (let period = 1; period <= periodsPerYear; period++) {
-                const periodInterest = currentBalance * periodRate;
-                currentBalance += periodInterest + paymentPerPeriod;
-            }
-            balances.push(currentBalance);
-        }
-        
-        // Find max value for scaling
-        const maxBalance = Math.max(...balances);
-        
-        // Draw bars
-        const barWidth = 700 / (t + 1);
-        const maxHeight = 180;
-        
-        for (let i = 0; i < balances.length; i++) {
-            const x = 50 + (i * barWidth);
-            const height = (balances[i] / maxBalance) * maxHeight;
-            const y = 200 - height;
-            
-            // Draw bar
-            const bar = document.createElementNS(svgNS, "rect");
-            bar.setAttribute("x", x);
-            bar.setAttribute("y", y);
-            bar.setAttribute("width", barWidth - 5);
-            bar.setAttribute("height", height);
-            bar.setAttribute("fill", i === balances.length - 1 ? "var(--secondary)" : "var(--primary)");
-            bar.setAttribute("rx", "3");
-            svg.appendChild(bar);
-            
-            // Draw value label (only for first, last, and every 5th year)
-            if (i === 0 || i === balances.length - 1 || i % 5 === 0) {
-                const text = document.createElementNS(svgNS, "text");
-                text.setAttribute("x", x + (barWidth - 5) / 2);
-                text.setAttribute("y", y - 5);
-                text.setAttribute("text-anchor", "middle");
-                text.setAttribute("font-size", "10");
-                text.setAttribute("fill", "var(--dark-gray)");
-                text.textContent = formatCurrency(Math.round(balances[i]));
-                svg.appendChild(text);
-            }
-            
-            // Draw year label
-            const yearText = document.createElementNS(svgNS, "text");
-            yearText.setAttribute("x", x + (barWidth - 5) / 2);
-            yearText.setAttribute("y", "230");
-            yearText.setAttribute("text-anchor", "middle");
-            yearText.setAttribute("font-size", "12");
-            yearText.setAttribute("fill", "var(--dark-gray)");
-            yearText.textContent = i;
-            svg.appendChild(yearText);
-        }
-        
-        // Draw axis
-        const axis = document.createElementNS(svgNS, "line");
-        axis.setAttribute("x1", "40");
-        axis.setAttribute("y1", "200");
-        axis.setAttribute("x2", "750");
-        axis.setAttribute("y2", "200");
-        axis.setAttribute("stroke", "var(--dark-gray)");
-        axis.setAttribute("stroke-width", "2");
-        svg.appendChild(axis);
-        
-        graphContainer.appendChild(svg);
-    }
-    
-    // Update diagramm (pie chart and bar graph)
-    function updateDiagramm(totalDeposits, totalInterest, futureValue) {
-        // Calculate percentages
-        const depositsPercent = (totalDeposits / futureValue) * 100;
-        const interestPercent = (totalInterest / futureValue) * 100;
-        
-        // Update pie chart (SVG stroke-dasharray)
-        // Circumference of circle with radius 16: 2 * π * 16 ≈ 100.53
-        // We'll use 100 as the total circumference for simplicity
-        const depositsDash = depositsPercent;
-        const interestDash = interestPercent;
-        
-        elements.pieSliceInvested.setAttribute("stroke-dasharray", `${depositsDash} 100`);
-        elements.pieSliceInterest.setAttribute("stroke-dasharray", `0 ${depositsDash} ${interestDash} 100`);
-        
-        // Update bar graph
-        elements.barInvested.style.width = `${depositsPercent}%`;
-        elements.barInterest.style.width = `${interestPercent}%`;
-        elements.barInterest.style.left = `${depositsPercent}%`;
-        
-        // Update labels
-        elements.pieTotal.textContent = formatCurrency(Math.round(futureValue));
-        elements.labelMin.textContent = '0 €';
-        elements.labelMid.textContent = formatCurrency(Math.round(futureValue / 2));
-        elements.labelMax.textContent = formatCurrency(Math.round(futureValue));
-        
-        // Update legend
-        elements.legendInvested.textContent = `Einzahlungen (${depositsPercent.toFixed(1).replace('.', ',')}%)`;
-        elements.legendInterest.textContent = `Zinserträge (${interestPercent.toFixed(1).replace('.', ',')}%)`;
-    }
-    
-    // Reset calculator
-    function resetCalculator() {
-        elements.initialCapital.value = 5000;
-        elements.initialCapitalSlider.value = 5000;
-        elements.monthlyDeposit.value = 100;
-        elements.monthlyDepositSlider.value = 100;
-        elements.duration.value = 10;
-        elements.durationSlider.value = 10;
-        elements.interestRate.value = 5;
-        elements.interestRateSlider.value = 5;
-        elements.payoutInterval.value = 'monthly';
-        
-        // Reset product options
-        document.querySelectorAll('.product-option').forEach(opt => {
-            opt.classList.remove('active');
-            if (opt.dataset.rate === '5.0') {
-                opt.classList.add('active');
-            }
-        });
-        
-        // Update displays
-        elements.initialCapitalValue.textContent = formatCurrency(5000);
-        elements.monthlyDepositValue.textContent = formatCurrency(100);
-        elements.durationValue.textContent = '10 Jahre';
-        elements.interestRateValue.textContent = formatPercent(5);
-        
-        // Recalculate
-        calculateCompoundInterest();
-    }
-    
-    // Event listeners for payout interval
-    elements.payoutInterval.addEventListener('change', calculateCompoundInterest);
-    
-    // Event listeners for buttons
-    elements.calculateBtn.addEventListener('click', calculateCompoundInterest);
-    elements.resetBtn.addEventListener('click', resetCalculator);
-    
-    // Initial calculation
-    calculateCompoundInterest();
-}
 
-// Initialize when page loads
-document.addEventListener('DOMContentLoaded', initCalculator);
-</script>
+        let donutChart, lineChart, barChart;
+
+        function calculate() {
+            const P = parseFloat(document.getElementById('input-initial').value) || 0;
+            const PMT = parseFloat(document.getElementById('input-monthly').value) || 0;
+            const years = parseInt(document.getElementById('input-years').value) || 0;
+            const annualRate = (parseFloat(document.getElementById('input-rate').value) || 0) / 100;
+            const interval = parseInt(document.getElementById('input-interval').value);
+
+            const tableBody = document.querySelector('#annual-table tbody');
+            tableBody.innerHTML = '';
+
+            let currentBalance = P;
+            let totalInvested = P;
+            let totalInterestEarned = 0;
+            
+            let yearsArr = [0];
+            let balanceArr = [P];
+            let investedArr = [P];
+            let interestArr = [0];
+
+            for (let y = 1; y <= years; y++) {
+                let startOfYear = currentBalance;
+                let annualContribution = PMT * 12;
+                
+                for (let m = 1; m <= 12; m++) {
+                    currentBalance += PMT;
+                    if (m % (12 / interval) === 0) {
+                        currentBalance *= (1 + (annualRate / interval));
+                    }
+                }
+
+                let yearInterest = currentBalance - startOfYear - annualContribution;
+                totalInterestEarned += yearInterest;
+                totalInvested += annualContribution;
+
+                yearsArr.push(y);
+                balanceArr.push(Math.round(currentBalance));
+                investedArr.push(Math.round(totalInvested));
+                interestArr.push(Math.round(totalInterestEarned));
+
+                tableBody.innerHTML += `
+                    <tr>
+                        <td>Jahr ${y}</td>
+                        <td>${Math.round(startOfYear).toLocaleString('de-DE')} €</td>
+                        <td>${annualContribution.toLocaleString('de-DE')} €</td>
+                        <td>${Math.round(yearInterest).toLocaleString('de-DE')} €</td>
+                        <td>${Math.round(currentBalance).toLocaleString('de-DE')} €</td>
+                    </tr>`;
+            }
+
+            tableBody.innerHTML += `
+                <tr class="total-row">
+                    <td>Gesamt</td>
+                    <td>-</td>
+                    <td>${totalInvested.toLocaleString('de-DE')} €</td>
+                    <td>${Math.round(totalInterestEarned).toLocaleString('de-DE')} €</td>
+                    <td>${Math.round(currentBalance).toLocaleString('de-DE')} €</td>
+                </tr>`;
+
+            document.getElementById('res-total').innerText = Math.round(currentBalance).toLocaleString('de-DE') + ' €';
+            document.getElementById('res-invested').innerText = Math.round(totalInvested).toLocaleString('de-DE') + ' €';
+            document.getElementById('res-interest').innerText = Math.round(totalInterestEarned).toLocaleString('de-DE') + ' €';
+            document.getElementById('results-section').style.display = 'block';
+
+            updateVisuals(totalInvested, totalInterestEarned, yearsArr, balanceArr, investedArr, interestArr);
+            window.scrollTo({ top: document.getElementById('results-section').offsetTop - 50, behavior: 'smooth' });
+        }
+
+        function updateVisuals(invested, interest, years, balances, investedHistory, interestHistory) {
+            const ctxD = document.getElementById('donutChart').getContext('2d');
+            if (donutChart) donutChart.destroy();
+            donutChart = new Chart(ctxD, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Eingezahltes Kapital', 'Zinsgewinn'],
+                    datasets: [{ data: [invested, interest], backgroundColor: ['#e2e8f0', '#2563eb'], borderWidth: 0 }]
+                },
+                options: { cutout: '75%', plugins: { legend: { display: false } } }
+            });
+
+            const ctxL = document.getElementById('lineChart').getContext('2d');
+            if (lineChart) lineChart.destroy();
+            lineChart = new Chart(ctxL, {
+                type: 'line',
+                data: {
+                    labels: years.map(y => 'Jahr ' + y),
+                    datasets: [
+                        { label: 'Gesamtwert', data: balances, borderColor: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.1)', fill: true, tension: 0.4 },
+                        { label: 'Investiert', data: investedHistory, borderColor: '#2563eb', borderDash: [5, 5], fill: false }
+                    ]
+                },
+                options: { plugins: { legend: { position: 'bottom' } } }
+            });
+
+            const ctxB = document.getElementById('barChart').getContext('2d');
+            if (barChart) barChart.destroy();
+            barChart = new Chart(ctxB, {
+                type: 'bar',
+                data: {
+                    labels: years.slice(1).map(y => y),
+                    datasets: [
+                        { label: 'Einzahlungen', data: investedHistory.slice(1), backgroundColor: '#2563eb' },
+                        { label: 'Zinsen', data: interestHistory.slice(1), backgroundColor: '#fb923c' }
+                    ]
+                },
+                options: { 
+                    scales: { x: { stacked: true }, y: { stacked: true } },
+                    plugins: { legend: { position: 'bottom' } }
+                }
+            });
+        }
+    </script>
 </body>
 </html>
