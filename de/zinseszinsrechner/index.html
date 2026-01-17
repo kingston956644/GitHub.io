@@ -1,30 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Zinseszinsrechner – Zinseszins & Endkapital einfach berechnen</title>
-<meta name="description" content="Mit unserem Zinseszinsrechner berechnen Sie Zinseszins, Zinsertrag und Endkapital einfach online – ideal für Sparpläne & Investments.">
-<link rel="canonical" href="https://www.lumpsumcalculators.in/de/zinseszinsrechner/">
+    <title>Zinseszinsrechner – Zinseszins & Endkapital einfach berechnen</title>
+    <meta name="description" content="Mit unserem Zinseszinsrechner berechnen Sie Zinseszins, Zinsertrag und Endkapital einfach online – ideal für Sparpläne & Investments.">
+    <link rel="canonical" href="https://www.lumpsumcalculators.in/de/zinseszinsrechner/">
 
-<meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Zinseszinsrechner – Zinseszins schnell & kostenlos berechnen">
-<meta property="og:description" content="Zinseszins einfach & schnell berechnen. Unser kostenloser Zinseszinsrechner zeigt Zinsertrag und Endkapital für Ihren Anlagezeitraum.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.lumpsumcalculators.in/de/zinseszinsrechner/">
-<meta property="og:image" content="https://lumpsumcalculators.in/og-image.webp">
+    <meta property="og:title" content="Zinseszinsrechner – Zinseszins schnell & kostenlos berechnen">
+    <meta property="og:description" content="Zinseszins einfach & schnell berechnen. Unser kostenloser Zinseszinsrechner zeigt Zinsertrag und Endkapital für Ihren Anlagezeitraum.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.lumpsumcalculators.in/de/zinseszinsrechner/">
+    <meta property="og:image" content="https://lumpsumcalculators.in/og-image.webp">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Zinseszinsrechner">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://lumpsumcalculators.in/og-image.webp">
-
-<link rel="icon" href="/favicon.ico">    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --primary: #2563eb;
@@ -40,7 +34,6 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text-main); margin: 0; padding-bottom: 100px; }
 
-        /* --- Navbar --- */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -55,63 +48,37 @@
         .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #1e293b; font-weight: 700; font-size: 1.4rem; }
         .nav-logo img { height: 32px; width: 32px; border-radius: 50%; }
         .nav-actions { display: flex; align-items: center; gap: 20px; }
-        .search-icon, .menu-icon { cursor: pointer; display: flex; align-items: center; }
+        .menu-icon { cursor: pointer; display: flex; align-items: center; }
 
-        /* --- Side Menu --- */
         .side-menu {
             position: fixed;
-            top: 0;
-            right: -100%;
-            width: 280px;
-            height: 100%;
-            background: white;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-            transition: 0.3s ease;
-            z-index: 2000;
-            padding: 2rem 1.5rem;
+            top: 0; right: -100%; width: 280px; height: 100%;
+            background: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            transition: 0.3s ease; z-index: 2000; padding: 2rem 1.5rem;
         }
         .side-menu.active { right: 0; }
         .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            display: none;
-            z-index: 1500;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.4); display: none; z-index: 1500;
         }
         .menu-overlay.active { display: block; }
         .menu-close { text-align: right; font-size: 1.5rem; cursor: pointer; margin-bottom: 2rem; }
         .menu-link { display: block; padding: 12px 0; color: #1e293b; text-decoration: none; font-weight: 600; border-bottom: 1px solid #f1f5f9; }
 
-        /* Container & Grid */
         .container { max-width: 700px; margin: 0 auto; padding: 1.5rem; }
-        .hero-text { text-align: center; padding: 2rem 0; }
+        h1 { text-align: center; padding: 2rem 0; margin: 0; }
 
         .input-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            margin-bottom: 1.2rem;
-            box-shadow: var(--shadow);
-            border: 1px solid #e2e8f0;
+            background: var(--card-bg); padding: 1.5rem; border-radius: var(--radius);
+            margin-bottom: 1.2rem; box-shadow: var(--shadow); border: 1px solid #e2e8f0;
         }
         .label-group { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
         label { font-weight: 600; font-size: 0.95rem; }
         
         .input-val { 
-            font-size: 1.1rem; 
-            font-weight: 700; 
-            color: var(--primary); 
-            background: #eff6ff; 
-            padding: 4px 12px; 
-            border-radius: 8px; 
-            border: none;
-            width: 120px;
-            text-align: right;
-            outline: none;
-            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem; font-weight: 700; color: var(--primary); 
+            background: #eff6ff; padding: 4px 12px; border-radius: 8px; 
+            border: none; width: 120px; text-align: right; outline: none; font-family: 'Inter', sans-serif;
         }
 
         input[type="range"] { width: 100%; margin: 10px 0; accent-color: var(--primary); }
@@ -134,6 +101,8 @@
 
         .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; padding: 1.2rem; background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); border-top: 1px solid #e2e8f0; z-index: 100; text-align: center; }
         .btn-primary { background: var(--primary); color: white; border: none; width: 100%; max-width: 500px; padding: 1rem; border-radius: 12px; font-size: 1.1rem; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px 0 rgba(37,99,235,0.39); }
+        
+        .seo-footer { padding: 20px; max-width: 700px; margin: 0 auto; }
     </style>
 </head>
 <body>
@@ -144,9 +113,6 @@
             Lumpsum
         </a>
         <div class="nav-actions">
-            <div class="search-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </div>
             <div class="menu-icon" onclick="toggleMenu()">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </div>
@@ -159,15 +125,10 @@
         <a href="https://www.lumpsumcalculators.in" class="menu-link">Startseite</a>
         <a href="#" class="menu-link">Rechner</a>
         <a href="#" class="menu-link">Investitionen</a>
-        <a href="#" class="menu-link">Profil</a>
-        <a href="#" class="menu-link">Einstellungen</a>
     </div>
-  
-<header>
-    <h1>Zinseszinsrechner</h1>
-</header>
-       
-       
+
+    <div class="container">
+        <h1>Zinseszinsrechner</h1>
 
         <div class="input-card">
             <div class="label-group">
@@ -223,26 +184,16 @@
             </div>
 
             <h3>Wachstum im Zeitverlauf</h3>
-            <div class="chart-card">
-                <canvas id="lineChart"></canvas>
-            </div>
+            <div class="chart-card"><canvas id="lineChart"></canvas></div>
 
             <h3>Jährlicher Zuwachs</h3>
-            <div class="chart-card">
-                <canvas id="barChart"></canvas>
-            </div>
+            <div class="chart-card"><canvas id="barChart"></canvas></div>
 
             <h3>Detaillierte Jahresübersicht</h3>
             <div class="table-container">
                 <table id="annual-table">
                     <thead>
-                        <tr>
-                            <th>Jahr</th>
-                            <th>Startkapital</th>
-                            <th>Einzahlungen</th>
-                            <th>Zinsen</th>
-                            <th>Endkapital</th>
-                        </tr>
+                        <tr><th>Jahr</th><th>Startkapital</th><th>Einzahlungen</th><th>Zinsen</th><th>Endkapital</th></tr>
                     </thead>
                     <tbody></tbody>
                 </table>
@@ -251,32 +202,56 @@
     </div>
 
     <div class="sticky-cta">
-        <button class="btn-primary" onclick="calculate()">Jetzt berechnen</button>
+        <button class="btn-primary" id="calcBtn" onclick="initCalculate()">Jetzt berechnen</button>
     </div>
-    <h2>Zinseszinsrechner – Zinseszins & Endkapital berechnen</h2>
-    <p class="subtitle">Beim Investieren hilft der Zinseszinseffekt dabei, Vermögen langfristig zu steigern. Mit zunehmender Laufzeit wachsen die Erträge immer stärker. Unser Zinseszinsrechner zeigt Ihnen übersichtlich, wie sich Zinseszins, Zinsertrag und Endkapital über einen frei wählbaren Anlagezeitraum entwickeln.</p>
 
-    <script defer>
+    <div class="seo-footer">
+        <h2>Zinseszinsrechner – Zinseszins & Endkapital berechnen</h2>
+        <p>Beim Investieren hilft der Zinseszinseffekt dabei, Vermögen langfristig zu steigern. Mit zunehmender Laufzeit wachsen die Erträge immer stärker. Unser Zinseszinsrechner zeigt Ihnen übersichtlich, wie sich Zinseszins, Zinsertrag und Endkapital über einen frei wählbaren Anlagezeitraum entwickeln.</p>
+    </div>
+
+    <script>
+        let chartLibLoaded = false;
+        let donutChart, lineChart, barChart;
+
         function toggleMenu() {
             document.getElementById('sideMenu').classList.toggle('active');
             document.getElementById('overlay').classList.toggle('active');
         }
 
+        // Synchronize range and text inputs
         const ids = ['initial', 'monthly', 'years', 'rate'];
-        
         ids.forEach(id => {
             const range = document.getElementById(`input-${id}`);
             const text = document.getElementById(`val-${id}`);
-
             range.addEventListener('input', () => { text.value = range.value; });
-
             text.addEventListener('input', () => {
                 let val = parseFloat(text.value.replace(/[^0-9.]/g, ''));
                 if (!isNaN(val)) { range.value = val; }
             });
         });
 
-        let donutChart, lineChart, barChart;
+        // Lazy load script to boost page speed
+        function loadChartsScript(callback) {
+            if (chartLibLoaded) return callback();
+            const script = document.createElement('script');
+            script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+            script.onload = () => { chartLibLoaded = true; callback(); };
+            document.body.appendChild(script);
+        }
+
+        function initCalculate() {
+            const btn = document.getElementById('calcBtn');
+            if (!chartLibLoaded) {
+                btn.innerText = "Lädt...";
+                loadChartsScript(() => {
+                    btn.innerText = "Jetzt berechnen";
+                    calculate();
+                });
+            } else {
+                calculate();
+            }
+        }
 
         function calculate() {
             const P = parseFloat(document.getElementById('input-initial').value) || 0;
@@ -291,23 +266,17 @@
             let currentBalance = P;
             let totalInvested = P;
             let totalInterestEarned = 0;
-            
-            let yearsArr = [0];
-            let balanceArr = [P];
-            let investedArr = [P];
-            let interestArr = [0];
+            let yearsArr = [0], balanceArr = [P], investedArr = [P], interestArr = [0];
 
             for (let y = 1; y <= years; y++) {
                 let startOfYear = currentBalance;
                 let annualContribution = PMT * 12;
-                
                 for (let m = 1; m <= 12; m++) {
                     currentBalance += PMT;
                     if (m % (12 / interval) === 0) {
                         currentBalance *= (1 + (annualRate / interval));
                     }
                 }
-
                 let yearInterest = currentBalance - startOfYear - annualContribution;
                 totalInterestEarned += yearInterest;
                 totalInvested += annualContribution;
@@ -317,24 +286,14 @@
                 investedArr.push(Math.round(totalInvested));
                 interestArr.push(Math.round(totalInterestEarned));
 
-                tableBody.innerHTML += `
-                    <tr>
-                        <td>Jahr ${y}</td>
-                        <td>${Math.round(startOfYear).toLocaleString('de-DE')} €</td>
-                        <td>${annualContribution.toLocaleString('de-DE')} €</td>
-                        <td>${Math.round(yearInterest).toLocaleString('de-DE')} €</td>
-                        <td>${Math.round(currentBalance).toLocaleString('de-DE')} €</td>
-                    </tr>`;
-            }
-
-            tableBody.innerHTML += `
-                <tr class="total-row">
-                    <td>Gesamt</td>
-                    <td>-</td>
-                    <td>${totalInvested.toLocaleString('de-DE')} €</td>
-                    <td>${Math.round(totalInterestEarned).toLocaleString('de-DE')} €</td>
+                tableBody.innerHTML += `<tr>
+                    <td>Jahr ${y}</td>
+                    <td>${Math.round(startOfYear).toLocaleString('de-DE')} €</td>
+                    <td>${annualContribution.toLocaleString('de-DE')} €</td>
+                    <td>${Math.round(yearInterest).toLocaleString('de-DE')} €</td>
                     <td>${Math.round(currentBalance).toLocaleString('de-DE')} €</td>
                 </tr>`;
+            }
 
             document.getElementById('res-total').innerText = Math.round(currentBalance).toLocaleString('de-DE') + ' €';
             document.getElementById('res-invested').innerText = Math.round(totalInvested).toLocaleString('de-DE') + ' €';
@@ -351,7 +310,7 @@
             donutChart = new Chart(ctxD, {
                 type: 'doughnut',
                 data: {
-                    labels: ['Eingezahltes Kapital', 'Zinsgewinn'],
+                    labels: ['Eingezahlt', 'Zinsgewinn'],
                     datasets: [{ data: [invested, interest], backgroundColor: ['#e2e8f0', '#2563eb'], borderWidth: 0 }]
                 },
                 options: { cutout: '75%', plugins: { legend: { display: false } } }
@@ -376,18 +335,18 @@
             barChart = new Chart(ctxB, {
                 type: 'bar',
                 data: {
-                    labels: years.slice(1).map(y => y),
+                    labels: years.slice(1),
                     datasets: [
                         { label: 'Einzahlungen', data: investedHistory.slice(1), backgroundColor: '#2563eb' },
                         { label: 'Zinsen', data: interestHistory.slice(1), backgroundColor: '#fb923c' }
                     ]
                 },
-                options: { 
-                    scales: { x: { stacked: true }, y: { stacked: true } },
-                    plugins: { legend: { position: 'bottom' } }
-                }
+                options: { scales: { x: { stacked: true }, y: { stacked: true } }, plugins: { legend: { position: 'bottom' } } }
             });
         }
+
+        // Optional: Pre-load the script 3 seconds after page load to have it ready
+        window.onload = () => { setTimeout(() => loadChartsScript(() => {}), 3000); };
     </script>
 </body>
 </html>
