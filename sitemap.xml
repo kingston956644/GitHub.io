@@ -4,15 +4,7 @@
   <url>
     <loc>https://www.lumpsumcalculators.in/</loc>
   </url>
-
 <url>
-  <loc>https://www.lumpsumcalculators.in/de/zinseszinsrechner/</loc>
-  <lastmod>2026-01-16</lastmod>
-  <priority>0.9</priority>
-</url>
-
-</urlset>
- <url>
     <loc>https://www.lumpsumcalculators.in/de/about/</loc>
   </url>
   <url>
@@ -24,3 +16,12 @@
   <url>
     <loc>https://www.lumpsumcalculators.in/de/legal/</loc>
   </url>
+
+<url>
+  <loc>https://www.lumpsumcalculators.in/de/zinseszinsrechner/</loc>
+  <lastmod>2026-01-16</lastmod>
+  <priority>0.9</priority>
+</url>
+
+</urlset>
+ 
