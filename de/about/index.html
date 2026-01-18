@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktieren Sie uns | Ihr Unternehmen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--primary:#2563eb;--success:#10b981;--bg:#f8fafc;--card-bg:#fff;--text-main:#1e293b;--text-muted:#64748b;--radius:16px;--shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background-color:var(--bg);color:var(--text-main);margin:0;padding-bottom:100px}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:1000}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1e293b;font-weight:700;font-size:1.4rem}
+.nav-logo img{height:32px;width:32px;border-radius:50%}
+.nav-actions{display:flex;align-items:center;gap:20px}
+.menu-icon{cursor:pointer;display:flex;align-items:center}
+.side-menu{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#fff;box-shadow:-5px 0 15px rgba(0,0,0,.1);transition:.3s ease;z-index:2000;padding:2rem 1.5rem}
+.side-menu.active{right:0}
+.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);display:none;z-index:1500}
+.menu-overlay.active{display:block}
+.menu-close{text-align:right;font-size:1.5rem;cursor:pointer;margin-bottom:2rem}
+.menu-link{display:block;padding:12px 0;color:#1e293b;text-decoration:none;font-weight:600;border-bottom:1px solid #f1f5f9}
+    header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .contact-form {
+            flex: 1.5;
+            min-width: 300px;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.8rem;
+        }
+        
+        .info-icon {
+            background-color: #eef2ff;
+            color: #2a5298;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .info-content h3 {
+            margin-bottom: 0.3rem;
+            color: #1e3c72;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #2a5298;
+            box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #2a5298, #1e3c72);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(30, 60, 114, 0.2);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .map-container {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .map-placeholder {
+            background-color: #eef2ff;
+            border-radius: 8px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #2a5298;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .business-hours {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .hours-title {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.7rem;
+            border-bottom: 2px solid #eef2ff;
+        }
+        
+        .hours-table {
+            width: 100%;
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-table td {
+            padding: 0.8rem 0;
+        }
+        
+        .hours-table td:first-child {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .hours-table td:last-child {
+            text-align: right;
+            color: #555;
+        }
+        
+        .highlight {
+            color: #1e3c72;
+            font-weight: 700;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: #666;
+            border-top: 1px solid #e0e0e0;
+            margin-top: 2rem;
+        }
+        
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+<a href="#" class="nav-logo">
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%232563eb'/%3E%3Cpath d='M16 8l-8 8h5v8h6v-8h5z' fill='white'/%3E%3C/svg%3E" alt="Logo"> 
+Lumpsum
+</a>
+<div class="nav-actions">
+<div class="menu-icon" onclick="toggleMenu()">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+</div>
+</div>
+</nav>
+
+<div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+<div class="menu-close" onclick="toggleMenu()">✕</div>
+<a href="https://www.lumpsumcalculators.in" class="menu-link">Startseite</a>
+<a href="#" class="menu-link">Rechner</a>
+<a href="#" class="menu-link">Investitionen</a>
+</div>
+     <div class="container">
+        <!-- Page Title -->
+        <h1 class="page-title">Über Lumpsum Calculators</h1>
+        
+        <!-- Our Story -->
+        <section>
+            <h2>Unsere Geschichte</h2>
+            <p>Lumpsum Calculators wurde 2020 in Berlin gegründet mit dem Ziel, präzise und benutzerfreundliche Finanzrechner für den deutschen Markt bereitzustellen.</p>
+            <p>Unser Gründer, ein Finanzberater, bemerkte, dass viele Deutsche Schwierigkeiten haben, komplexe Finanzberechnungen zu verstehen. Es gab kaum kostenlose Rechner, die deutsche Steuergesetze, Gebühren und Vorschriften berücksichtigen.</p>
+            <p>Heute sind wir eine der vertrauenswürdigsten Plattformen für Finanzrechner in Deutschland, mit über 100.000 monatlichen Nutzern.</p>
+        </section>
+        
+        <!-- Mission & Vision -->
+        <section>
+            <h2>Unsere Mission & Vision</h2>
+            <div class="mission-vision">
+                <div class="mission">
+                    <h3>Unsere Mission</h3>
+                    <p>Finanzielle Bildung für alle Deutschen zugänglich zu machen durch kostenlose, präzise Finanzrechner, die speziell auf den deutschen Markt abgestimmt sind.</p>
+                </div>
+                <div class="vision">
+                    <h3>Unsere Vision</h3>
+                    <p>Die erste Anlaufstelle für jeden Deutschen zu werden, der fundierte Finanzentscheidungen treffen möchte - von der Altersvorsorge bis zur Immobilienfinanzierung.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Calculators -->
+        <section>
+            <h2>Unsere Finanzrechner</h2>
+            <p>Alle unsere Rechner sind speziell für deutsche Nutzer entwickelt und berücksichtigen:</p>
+            
+            <div class="calculator-list">
+                <div class="calculator-item">
+                    <h3>Investmentrechner</h3>
+                    <p>Kapitalentwicklung mit deutschen Steuern und Gebühren</p>
+                </div>
+                <div class="calculator-item">
+                    <h3>Immobilienrechner</h3>
+                    <p>Kauf vs. Miete, Baufinanzierung für Deutschland</p>
+                </div>
+                <div class="calculator-item">
+                    <h3>Riester & Rürup Rechner</h3>
+                    <p>Altersvorsorge mit deutschen Förderrichtlinien</p>
+                </div>
+                <div class="calculator-item">
+                    <h3>Steuerrechner</h3>
+                    <p>Einkommensteuer, Kapitalertragsteuer in Deutschland</p>
+                </div>
+                <div class="calculator-item">
+                    <h3>Kreditrechner</h3>
+                    <p>Kreditkonditionen nach deutschem Verbraucherschutz</p>
+                </div>
+                <div class="calculator-item">
+                    <h3>Sparrechner</h3>
+                    <p>Sparziele mit deutschen Zinsen und Inflation</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Germany Focus -->
+        <section class="germany-focus">
+            <h2>Warum Deutschland?</h2>
+            <p>Deutschland hat ein einzigartiges Finanzsystem. Unsere Rechner berücksichtigen:</p>
+            
+            <div class="focus-points">
+                <ul>
+                    <li><strong>Deutsche Steuergesetze:</strong> Einkommensteuer, Kapitalertragsteuer, Solidaritätszuschlag</li>
+                    <li><strong>Deutsche Altersvorsorge:</strong> Riester, Rürup, betriebliche Altersvorsorge</li>
+                    <li><strong>Deutsche Inflation:</strong> Historische und aktuelle Inflationsraten für Deutschland</li>
+                    <li><strong>Deutsche Gebühren:</strong> Bankgebühren, Fondskosten auf dem deutschen Markt</li>
+                    <li><strong>Deutsche Gesetze:</strong> Verbraucherschutz, Finanzvorschriften in Deutschland</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Our Team -->
+        <section>
+            <h2>Unser Team</h2>
+            <p>Hinter Lumpsum Calculators steht ein erfahrenes Team von Finanzexperten und Softwareentwicklern.</p>
+            
+            <div class="team">
+                <div class="team-member">
+                    <div class="member-img">MW</div>
+                    <div class="member-name">Markus Weber</div>
+                    <div class="member-role">Gründer & Finanzexperte</div>
+                    <p>15+ Jahre Erfahrung im deutschen Finanzsektor</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">AS</div>
+                    <div class="member-name">Anna Schmidt</div>
+                    <div class="member-role">Softwareentwicklung</div>
+                    <p>Spezialistin für Finanzsoftware</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-img">TB</div>
+                    <div class="member-name">Thomas Bauer</div>
+                    <div class="member-role">Steuerberater</div>
+                    <p>Experte für deutsche Steuergesetze</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta">
+            <h2>Bereit für Ihre Finanzplanung?</h2>
+            <p>Nutzen Sie unsere kostenlosen, auf Deutschland zugeschnittenen Finanzrechner für fundierte Entscheidungen.</p>
+            <a href="rechner.html" class="btn">Zu den Rechnern</a>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Lumpsum Calculators</h3>
+            <p>Finanzrechner speziell für Deutschland</p>
+            
+            <div class="footer-links">
+                <a href="index.html">Startseite</a>
+                <a href="rechner.html">Rechner</a>
+                <a href="about.html">Über uns</a>
+                <a href="blog.html">Blog</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Lumpsum Calculators. Alle Rechte vorbehalten.</p>
+                <p>Diese Website dient nur zu Informationszwecken und stellt keine Finanzberatung dar.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('overlay').classList.toggle('active')}
+const ids=['initial','monthly','years','rate'];
+ids.forEach(id=>{const r=document.getElementById(`input-${id}`),t=document.getElementById(`val-${id}`);r.oninput=()=>t.value=r.value;t.oninput=()=>{let v=parseFloat(t.value.replace(/[^0-9.]/g,''));!isNaN(v)&&(r.value=v)}});
+
+    </script>
+    
+</body>
+</html>
