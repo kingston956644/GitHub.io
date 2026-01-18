@@ -47,7 +47,21 @@ tr.total-row{background:#f8fafc;font-weight:700}
 .btn-primary:active{transform:scale(.98)}
 .seo-footer{padding:20px;max-width:700px;margin:0 auto}
 canvas{max-width:100%;height:auto}
-</style>
+
+        
+        h1 { color: #003366; font-size: 2.2rem; margin-bottom: 10px; }
+        .intro { font-size: 1.1rem; color: #444; margin-bottom: 30px; }
+        .results-info { background: #f8f9fa; border-radius: 8px; padding: 20px; margin: 20px 0; border: 1px solid #e0e0e0; }
+        .example-box { border-left: 4px solid #003366; padding-left: 15px; margin: 25px 0; font-style: normal; }
+        .internal-links { background: #eef4f8; padding: 20px; border-radius: 8px; margin: 30px 0; }
+        .internal-links ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .internal-links a { color: #003366; text-decoration: none; font-weight: 500; }
+        .internal-links a:hover { text-decoration: underline; }
+
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 1.2rem; margin-bottom: 5px; }
+        footer { font-size: 0.9rem; color: #777; margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px; }
+    </style>
 </head>
 <body>
 <nav class="navbar">
@@ -71,7 +85,13 @@ Lumpsum
 </div>
 
 <div class="container">
-<h1>Zinseszinsrechner</h1>
+  <header>
+        <h1>Zinseszinsrechner – Kapitalwachstum einfach berechnen</h1>
+        <p class="intro">
+            Mit unserem Zinseszinsrechner berechnen Sie schnell, wie sich Ihr Kapital über die Zeit entwickelt. 
+            Berücksichtigt werden Einmalanlagen, monatliche Sparraten und unterschiedliche Zinsintervalle für eine präzise Finanzplanung.
+        </p>
+    </header>
 
 <div class="input-card">
 <div class="label-group">
@@ -149,10 +169,88 @@ Lumpsum
 </div>
 
 <div class="seo-footer">
-<h2>Zinseszinsrechner – Zinseszins & Endkapital berechnen</h2>
-<p>Beim Investieren hilft der Zinseszinseffekt dabei, Vermögen langfristig zu steigern. Mit zunehmender Laufzeit wachsen die Erträge immer stärker.</p>
-</div>
 
+
+    <section class="results-info">
+        <h2>Ihre Ergebnisse verstehen</h2>
+        <ul>
+            <li><strong>Endkapital:</strong> Der Gesamtwert Ihrer Anlage nach Ablauf der gewählten Laufzeit inklusive aller Zinsen.</li>
+            <li><strong>Eingezahltes Kapital:</strong> Die Summe aus Ihrem Startkapital und allen monatlichen Sparraten.</li>
+            <li><strong>Gesamtzinsen:</strong> Der reine Zinsertrag, den Ihr Kapital durch den Zinseszinseffekt über die Jahre generiert hat.</li>
+        </ul>
+        <p><small>Hinweis: Die Berechnung erfolgt nach der klassischen Zinseszinsformel unter Berücksichtigung der Zinskapitalisierung.</small></p>
+    </section>
+
+    <section>
+        <h2>Beispiel für langfristigen Vermögensaufbau</h2>
+        <div class="example-box">
+            <p>Wer <strong>10.000 €</strong> einmalig anlegt und bei einer durchschnittlichen Rendite von <strong>7 %</strong> für <strong>20 Jahre</strong> hält, erzielt ein Endkapital von ca. <strong>38.697 €</strong>. Davon sind über 28.000 € reiner Zinsgewinn – ohne weitere Einzahlungen.</p>
+        </div>
+    </section>
+
+  
+
+    <section class="internal-links">
+        <h3>Weitere Rechner für Ihre Planung</h3>
+        <ul>
+            <li><a href="/zinseszinsrechner-monatlich/">Zinseszinsrechner monatlich</a></li>
+            <li><a href="/zinseszinsrechner-taeglich/">Zinseszinsrechner täglich</a></li>
+            <li><a href="/zinsrechner-monatlich/">Zinsrechner monatlich</a></li>
+            <li><a href="/sparrechner/">Sparrechner</a></li>
+        </ul>
+    </section>
+
+    <section class="faq-section">
+        <h2>Häufig gestellte Fragen (FAQ)</h2>
+        <div itemscope itemtype="https://schema.org/FAQPage">
+            
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Wie funktioniert der Zinseszinsrechner genau?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Der Rechner addiert die jährlichen Zinsen zum ursprünglichen Kapital. In der nächsten Periode werden diese Zinsen mitverzinst, was zu einem exponentiellen Wachstum führt.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Berücksichtigt der Rechner Steuern?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Dieser Standardrechner gibt Bruttoergebnisse aus. In Deutschland unterliegen Kapitalerträge der Abgeltungssteuer von 25 % (zzgl. Soli und ggf. Kirchensteuer), sofern der Freibetrag überschritten wird.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Was ist der Unterschied zum einfachen Zinsrechner?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Ein einfacher Zinsrechner berechnet Erträge nur auf das Startkapital. Der Zinseszinsrechner reinvestiert die Gewinne hingegen sofort wieder.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Warum ist das Zinsintervall wichtig?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Je häufiger die Zinsen gutgeschrieben werden (z. B. monatlich statt jährlich), desto schneller setzt der Zinseszinseffekt ein und erhöht das Endkapital.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h3 itemprop="name">Ist die 72er-Regel im Rechner integriert?</h3>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Die 72er-Regel ist eine Faustformel zur Verdopplungszeit. Unser Rechner nutzt jedoch exakte mathematische Formeln für präzise Ergebnisse auf den Cent genau.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Informationen zur Nutzung: Die berechneten Werte dienen der allgemeinen Orientierung und stellen keine Anlageberatung dar. Alle Angaben ohne Gewähr.</p>
+    </footer>
+
+   
+</div>
+  
+  
+  
 <script>
 function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('overlay').classList.toggle('active')}
 const ids=['initial','monthly','years','rate'];
