@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechtliches | Lumpsum Calculators - Finanzrechner für Deutschland</title>
+<style>
+:root{--primary:#2563eb;--success:#10b981;--bg:#f8fafc;--card-bg:#fff;--text-main:#1e293b;--text-muted:#64748b;--radius:16px;--shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background-color:var(--bg);color:var(--text-main);margin:0;padding-bottom:100px}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:1000}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1e293b;font-weight:700;font-size:1.4rem}
+.nav-logo img{height:32px;width:32px;border-radius:50%}
+.nav-actions{display:flex;align-items:center;gap:20px}
+.menu-icon{cursor:pointer;display:flex;align-items:center}
+.side-menu{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#fff;box-shadow:-5px 0 15px rgba(0,0,0,.1);transition:.3s ease;z-index:2000;padding:2rem 1.5rem}
+.side-menu.active{right:0}
+.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);display:none;z-index:1500}
+.menu-overlay.active{display:block}
+.menu-close{text-align:right;font-size:1.5rem;cursor:pointer;margin-bottom:2rem}
+.menu-link{display:block;padding:12px 0;color:#1e293b;text-decoration:none;font-weight:600;border-bottom:1px solid #f1f5f9}
+    header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+       /* Header */
+        header {
+            background-color: #1e3c72;
+            color: white;
+            padding: 1.2rem 0;
+            text-align: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+        
+        .logo span {
+            color: #4dabf7;
+        }
+        
+        .tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            margin-top: 15px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.95rem;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin: 2rem 0 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #4dabf7;
+        }
+        
+        .page-header h1 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Legal Navigation */
+        .legal-nav {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .legal-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .legal-nav a {
+            color: #1e3c72;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        .legal-nav a:hover, .legal-nav a.active {
+            background-color: #f0f7ff;
+            color: #1e3c72;
+        }
+        
+        /* Legal Sections */
+        .legal-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .legal-section h2 {
+            color: #1e3c72;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 1.5rem;
+        }
+        
+        .legal-section h3 {
+            color: #2a5298;
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .legal-section h4 {
+            color: #2a5298;
+            margin: 1.2rem 0 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .legal-section p {
+            margin-bottom: 1rem;
+        }
+        
+        .legal-section ul, .legal-section ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .legal-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Highlight Boxes */
+        .important-box {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .warning-box {
+            background-color: #ffeaea;
+            border-left: 4px solid #dc3545;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .info-box {
+            background-color: #e6f2ff;
+            border-left: 4px solid #4dabf7;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        /* Contact Info */
+        .contact-info {
+            background: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        
+        .contact-info h3 {
+            margin-top: 0;
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .back-to-top a {
+            color: #1e3c72;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-to-top a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2a5298;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 1.5rem;
+            color: #a0aec0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .legal-nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .legal-section {
+                padding: 1.5rem;
+            }
+            
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            nav, .legal-nav, .back-to-top, footer {
+                display: none;
+            }
+            
+            .legal-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+<a href="#" class="nav-logo">
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%232563eb'/%3E%3Cpath d='M16 8l-8 8h5v8h6v-8h5z' fill='white'/%3E%3C/svg%3E" alt="Logo"> 
+Lumpsum
+</a>
+<div class="nav-actions">
+<div class="menu-icon" onclick="toggleMenu()">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+</div>
+</div>
+</nav>
+
+<div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+<div class="menu-close" onclick="toggleMenu()">✕</div>
+<a href="https://www.lumpsumcalculators.in" class="menu-link">Startseite</a>
+<a href="#" class="menu-link">Rechner</a>
+<a href="#" class="menu-link">Investitionen</a>
+</div>
+      
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1>Rechtliche Informationen</h1>
+            <p>Wichtige rechtliche Hinweise zu unserer Website und Dienstleistungen</p>
+        </div>
+        
+        <!-- Legal Navigation -->
+        <div class="legal-nav">
+            <ul>
+                <li><a href="#impressum" class="active">Impressum</a></li>
+                <li><a href="#datenschutz">Datenschutzerklärung</a></li>
+                <li><a href="#agb">Allgemeine Geschäftsbedingungen</a></li>
+                <li><a href="#haftung">Haftungsausschluss</a></li>
+                <li><a href="#urheber">Urheberrecht</a></li>
+            </ul>
+        </div>
+        
+        <!-- Impressum Section -->
+        <section id="impressum" class="legal-section">
+            <h2>Impressum</h2>
+            
+            <div class="info-box">
+                <p><strong>Angaben gemäß § 5 TMG und Verantwortlicher für den Inhalt nach § 55 Abs. 2 RStV:</strong></p>
+            </div>
+            
+            <h3>Betreiber der Website</h3>
+            <p>
+                Lumpsum Calculators GmbH<br>
+                Musterstraße 123<br>
+                10115 Berlin<br>
+                Deutschland
+            </p>
+            
+            <h3>Vertretungsberechtigte Geschäftsführer</h3>
+            <p>
+                Dr. Markus Weber<br>
+                Anna Schmidt<br>
+                Thomas Bauer
+            </p>
+            
+            <h3>Kontakt</h3>
+            <div class="contact-info">
+                <p>
+                    Telefon: +49 (0)30 12345678<br>
+                    E-Mail: info@lumpsum-calculators.de<br>
+                    Website: www.lumpsum-calculators.de
+                </p>
+            </div>
+            
+            <h3>Registereintrag</h3>
+            <p>
+                Eingetragen im Handelsregister<br>
+                Registergericht: Amtsgericht Berlin-Charlottenburg<br>
+                Registernummer: HRB 123456
+            </p>
+            
+            <h3>Umsatzsteuer-ID</h3>
+            <p>
+                Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>
+                DE123456789
+            </p>
+            
+            <h3>Aufsichtsbehörde</h3>
+            <p>
+                Bundesanstalt für Finanzdienstleistungsaufsicht (BaFin)<br>
+                Graurheindorfer Straße 108, 53117 Bonn<br>
+                Marie-Curie-Straße 24-28, 60439 Frankfurt am Main
+            </p>
+            
+            <h3>Berufsrechtliche Regelungen</h3>
+            <p>
+                Berufsbezeichnung: Finanzdienstleister<br>
+                Staat, der die Berufsbezeichnung verliehen hat: Bundesrepublik Deutschland<br>
+                Es gelten die berufsrechtlichen Regelungen der Bundesrepublik Deutschland.
+            </p>
+        </section>
+        
+        <!-- Datenschutz Section -->
+        <section id="datenschutz" class="legal-section">
+            <h2>Datenschutzerklärung</h2>
+            
+            <div class="important-box">
+                <p><strong>Stand: 01. Januar 2024</strong></p>
+            </div>
+            
+            <h3>1. Allgemeine Hinweise</h3>
+            <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Nachfolgend informieren wir Sie über die Erhebung, Verarbeitung und Nutzung Ihrer Daten beim Besuch unserer Website.</p>
+            
+            <h3>2. Verantwortliche Stelle</h3>
+            <p>Verantwortliche Stelle im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze ist die Lumpsum Calculators GmbH (Adresse siehe Impressum).</p>
+            
+            <h3>3. Erhebung und Speicherung personenbezogener Daten</h3>
+            <p>Bei Nutzung unserer Finanzrechner erheben und speichern wir folgende Daten:</p>
+            <ul>
+                <li>Von Ihnen eingegebene finanzielle Daten (berechnungsrelevante Angaben)</li>
+                <li>IP-Adresse</li>
+                <li>Datum und Uhrzeit des Zugriffs</li>
+                <li>Verwendeter Browser und Betriebssystem</li>
+            </ul>
+            
+            <h3>4. Zweck der Datenerhebung</h3>
+            <p>Ihre Daten werden ausschließlich zu folgenden Zwecken verarbeitet:</p>
+            <ul>
+                <li>Bereitstellung der Finanzrechner-Funktionalität</li>
+                <li>Verbesserung unserer Dienstleistungen</li>
+                <li>Gewährleistung der Systemsicherheit</li>
+                <li>Erfüllung gesetzlicher Aufbewahrungspflichten</li>
+            </ul>
+            
+            <div class="warning-box">
+                <p><strong>Wichtig:</strong> Wir speichern keine sensiblen persönlichen Finanzdaten dauerhaft. Alle Berechnungen werden in Echtzeit durchgeführt und die Eingabedaten werden nach der Berechnung gelöscht.</p>
+            </div>
+            
+            <h3>5. Ihre Rechte</h3>
+            <p>Sie haben das Recht:</p>
+            <ul>
+                <li>Auskunft über Ihre gespeicherten Daten zu erhalten</li>
+                <li>Berichtigung unrichtiger Daten zu verlangen</li>
+                <li>Löschung Ihrer Daten zu verlangen</li>
+                <li>Einschränkung der Verarbeitung zu verlangen</li>
+                <li>Widerspruch gegen die Verarbeitung einzulegen</li>
+                <li>Datenübertragbarkeit</li>
+            </ul>
+            
+            <h3>6. Kontakt zum Datenschutzbeauftragten</h3>
+            <p>
+                Unser Datenschutzbeauftragter:<br>
+                Max Mustermann<br>
+                E-Mail: datenschutz@lumpsum-calculators.de<br>
+                Telefon: +49 (0)30 12345679
+            </p>
+        </section>
+        
+        <!-- AGB Section -->
+        <section id="agb" class="legal-section">
+            <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
+            
+            <h3>§ 1 Geltungsbereich</h3>
+            <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Nutzer der Website lumpsum-calculators.de und der dort angebotenen Finanzrechner.</p>
+            
+            <h3>§ 2 Leistungsbeschreibung</h3>
+            <p>Lumpsum Calculators stellt kostenlose Finanzrechner zur Verfügung, die speziell für den deutschen Markt entwickelt wurden. Die Rechner dienen der informativen Berechnung finanzieller Sachverhalte.</p>
+            
+            <div class="important-box">
+                <p><strong>Keine Finanzberatung:</strong> Unsere Rechner stellen keine Finanz- oder Anlageberatung dar und ersetzen keine professionelle Beratung durch qualifizierte Fachleute.</p>
+            </div>
+            
+            <h3>§ 3 Nutzungsrechte</h3>
+            <p>Die Nutzung der Finanzrechner ist für private und geschäftliche Zwecke kostenlos gestattet. Eine gewerbliche Weiterverbreitung der Berechnungsergebnisse bedarf unserer schriftlichen Zustimmung.</p>
+            
+            <h3>§ 4 Haftungsbeschränkung</h3>
+            <p>Wir haften nicht für Schäden, die durch die Nutzung unserer Finanzrechner entstehen, es sei denn, sie beruhen auf vorsätzlichem oder grob fahrlässigem Verhalten unsererseits.</p>
+            
+            <h3>§ 5 Änderungen der AGB</h3>
+            <p>Wir behalten uns das Recht vor, diese AGB jederzeit zu ändern. Die geänderten Bedingungen werden auf unserer Website veröffentlicht.</p>
+        </section>
+        
+        <!-- Haftungsausschluss Section -->
+        <section id="haftung" class="legal-section">
+            <h2>Haftungsausschluss</h2>
+            
+            <h3>1. Inhalt der Website</h3>
+            <p>Die Inhalte unserer Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+            
+            <h3>2. Externe Links</h3>
+            <p>Unsere Website enthält Links zu externen Websites Dritter. Für deren Inhalte sind ausschließlich die jeweiligen Betreiber verantwortlich.</p>
+            
+            <h3>3. Berechnungen und Ergebnisse</h3>
+            <p>Alle Berechnungen auf unserer Website dienen ausschließlich Informationszwecken. Die Ergebnisse stellen keine verbindliche Finanzberatung dar.</p>
+            
+            <div class="warning-box">
+                <p><strong>Wichtiger Hinweis:</strong> Bitte konsultieren Sie für wichtige finanzielle Entscheidungen immer einen qualifizierten Finanzberater oder Steuerberater. Die auf unserer Website dargestellten Berechnungen können von der Realität abweichen.</p>
+            </div>
+            
+            <h3>4. Verfügbarkeit</h3>
+            <p>Wir bemühen uns, den Service möglichst unterbrechungsfrei anzubieten. Ein Anspruch auf Verfügbarkeit besteht jedoch nicht.</p>
+        </section>
+        
+        <!-- Urheberrecht Section -->
+        <section id="urheber" class="legal-section">
+            <h2>Urheberrecht</h2>
+            
+            <h3>1. Schutz der Inhalte</h3>
+            <p>Alle auf dieser Website veröffentlichten Inhalte (Texte, Grafiken, Logos, Bilder, Videos, Software) unterliegen dem deutschen Urheberrecht.</p>
+            
+            <h3>2. Nutzungsrechte</h3>
+            <p>Die Vervielfältigung, Verarbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen unserer schriftlichen Zustimmung.</p>
+            
+            <h3>3. Ausnahmen</h3>
+            <p>Die private, nicht-kommerzielle Nutzung unserer Finanzrechner ist gestattet. Die Berechnungsergebnisse dürfen für persönliche Zwecke genutzt werden.</p>
+            
+            <h3>4. Zitatrecht</h3>
+            <p>Das Zitieren unserer Inhalte ist im Rahmen des gesetzlich Zulässigen gestattet, sofern die Quelle deutlich angegeben wird.</p>
+            
+            <h3>5. Verstöße</h3>
+            <p>Sollten Sie einen Verstoß gegen das Urheberrecht feststellen, bitten wir um entsprechende Mitteilung an: recht@lumpsum-calculators.de</p>
+        </section>
+        
+        <!-- Back to Top -->
+        <div class="back-to-top">
+            <a href="#impressum">↑ Nach oben</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Lumpsum Calculators</h3>
+            <p>Finanzrechner speziell für Deutschland</p>
+            
+            <div class="footer-links">
+                <a href="index.html">Startseite</a>
+                <a href="rechner.html">Rechner</a>
+                <a href="about.html">Über uns</a>
+                <a href="blog.html">Blog</a>
+                <a href="kontakt.html">Kontakt</a>
+                <a href="#impressum">Impressum</a>
+                <a href="#datenschutz">Datenschutz</a>
+                <a href="#agb">AGB</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Lumpsum Calculators GmbH. Alle Rechte vorbehalten.</p>
+                <p>Alle auf dieser Website dargestellten Berechnungen dienen ausschließlich Informationszwecken und stellen keine Finanzberatung dar.</p>
+                <p>Diese Website verwendet keine Cookies für Tracking-Zwecke.</p>
+            </div>
+        </div>
+    </footer>
+
+<script>
+function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('overlay').classList.toggle('active')}
+const ids=['initial','monthly','years','rate'];
+ids.forEach(id=>{const r=document.getElementById(`input-${id}`),t=document.getElementById(`val-${id}`);r.oninput=()=>t.value=r.value;t.oninput=()=>{let v=parseFloat(t.value.replace(/[^0-9.]/g,''));!isNaN(v)&&(r.value=v)}});
+
+           // Simple script for legal page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.legal-nav a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Update active nav link on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('.legal-section');
+                const navLinks = document.querySelectorAll('.legal-nav a');
+                
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if(window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        currentSection = '#' + section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href') === currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Print functionality
+            const printButton = document.createElement('button');
+            printButton.textContent = 'Seite drucken';
+            printButton.style.cssText = `
+                display: block;
+                margin: 20px auto;
+                padding: 10px 20px;
+                background-color: #1e3c72;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+            `;
+            printButton.onclick = function() {
+                window.print();
+            };
+            
+            document.querySelector('.back-to-top').appendChild(printButton);
+        });
+    </script>
+    
+</body>
+</html>
