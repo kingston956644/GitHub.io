@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calcolatore Interesse Composto – Calcola Montante e Interessi Online</title>
+<meta name="description" content="Usa il nostro calcolatore interesse composto gratuito per simulare la crescita del tuo capitale, risparmi e investimenti ETF con grafici dettagliati.">
+<link rel="canonical" href="https://www.lumpsumcalculators.in/it/calcolatore-interesse-composto/">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Calcolatore Interesse Composto – Calcola Montante e Interessi Online">
+<meta property="og:description" content="Usa il nostro calcolatore interesse composto gratuito per simulare la crescita del tuo capitale, risparmi e investimenti ETF.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lumpsumcalculators.in/it/calcolatore-interesse-composto/">
+<meta property="og:image" content="https://lumpsumcalculators.in/og-image.webp">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Calcolatore Interesse Composto – Simulazione Investimenti">
+<meta name="twitter:description" content="Calcola l'effetto dell'interesse composto sui tuoi risparmi in pochi clic.">
+<meta name="twitter:image" content="https://lumpsumcalculators.in/og-image.webp">
+
+<link rel="icon" href="/favicon.ico">
+     <style>
+:root{--primary:#2563eb;--success:#10b981;--bg:#f8fafc;--card-bg:#fff;--text-main:#1e293b;--text-muted:#64748b;--radius:16px;--shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background-color:var(--bg);color:var(--text-main);margin:0;padding-bottom:100px}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:1000}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1e293b;font-weight:700;font-size:1.4rem}
+.nav-logo img{height:32px;width:32px;border-radius:50%}
+.nav-actions{display:flex;align-items:center;gap:20px}
+.menu-icon{cursor:pointer;display:flex;align-items:center}
+.side-menu{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#fff;box-shadow:-5px 0 15px rgba(0,0,0,.1);transition:.3s ease;z-index:2000;padding:2rem 1.5rem}
+.side-menu.active{right:0}
+.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);display:none;z-index:1500}
+.menu-overlay.active{display:block}
+.menu-close{text-align:right;font-size:1.5rem;cursor:pointer;margin-bottom:2rem}
+.menu-link{display:block;padding:12px 0;color:#1e293b;text-decoration:none;font-weight:600;border-bottom:1px solid #f1f5f9}
+.container{max-width:700px;margin:0 auto;padding:1.5rem}
+h1{text-align:center;padding:2rem 0;margin:0}
+.input-card{background:var(--card-bg);padding:1.5rem;border-radius:var(--radius);margin-bottom:1.2rem;box-shadow:var(--shadow);border:1px solid #e2e8f0}
+.label-group{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+label{font-weight:600;font-size:.95rem}
+.input-val{font-size:1.1rem;font-weight:700;color:var(--primary);background:#eff6ff;padding:4px 12px;border-radius:8px;border:none;width:120px;text-align:right;outline:0;font-family:inherit}
+input[type=range]{width:100%;margin:10px 0;accent-color:var(--primary);cursor:pointer;height:6px;-webkit-appearance:none;background:#e2e8f0;border-radius:3px;outline:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--primary);cursor:pointer;border-radius:50%;box-shadow:0 2px 4px rgba(37,99,235,.3)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--primary);cursor:pointer;border-radius:50%;border:0;box-shadow:0 2px 4px rgba(37,99,235,.3)}
+select{width:100%;padding:12px;border-radius:8px;border:1px solid #cbd5e1;font-size:1rem;background:#fff;outline:0}
+#results-section{display:none;margin-top:2rem}
+.viz-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+@media (max-width:600px){.viz-grid{grid-template-columns:1fr}}
+.result-card{background:#fff;padding:1.5rem;border-radius:var(--radius);text-align:center;box-shadow:var(--shadow)}
+.chart-card{background:#fff;padding:1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:1.5rem}
+.donut-container{max-width:200px;margin:0 auto}
+h3{margin-top:2rem;font-size:1.2rem;border-left:4px solid var(--primary);padding-left:10px}
+.table-container{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:1rem;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{background:#1e293b;color:#fff;padding:12px;text-align:left;white-space:nowrap}
+td{padding:12px;border-bottom:1px solid #f1f5f9;white-space:nowrap}
+tr.total-row{background:#f8fafc;font-weight:700}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:1.2rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid #e2e8f0;z-index:100;text-align:center}
+.btn-primary{background:var(--primary);color:#fff;border:none;width:100%;max-width:500px;padding:1rem;border-radius:12px;font-size:1.1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px 0 rgba(37,99,235,.39);transition:transform .1s}
+.btn-primary:active{transform:scale(.98)}
+.seo-footer{padding:20px;max-width:700px;margin:0 auto}
+canvas{max-width:100%;height:auto}
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+<a href="#" class="nav-logo">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAnFBMVEUaO5IaO5MaPJUaPJYaPJcaPJgQN5EIMpIAL5EAKY4AAIcpQZduda+Ki7yUlcIAAIkwP5ebn8bp6vL///+VmcIpPpkOMpRLU5/h4+xATZ8bPZgAFYrEx9uzutQAI5CLjr3c3Or29/klLpBOWaSipskAJ5EAC4tVXaPz9fjJzt4vOJYAAHwAHo6rsNBiba6Ag7d2erBOYaZjZahESJh1z7UdAAABW0lEQVR4AYSSBZLDMBAEY2aUmRnC8P+/3QoCKro2u4VTe8AIgAiQm0SQAYVJ4B8pqJoOaIpIpfyVqmFatuO6jm15hsL31PwgRIwwipO3JP3SDP2Q5YqsFKznoawQR91IxVsKRsTLVpeJBEds13VhzyZtS4kOC2iG0XimaQ6pXfVZbTfjNIMlblmnjPTZ9uh4Wsa2Q9VZIj2FgVvMpengftXonPoFcdxuqFsThcmKl1MyntyaDatq3P4rL6/hfqYLUq/zfaeb6MPqOl8fsJdVlYk0su5m+usTSOclCusU1bkuM1njMKspCi57iMNJ5rMqMynwuU4Qjii9pdoO6SXcetT3Wxf48U2XiGNzbpfnqXylr8E82TWqz+K3TPSAJJftHc3QTqSvFOZpQx/Cm8EX2Dm/V9mGp7zY0iwyxySEdDYx3qyK4JgsvtUHTxHzLduvFOHiZfE3VElGNEkALa8qhJXImN0AAAAASUVORK5CYII="> 
+Lumpsum
+</a>
+<div class="nav-actions">
+<div class="menu-icon" onclick="toggleMenu()">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+</div>
+</div>
+</nav>
+
+<div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+<div class="menu-close" onclick="toggleMenu()">✕</div>
+<a href="#" class="menu-link">Home</a>
+<a href="#" class="menu-link">Contattaci</a>
+<a href="#" class="menu-link">Chi Siamo</a>
+<a href="#" class="menu-link">Privacy Policy</a>
+<a href="#" class="menu-link">Note Legali</a>
+<a href="#" class="menu-link">Interesse Composto Annuo</a>
+<a href="#" class="menu-link">Interesse Composto Mensile</a>
+<a href="#" class="menu-link">Interesse Composto Giornaliero</a>
+</div>
+
+<div class="container">
+ 
+<h1>Calcolatore Interesse Composto – Simula la tua Crescita Finanziaria</h1>
+
+<p>
+Scopri come il tuo capitale si evolve nel tempo grazie al potere dell'interesse composto.</p>
+
+<div class="input-card">
+<div class="label-group">
+<label>Capitale Iniziale (€)</label>
+<input type="text" class="input-val" id="val-initial" value="5000">
+</div>
+<input type="range" id="input-initial" min="0" max="100000" step="500" value="5000">
+</div>
+
+<div class="input-card">
+<div class="label-group">
+<label>Contributo Mensile (€)</label>
+<input type="text" class="input-val" id="val-monthly" value="100">
+</div>
+<input type="range" id="input-monthly" min="0" max="5000" step="50" value="100">
+</div>
+
+<div class="input-card">
+<div class="label-group">
+<label>Durata (Anni)</label>
+<input type="text" class="input-val" id="val-years" value="10">
+</div>
+<input type="range" id="input-years" min="1" max="40" step="1" value="10">
+</div>
+
+<div class="input-card">
+<div class="label-group">
+<label>Tasso di Interesse Annuo (%)</label>
+<input type="text" class="input-val" id="val-rate" value="5">
+</div>
+<input type="range" id="input-rate" min="1" max="15" step="0.1" value="5">
+</div>
+
+<div class="input-card">
+<label style="display:block;margin-bottom:10px">Intervallo di Capitalizzazione</label>
+<select id="input-interval">
+<option value="12">Mensile</option>
+<option value="4">Trimestrale</option>
+<option value="1">Annuale</option>
+</select>
+</div>
+
+<div id="results-section">
+<div class="viz-grid">
+<div class="result-card">
+<div class="donut-container"><canvas id="donutChart" width="200" height="200"></canvas></div>
+</div>
+<div class="result-card" style="display:flex;flex-direction:column;justify-content:center;gap:15px">
+<div><small>VALORE FINALE</small><h2 id="res-total" style="color:var(--primary);margin:5px 0">0 €</h2></div>
+<div><small>TOTALE INVESTITO</small><h2 id="res-invested" style="color:var(--text-main);margin:5px 0">0 €</h2></div>
+<div><small>INTERESSI TOTALI</small><h2 id="res-interest" style="color:var(--success);margin:5px 0">0 €</h2></div>
+</div>
+</div>
+
+<h3>Crescita nel Tempo</h3>
+<div class="chart-card"><canvas id="lineChart"></canvas></div>
+
+<h3>Incremento Annuale</h3>
+<div class="chart-card"><canvas id="barChart"></canvas></div>
+
+<h3>Dettaglio Annuale</h3>
+<div class="table-container">
+<table id="annual-table">
+<thead>
+<tr><th>Anno</th><th>Capitale Iniziale</th><th>Versamenti</th><th>Interessi</th><th>Capitale Finale</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="sticky-cta">
+<button class="btn-primary" onclick="calculate()">Calcola Ora</button>
+</div>
+
+<div class="seo-footer">
+
+
+<section id="zinseszins-erklaerung">
+  <h2>Cos'è un calcolatore interesse composto?</h2>
+  <p>
+    Un <strong>calcolatore interesse composto</strong> ti aiuta a prevedere come crescerà il tuo capitale nel tempo, 
+    considerando che gli interessi non vengono calcolati solo sulla somma iniziale, ma anche sugli interessi già maturati.
+    Questo fenomeno è noto come "l'ottava meraviglia del mondo" ed è fondamentale per la creazione di ricchezza a lungo termine.
+  </p>
+
+  <h2>Come funziona l'interesse composto?</h2>
+  <p>
+    Nell'interesse composto, i rendimenti generati vengono reinvestiti. 
+    A partire da quel momento, guadagnerai interessi sia sul capitale originale che sui nuovi interessi aggiunti. 
+    Più lungo è l'orizzonte temporale e più frequente è la capitalizzazione, più esplosiva sarà la crescita.
+  </p>
+
+  <h3>La formula dell'interesse composto spiegata</h3>
+  <p><strong>Formula:</strong></p>
+  <p>
+    <code>Montante = Capitale Iniziale × (1 + i)<sup>n</sup></code>
+  </p>
+
+  <ul>
+    <li><strong>Capitale Iniziale:</strong> L'importo con cui inizi</li>
+    <li><strong>i:</strong> Tasso di interesse periodico (es. 5% = 0,05)</li>
+    <li><strong>n:</strong> Numero di periodi di investimento</li>
+  </ul>
+
+  <p>
+    Il nostro calcolatore gestisce automaticamente i versamenti mensili ricorrenti e diversi intervalli di capitalizzazione, rendendo il calcolo immediato e preciso.
+  </p>
+
+  <h2>Interesse Semplice vs Interesse Composto</h2>
+    <div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Caratteristica</th>
+        <th>Interesse Semplice</th>
+        <th>Interesse Composto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Interessi su Interessi</td>
+        <td>No</td>
+        <td>Sì</td>
+      </tr>
+      <tr>
+        <td>Effetto a Lungo Termine</td>
+        <td>Lineare (Lento)</td>
+        <td>Esponenziale (Veloce)</td>
+      </tr>
+      <tr>
+        <td>Ideale per</td>
+        <td>Prestiti brevi</td>
+        <td>Investimenti e Fondi Pensione</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <h2>Esempi Pratici di Utilizzo</h2>
+
+  <h3>1. Piano di Accumulo del Capitale (PAC)</h3>
+  <p>
+    Iniziare a risparmiare anche piccole somme mensili in giovane età permette all'interesse composto di lavorare per decenni, creando patrimoni significativi per la pensione.
+  </p>
+
+  <h3>2. Investimenti in ETF</h3>
+  <p>
+    Molti investitori utilizzano un calcolatore interesse composto per simulare il rendimento di un ETF (come l'S&P 500) reinvestendo i dividendi.
+  </p>
+
+  <h2>La Regola del 72</h2>
+  <p>
+    La <strong>Regola del 72</strong> è un metodo veloce per stimare quanto tempo impiegherà il tuo denaro a raddoppiare:
+  </p>
+  <p>
+    <code>72 ÷ Tasso di Interesse = Anni per il raddoppio</code>
+  </p>
+  <p>
+    Esempio: Con un tasso del 6%, il tuo capitale raddoppierà in circa 12 anni.
+  </p>
+
+  <h2>Consigli per massimizzare il rendimento</h2>
+  <ul>
+    <li><strong>Inizia il prima possibile:</strong> Il tempo è il fattore più importante.</li>
+    <li><strong>Sii costante:</strong> I versamenti ricorrenti accelerano il processo.</li>
+    <li><strong>Reinvesti sempre:</strong> Non prelevare gli interessi se vuoi massimizzare la crescita.</li>
+    <li><strong>Controlla i costi:</strong> Commissioni alte possono erodere l'effetto composto.</li>
+  </ul>
+
+</section>
+    <article style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto;">
+
+    <h2>Investire con Metodo</h2>
+    <p>Chi investe oggi nel mercato azionario cerca spesso un <strong>calcolatore interesse composto ETF</strong> per visualizzare il potenziale di crescita su 20 o 30 anni. Questo strumento è essenziale per ogni strategia di investimento passivo.</p>
+
+    <section id="faq-zinseszinsrechner">
+  <h2>Domande Frequenti (FAQ)</h2>
+
+  <h3>Cos'è esattamente l'interesse composto?</h3>
+  <p>
+    È l'interesse calcolato sul capitale iniziale e anche sugli interessi accumulati dei periodi precedenti.
+  </p>
+
+  <h3>Il calcolatore è adatto per gli ETF?</h3>
+  <p>
+    Assolutamente sì. È lo strumento ideale per simulare ETF ad accumulazione o la reinvestizione dei dividendi.
+  </p>
+
+  <h3>Questo strumento considera l'inflazione?</h3>
+  <p>
+    No, il calcolo è nominale. Per una stima reale, puoi sottrarre il tasso di inflazione atteso dal tasso di interesse inserito.
+  </p>
+
+  <h3>Il calcolatore interesse composto è gratuito?</h3>
+  <p>
+    Sì, il nostro strumento è gratuito al 100% e non richiede registrazione.
+  </p>
+</section>
+</div>
+  
+  
+  
+<script>
+function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('overlay').classList.toggle('active')}
+const ids=['initial','monthly','years','rate'];
+ids.forEach(id=>{const r=document.getElementById(`input-${id}`),t=document.getElementById(`val-${id}`);r.oninput=()=>t.value=r.value;t.oninput=()=>{let v=parseFloat(t.value.replace(/[^0-9.]/g,''));!isNaN(v)&&(r.value=v)}});
+
+function calculate(){
+const P=parseFloat(document.getElementById('input-initial').value)||0,
+PMT=parseFloat(document.getElementById('input-monthly').value)||0,
+years=parseInt(document.getElementById('input-years').value)||0,
+annualRate=(parseFloat(document.getElementById('input-rate').value)||0)/100,
+interval=parseInt(document.getElementById('input-interval').value),
+tb=document.querySelector('#annual-table tbody');
+tb.innerHTML='';
+let cb=P,ti=P,tie=0,ya=[0],ba=[P],ia=[P],ina=[0];
+for(let y=1;y<=years;y++){
+let soy=cb,ac=PMT*12;
+for(let m=1;m<=12;m++){cb+=PMT;m%(12/interval)===0&&(cb*=1+annualRate/interval)}
+let yi=cb-soy-ac;tie+=yi;ti+=ac;ya.push(y);ba.push(Math.round(cb));ia.push(Math.round(ti));ina.push(Math.round(tie));
+tb.innerHTML+=`<tr><td>Anno ${y}</td><td>${Math.round(soy).toLocaleString('it-IT')} €</td><td>${ac.toLocaleString('it-IT')} €</td><td>${Math.round(yi).toLocaleString('it-IT')} €</td><td>${Math.round(cb).toLocaleString('it-IT')} €</td></tr>`}
+document.getElementById('res-total').innerText=Math.round(cb).toLocaleString('it-IT')+' €';
+document.getElementById('res-invested').innerText=Math.round(ti).toLocaleString('it-IT')+' €';
+document.getElementById('res-interest').innerText=Math.round(tie).toLocaleString('it-IT')+' €';
+document.getElementById('results-section').style.display='block';
+drawCharts(ti,tie,ya,ba,ia,ina);
+setTimeout(()=>window.scrollTo({top:document.getElementById('results-section').offsetTop-50,behavior:'smooth'}),100)}
+
+function drawCharts(inv,int,ys,bs,ih,inh){
+const dc=document.getElementById('donutChart'),dctx=dc.getContext('2d'),lc=document.getElementById('lineChart'),lctx=lc.getContext('2d'),bc=document.getElementById('barChart'),bctx=bc.getContext('2d');
+dc.width=200;dc.height=200;
+dctx.clearRect(0,0,200,200);
+const tot=inv+int,p=inv/tot*2*Math.PI;
+dctx.lineWidth=35;
+dctx.beginPath();dctx.arc(100,100,65,-Math.PI/2,-Math.PI/2+p);dctx.strokeStyle='#2563eb';dctx.stroke();
+dctx.beginPath();dctx.arc(100,100,65,-Math.PI/2+p,3*Math.PI/2);dctx.strokeStyle='#e2e8f0';dctx.stroke();
+lc.width=lc.offsetWidth;lc.height=250;
+const mx=Math.max(...bs),w=lc.width,h=lc.height,px=w/(ys.length+1),py=(h-40)/mx;
+lctx.clearRect(0,0,w,h);
+lctx.strokeStyle='#10b981';lctx.lineWidth=3;lctx.beginPath();
+bs.forEach((b,i)=>{const x=px*(i+1),y=h-20-b*py;i===0?lctx.moveTo(x,y):lctx.lineTo(x,y)});lctx.stroke();
+lctx.strokeStyle='#2563eb';lctx.setLineDash([5,5]);lctx.beginPath();
+ih.forEach((iv,i)=>{const x=px*(i+1),y=h-20-iv*py;i===0?lctx.moveTo(x,y):lctx.lineTo(x,y)});lctx.stroke();
+lctx.setLineDash([]);
+bc.width=bc.offsetWidth;bc.height=250;
+const bw=bc.width,bh=bc.height,bmx=Math.max(...ih.slice(1).map((v,i)=>v+inh[i+1])),bwid=(bw/(ys.length-1))*.7;
+bctx.clearRect(0,0,bw,bh);
+for(let i=1;i<ys.length;i++){
+const x=(i-1)*(bw/(ys.length-1))+bwid*.15,dh=(ih[i]/bmx)*(bh-40),ih2=(inh[i]/bmx)*(bh-40);
+bctx.fillStyle='#2563eb';bctx.fillRect(x,bh-20-dh,bwid,dh);
+bctx.fillStyle='#fb923c';bctx.fillRect(x,bh-20-dh-ih2,bwid,ih2)}}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cos'è un calcolatore interesse composto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un calcolatore interesse composto calcola come si sviluppa il capitale quando gli interessi vengono aggiunti regolarmente al saldo e producono a loro volta altri interessi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual è la differenza tra interesse semplice e composto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nell'interesse semplice, l'interesse viene calcolato solo sul capitale iniziale. Nell'interesse composto, anche gli interessi già ricevuti vengono nuovamente remunerati."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Il calcolatore è adatto per gli ETF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì. Soprattutto per gli ETF con reinvestimento dei proventi (accumulazione), il calcolatore dell'interesse composto è uno strumento realistico per le previsioni a lungo termine."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
