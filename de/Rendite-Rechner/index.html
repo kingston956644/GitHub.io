@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profi Rendite Rechner – Kapitalrendite & Investment-Zuwachs berechnen</title>
+<meta name="description" content="Berechnen Sie mit unserem Rendite Rechner die Performance Ihrer Geldanlage. Ermitteln Sie Gesamtrendite, Endkapital und jährliche Zuwächse einfach online.">
+<style>
+:root{--primary:#2563eb;--success:#10b981;--warning:#fb923c;--bg:#f8fafc;--card-bg:#fff;--text-main:#1e293b;--text-muted:#64748b;--radius:16px;--shadow:0 10px 15px -3px rgba(0,0,0,.1)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background-color:var(--bg);color:var(--text-main);margin:0;padding-bottom:100px}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:#fff;border-bottom:1px solid #e2e8f0;position:sticky;top:0;z-index:1000}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1e293b;font-weight:700;font-size:1.4rem}
+.nav-logo img{height:32px;width:32px;border-radius:50%}
+.nav-actions{display:flex;align-items:center;gap:20px}
+.menu-icon{cursor:pointer;display:flex;align-items:center}
+.side-menu{position:fixed;top:0;right:-100%;width:280px;height:100%;background:#fff;box-shadow:-5px 0 15px rgba(0,0,0,.1);transition:.3s ease;z-index:2000;padding:2rem 1.5rem}
+.side-menu.active{right:0}
+.menu-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);display:none;z-index:1500}
+.menu-overlay.active{display:block}
+.menu-close{text-align:right;font-size:1.5rem;cursor:pointer;margin-bottom:2rem}
+.menu-link{display:block;padding:12px 0;color:#1e293b;text-decoration:none;font-weight:600;border-bottom:1px solid #f1f5f9}
+.container{max-width:700px;margin:0 auto;padding:1.5rem}
+h1{text-align:center;padding:2rem 0;margin:0}
+.input-card{background:var(--card-bg);padding:1.5rem;border-radius:var(--radius);margin-bottom:1.2rem;box-shadow:var(--shadow);border:1px solid #e2e8f0}
+.label-group{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+label{font-weight:600;font-size:.95rem}
+.input-val{font-size:1.1rem;font-weight:700;color:var(--primary);background:#eff6ff;padding:4px 12px;border-radius:8px;border:none;width:120px;text-align:right;outline:0;font-family:inherit}
+input[type=range]{width:100%;margin:10px 0;accent-color:var(--primary);cursor:pointer;height:6px;-webkit-appearance:none;background:#e2e8f0;border-radius:3px;outline:0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;background:var(--primary);cursor:pointer;border-radius:50%;box-shadow:0 2px 4px rgba(37,99,235,.3)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--primary);cursor:pointer;border-radius:50%;border:0;box-shadow:0 2px 4px rgba(37,99,235,.3)}
+select{width:100%;padding:12px;border-radius:8px;border:1px solid #cbd5e1;font-size:1rem;background:#fff;outline:0}
+#results-section{display:none;margin-top:2rem}
+.viz-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+@media (max-width:600px){.viz-grid{grid-template-columns:1fr}}
+.result-card{background:#fff;padding:1.5rem;border-radius:var(--radius);text-align:center;box-shadow:var(--shadow)}
+.chart-card{background:#fff;padding:1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:1.5rem}
+.donut-container{max-width:200px;margin:0 auto}
+h3{margin-top:2rem;font-size:1.2rem;border-left:4px solid var(--primary);padding-left:10px}
+.table-container{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:1rem;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+th{background:#1e293b;color:#fff;padding:12px;text-align:left;white-space:nowrap}
+td{padding:12px;border-bottom:1px solid #f1f5f9;white-space:nowrap}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:1.2rem;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid #e2e8f0;z-index:100;text-align:center}
+.btn-primary{background:var(--primary);color:#fff;border:none;width:100%;max-width:500px;padding:1rem;border-radius:12px;font-size:1.1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px 0 rgba(37,99,235,.39);transition:transform .1s}
+.btn-primary:active{transform:scale(.98)}
+.flex-row{display:flex;gap:10px;align-items:center}
+.flex-row div{flex:1}
+.stats-list {text-align: left; margin-top: 10px;}
+.stats-item {display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem;}
+.info-icon {color: var(--warning); cursor: help; font-size: 0.8rem; margin-right: 5px;}
+.definition-box {background:#f1f5f9; padding: 1rem; border-radius: 12px; font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; border: 1px dashed #cbd5e1;}
+.definition-box b {color: var(--text-main);}
+</style>
+</head>
+<body>
+<nav class="navbar">
+<a href="#" class="nav-logo">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAnFBMVEUaO5IaO5MaPJUaPJYaPJcaPJgQN5EIMpIAL5EAKY4AAIcpQZduda+Ki7yUlcIAAIkwP5ebn8bp6vL///+VmcIpPpkOMpRLU5/h4+xATZ8bPZgAFYrEx9uzutQAI5CLjr3c3Or29/klLpBOWaSipskAJ5EAC4tVXaPz9fjJzt4vOJYAAHwAHo6rsNBiba6Ag7d2erBOYaZjZahESJh1z7UdAAABW0lEQVR4AYSSBZLDMBAEY2aUmRnC8P+/3QoCKro2u4VTe8AIgAiQm0SQAYVJ4B8pqJoOaIpIpfyVqmFatuO6jm15hsL31PwgRIwwipO3JP3SDP2Q5YqsFKznoawQR91IxVsKRsTLVpeJBEds13VhzyZtS4kOC2iG0XimaQ6pXfVZbTfjNIMlblmnjPTZ9uh4Wsa2Q9VZIj2FgVvMpengftXonPoFcdxuqFsThcmKl1MyntyaDatq3P4rL6/hfqYLUq/zfaeb6MPqOl8fsJdVlYk0su5m+usTSOclCusU1bkuM1njMKspCi57iMNJ5rMqMynwuU4Qjii9pdoO6SXcetT3Wxf48U2XiGNzbpfnqXylr8E82TWqz+K3TPSAJJftHc3QTqSvFOZpQx/Cm8EX2Dm/V9mGp7zY0iwyxySEdDYx3qyK4JgsvtUHTxHzLduvFOHiZfE3VElGNEkALa8qhJXImN0AAAAASUVORK5CYII=" alt="Logo"> 
+Lumpsum
+</a>
+<div class="nav-actions">
+<div class="menu-icon" onclick="toggleMenu()">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#444" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+</div>
+</div>
+</nav>
+
+<div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="side-menu" id="sideMenu">
+<div class="menu-close" onclick="toggleMenu()">✕</div>
+<a href="https://www.lumpsumcalculators.in" class="menu-link">Startseite</a>
+<a href="https://www.lumpsumcalculators.in/de/contact/" class="menu-link">Contacu us</a>
+<a href="https://www.lumpsumcalculators.in/de/about/" class="menu-link">About</a>
+<a href="https://www.lumpsumcalculators.in/de/privacy/" class="menu-link">privacy policy</a>
+<a href="https://www.lumpsumcalculators.in/de/legal/" class="menu-link">Legal</a>
+<a href="https://www.lumpsumcalculators.in/de/zinseszinsrechner/" class="menu-link">zinseszinsrechner</a>
+<a href="https://www.lumpsumcalculators.in/de/zinseszinsrechner-monatlich/" class="menu-link">zinseszinsrechner monatlich</a>
+<a href="https://www.lumpsumcalculators.in/de/zinseszinsrechner-taeglich/" class="menu-link">Zinseszinsrechner täglich</a>
+<a href="https://www.lumpsumcalculators.in/" class="menu-link">Rendite Rechner</a>
+
+</div>
+
+
+
+
+<div class="container">
+<h1>Rendite Rechner</h1>
+<p>Banken-Präzision inklusive grafischer Analyse.</p>
+
+<div class="input-card">
+    <div class="label-group"><label>Einmalanlage (€)</label><input type="text" class="input-val" id="val-initial" value="10000"></div>
+    <input type="range" id="input-initial" min="0" max="250000" step="1000" value="10000">
+</div>
+
+<div class="input-card">
+    <div class="label-group"><label>Monatliche Sparrate (€)</label><input type="text" class="input-val" id="val-monthly" value="100"></div>
+    <input type="range" id="input-monthly" min="0" max="5000" step="50" value="100">
+</div>
+
+<div class="input-card">
+    <label style="display:block;margin-bottom:10px">Anlagedauer (Jahre)</label>
+    <div class="flex-row">
+        <div><input type="number" class="input-val" style="width:100%; text-align: left;" id="input-years" value="10"></div>
+    </div>
+</div>
+
+<div class="input-card">
+    <div class="label-group"><label>Zinssatz p.a. (%)</label><input type="text" class="input-val" id="val-rate" value="5"></div>
+    <input type="range" id="input-rate" min="0.1" max="25" step="0.1" value="5">
+</div>
+
+<div class="input-card">
+    <label style="display:block;margin-bottom:10px">Investment Typ</label>
+    <select id="input-type">
+        <option value="accumulating">Thesaurierend (Zinsansammlung)</option>
+        <option value="distributing">Ausschüttend</option>
+    </select>
+</div>
+
+<div class="input-card">
+    <label style="display:block;margin-bottom:10px">Zinsgutschrift</label>
+    <select id="input-interval">
+        <option value="1">Jährlich (Standard)</option>
+        <option value="4">Quartalsweise</option>
+        <option value="12">Monatlich</option>
+    </select>
+</div>
+
+<div class="input-card">
+    <div class="flex-row">
+        <div><label>Abgeltungsteuer (25%)?</label>
+            <select id="input-tax"><option value="0">Nein</option><option value="0.25">Ja</option></select>
+        </div>
+        <div><label>Inflation einrechnen (2%)?</label>
+            <select id="input-inflation"><option value="0">Nein</option><option value="0.02">Ja</option></select>
+        </div>
+    </div>
+</div>
+
+<div id="results-section">
+<div class="viz-grid">
+    <div class="result-card">
+        <div class="donut-container"><canvas id="donutChart" width="200" height="200"></canvas></div>
+    </div>
+    <div class="result-card" style="display:flex;flex-direction:column;justify-content:center;">
+        <div><small>ENDKAPITAL</small><h2 id="res-total" style="color:var(--primary);margin:5px 0">0 €</h2></div>
+        <div class="stats-list">
+            <div class="stats-item"><span>Eingezahlt:</span><span id="res-invested">0 €</span></div>
+            <div class="stats-item"><span>Zinsertrag:</span><span id="res-interest" style="color:var(--success)">0 €</span></div>
+            <div class="stats-item"><span>Rendite p.a. (CAGR):</span><span id="res-cagr" style="font-weight:700; color:var(--primary)">0 %</span></div>
+        </div>
+    </div>
+</div>
+
+<h3>Wachstum im Zeitverlauf</h3>
+<div class="chart-card"><canvas id="lineChart"></canvas></div>
+
+<h3>Jährlicher Zuwachs</h3>
+<div class="chart-card"><canvas id="barChart"></canvas></div>
+
+<h3>Detaillierter Jahresbericht</h3>
+<div class="table-container">
+<table id="annual-table">
+<thead>
+    <tr><th>Zeitraum</th><th>Startkapital</th><th>Einzahlung</th><th>Zinsen</th><th>Endkapital</th></tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="sticky-cta">
+<button class="btn-primary" onclick="calculate()">Berechnen & Analysieren</button>
+</div>
+
+<script>
+function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('overlay').classList.toggle('active')}
+
+const ids=['initial','monthly','rate'];
+ids.forEach(id=>{
+    const r=document.getElementById(`input-${id}`),t=document.getElementById(`val-${id}`);
+    r.oninput=()=>{t.value=r.value;};
+    t.oninput=()=>{let v=parseFloat(t.value);if(!isNaN(v))r.value=v;};
+});
+
+function calculate(){
+    const P = parseFloat(document.getElementById('input-initial').value) || 0;
+    const PMT = parseFloat(document.getElementById('input-monthly').value) || 0;
+    const years = parseInt(document.getElementById('input-years').value) || 0;
+    const annualRate = (parseFloat(document.getElementById('val-rate').value) || 0) / 100;
+    const taxRate = parseFloat(document.getElementById('input-tax').value);
+    const inflationRate = parseFloat(document.getElementById('input-inflation').value);
+    const isAccumulating = document.getElementById('input-type').value === 'accumulating';
+    
+    const tb = document.querySelector('#annual-table tbody');
+    tb.innerHTML = '';
+    
+    let currentBalance = P;
+    let totalInvested = P;
+    let totalInterestAcc = 0;
+    
+    let ya = [0], ba = [P], ia = [P], yearlyIntArr = [0];
+
+    for(let y = 1; y <= years; y++) {
+        let startOfYearBalance = currentBalance;
+        
+        // 1. Compound Interest on the balance from previous years
+        let interestOnBase = currentBalance * annualRate;
+        
+        // 2. Linear Pro-Rata Interest on monthly savings (German Bank Standard)
+        // Formula: PMT * rate * ( (n-1)/2 / 12 ) where n is 12 months
+        let interestOnSavings = PMT * annualRate * 5.5; 
+        
+        let yearlyGrossInterest = interestOnBase + interestOnSavings;
+        if(taxRate > 0) yearlyGrossInterest *= (1 - taxRate);
+        
+        let yearlyDeposit = PMT * 12;
+        
+        if(isAccumulating) {
+            currentBalance += yearlyDeposit + yearlyGrossInterest;
+        } else {
+            currentBalance += yearlyDeposit; // Interest is paid out, not added to balance
+        }
+        
+        totalInvested += yearlyDeposit;
+        totalInterestAcc += yearlyGrossInterest;
+
+        // Apply inflation to visualization arrays if selected
+        let displayBalance = currentBalance;
+        if(inflationRate > 0) displayBalance = currentBalance / Math.pow(1 + inflationRate, y);
+
+        tb.innerHTML += `<tr>
+            <td>Jahr ${y}</td>
+            <td>${Math.round(startOfYearBalance).toLocaleString('de-DE')} €</td>
+            <td>${yearlyDeposit.toLocaleString('de-DE')} €</td>
+            <td>${Math.round(yearlyGrossInterest).toLocaleString('de-DE')} €</td>
+            <td>${Math.round(displayBalance).toLocaleString('de-DE')} €</td>
+        </tr>`;
+        
+        ya.push(y);
+        ba.push(Math.round(displayBalance));
+        ia.push(Math.round(totalInvested));
+        yearlyIntArr.push(Math.round(totalInterestAcc));
+    }
+
+    const cagr = (Math.pow(currentBalance / totalInvested, 1 / years) - 1) * 100;
+
+    document.getElementById('res-total').innerText = Math.round(currentBalance).toLocaleString('de-DE') + ' €';
+    document.getElementById('res-invested').innerText = Math.round(totalInvested).toLocaleString('de-DE') + ' €';
+    document.getElementById('res-interest').innerText = Math.round(totalInterestAcc).toLocaleString('de-DE') + ' €';
+    document.getElementById('res-cagr').innerText = cagr.toFixed(2) + ' % p.a.';
+    
+    document.getElementById('results-section').style.display = 'block';
+    drawCharts(totalInvested, totalInterestAcc, ya, ba, ia, yearlyIntArr);
+}
+
+function drawCharts(inv, int, ys, bs, ih, inArr) {
+    const dc=document.getElementById('donutChart'), dctx=dc.getContext('2d');
+    const lc=document.getElementById('lineChart'), lctx=lc.getContext('2d');
+    const bc=document.getElementById('barChart'), bctx=bc.getContext('2d');
+    
+    // Donut Chart
+    dctx.clearRect(0,0,200,200);
+    const tot=inv+int, p=(inv/tot)*2*Math.PI;
+    dctx.lineWidth=30;
+    dctx.beginPath(); dctx.arc(100,100,70, -Math.PI/2, -Math.PI/2+p); dctx.strokeStyle='#2563eb'; dctx.stroke();
+    dctx.beginPath(); dctx.arc(100,100,70, -Math.PI/2+p, 1.5*Math.PI); dctx.strokeStyle='#10b981'; dctx.stroke();
+
+    // Line Chart (Growth)
+    lc.width=lc.offsetWidth; lc.height=250;
+    const mx=Math.max(...bs), w=lc.width, h=lc.height, px=w/(ys.length-1), py=(h-40)/mx;
+    lctx.clearRect(0,0,w,h);
+    lctx.strokeStyle='#10b981'; lctx.lineWidth=3; lctx.beginPath();
+    bs.forEach((b,i)=>{ const x=i*px, y=h-20-b*py; i===0?lctx.moveTo(x,y):lctx.lineTo(x,y)}); lctx.stroke();
+    lctx.strokeStyle='#2563eb'; lctx.setLineDash([5, 5]); lctx.beginPath();
+    ih.forEach((v,i)=>{ const x=i*px, y=h-20-v*py; i===0?lctx.moveTo(x,y):lctx.lineTo(x,y)}); lctx.stroke();
+    lctx.setLineDash([]);
+
+    // Bar Chart (Stacked Interest)
+    bc.width=bc.offsetWidth; bc.height=250;
+    const bmx = Math.max(...bs), bw = bc.width, bh = bc.height;
+    const barWidth = (bw / (ys.length - 1)) * 0.6;
+    const stepX = bw / (ys.length - 1);
+    bctx.clearRect(0,0,bw,bh);
+    for(let i=1; i<ys.length; i++){
+        const x = (i-1) * stepX + (stepX - barWidth)/2;
+        const hInv = (ih[i] / bmx) * (bh - 40);
+        const hInt = (inArr[i] / bmx) * (bh - 40);
+        bctx.fillStyle = '#2563eb'; bctx.fillRect(x, bh-20-hInv, barWidth, hInv);
+        bctx.fillStyle = '#fb923c'; bctx.fillRect(x, bh-20-hInv-hInt, barWidth, hInt);
+    }
+}
+</script>
+</body>
+</html>
