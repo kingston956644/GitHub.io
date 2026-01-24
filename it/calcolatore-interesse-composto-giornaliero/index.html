@@ -62,6 +62,37 @@ tr.total-row{background:#f8fafc;font-weight:700}
 .btn-primary:active{transform:scale(.98)}
 .seo-footer{padding:20px;max-width:700px;margin:0 auto}
 canvas{max-width:100%;height:auto}
+         .card { 
+            background: #ffffff; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
+            margin-bottom: 30px;
+        }
+
+        h1 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 1rem; line-height: 1.2; }
+        h2 { font-size: 1.5rem; color: var(--primary-dark); margin-top: 2rem; }
+             .internal-nav { 
+            display: flex; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+            margin-top: 15px;
+        }
+
+        .nav-link { 
+            text-decoration: none; 
+            color: var(--accent); 
+            font-weight: 500; 
+            font-size: 0.9rem;
+            border: 1px solid var(--accent);
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        @media (min-width: 600px) {
+            .grid-inputs { grid-template-columns: 1fr 1fr; }
+            h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -88,10 +119,8 @@ Lumpsum
 
 <div class="container">
  
-<h1>Calcolatore Interesse Composto Giornaliero</h1>
-
-<p style="text-align:center; color:var(--text-muted)">
-Ottimizza i tuoi rendimenti calcolando l'impatto della capitalizzazione quotidiana sui tuoi investimenti.</p>
+    <h1>Calcolatore di Interesse Composto Giornaliero</h1>
+        <p>Strumento avanzato per determinare la crescita del capitale con capitalizzazione a frequenza giornaliera (365 giorni l'anno). Ottimizza il rendimento analizzando l'effetto cumulativo immediato.</p>
 
 <div class="input-card">
 <div class="label-group">
@@ -134,7 +163,6 @@ Ottimizza i tuoi rendimenti calcolando l'impatto della capitalizzazione quotidia
 <option value="1">Annuale</option>
 </select>
 </div>
-
 <div id="results-section">
 <div class="viz-grid">
 <div class="result-card">
@@ -168,31 +196,109 @@ Ottimizza i tuoi rendimenti calcolando l'impatto della capitalizzazione quotidia
 
 <div class="seo-footer">
 
-<section>
-  <h2>Perché usare un calcolatore interesse composto giornaliero?</h2>
-  <p>
-    Il <strong>calcolatore interesse composto giornaliero</strong> è lo strumento più preciso per chi investe in asset che accreditano rendimenti quotidianamente, come alcuni conti deposito, staking di criptovalute o mercati monetari. Rispetto alla capitalizzazione annuale, quella giornaliera accelera la crescita del montante finale.
-  </p>
+    <section class="card">
+        <h2>Cos'è l'interesse composto giornaliero?</h2>
+        <p>
+            L'interesse composto giornaliero è la forma più accelerata di capitalizzazione finanziaria. In questo regime, il rendimento maturato viene calcolato e aggiunto al capitale ogni <strong>24 ore</strong>. 
+        </p>
+        <p>
+            Questo significa che il capitale su cui si calcola il profitto aumenta 365 volte l'anno (o 366 negli anni bisestili). Sebbene la differenza su brevi periodi possa sembrare minima, su capitali significativi o orizzonti temporali estesi, il calcolo giornaliero offre un vantaggio matematico rispetto alla capitalizzazione mensile o annuale.
+        </p>
+        
+        <div class="highlight-box">
+            <strong>Applicazioni comuni:</strong>
+            <ul>
+                <li>Conti di deposito ad alta resa.</li>
+                <li>Mercati delle criptovalute e protocolli DeFi.</li>
+                <li>Gestione di debiti rotativi (es. carte di credito).</li>
+            </ul>
+        </div>
+    </section>
 
-  <h2>Come viene calcolato l'interesse giornaliero?</h2>
-  <p>
-    A differenza dell'interesse semplice, il calcolo giornaliero aggiunge ogni giorno una piccola frazione del tasso annuo al tuo saldo. Il giorno successivo, l'interesse verrà calcolato su questo nuovo totale.
-  </p>
+    <section class="card">
+        <h2>La Logica Matematica (Formula Giornaliera)</h2>
+        <p>A differenza della formula standard, qui il tasso nominale annuo viene frazionato per il numero di giorni dell'anno civile.</p>
+        <p>In termini concettuali, il montante finale si ottiene applicando:</p>
+        <ul>
+            <li><strong>Divisione del Tasso:</strong> Il tasso percentuale annuo viene diviso per 365.</li>
+            <li><strong>Frequenza Esponenziale:</strong> Il numero di periodi diventa pari al numero di anni moltiplicato per 365.</li>
+        </ul>
+        <p>Questo processo crea una curva di crescita estremamente fluida e costante giorno dopo giorno.</p>
+    </section>
 
-  <p><strong>Formula utilizzata:</strong></p>
-  <p>
-    <code>A = P(1 + r/365)<sup>365t</sup></code>
-  </p>
-</section>
+    <section class="card">
+        <h2>Esempio Pratico: L'effetto dei 365 Giorni</h2>
+        <p>Supponiamo di investire <strong>20.000 €</strong> a un tasso del <strong>6%</strong> per <strong>5 anni</strong>.</p>
+        <div class="step-item">
+            <p><strong>Capitalizzazione Annuale:</strong> Al termine dei 5 anni avrai circa 26.764 €.</p>
+            <p><strong>Capitalizzazione Giornaliera:</strong> Con il calcolo ogni 24 ore, il montante finale sale a circa <strong>26.996 €</strong>.</p>
+            <p>L'uso della frequenza giornaliera ha generato un surplus di <strong>232 €</strong> semplicemente modificando la modalità di calcolo degli interessi.</p>
+        </div>
+    </section>
 
-<section>
-  <h2>Vantaggi della capitalizzazione giornaliera</h2>
-  <ul>
-    <li><strong>Crescita Esponenziale:</strong> Anche se la differenza sembra minima, su 10 o 20 anni la capitalizzazione giornaliera batte quella mensile o annuale.</li>
-    <li><strong>Precisione:</strong> Ideale per monitorare investimenti dinamici e piani di accumulo (PAC).</li>
-    <li><strong>Visualizzazione:</strong> Grazie ai nostri grafici, puoi vedere esattamente quando la curva degli interessi inizia a superare il capitale investito.</li>
-  </ul>
-</section>
+    
+
+    <section class="card">
+        <h2>Confronto Frequenze: Giornaliero vs Altri Periodi</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Frequenza</th>
+                        <th>Calcoli/Anno</th>
+                        <th>Efficacia Rendimento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Giornaliera</strong></td>
+                        <td>365</td>
+                        <td>Massima (Accelerata)</td>
+                    </tr>
+                    <tr>
+                        <td>Mensile</td>
+                        <td>12</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>Annuale</td>
+                        <td>1</td>
+                        <td>Standard (Lineare)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="internal-nav">
+            <span>Passa ad altri strumenti:</span>
+            <a href="/calcolatore-interesse-composto-mensile" class="nav-link">Versione Mensile</a>
+            <a href="/calcolatore-interesse-composto" class="nav-link">Calcolatore Generico</a>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Domande Frequenti (FAQ)</h2>
+        <div class="faq-item">
+            <strong>L'interesse giornaliero rende davvero di più?</strong>
+            <p>Sì. Matematicamente, maggiore è la frequenza di capitalizzazione, maggiore è il montante finale a parità di tasso nominale.</p>
+        </div>
+        <div class="faq-item">
+            <strong>Perché non tutti usano il calcolo giornaliero?</strong>
+            <p>Perché dipende dalle condizioni contrattuali dell'istituto finanziario. Molte banche tradizionali preferiscono la capitalizzazione trimestrale o annuale per ridurre gli oneri finanziari a loro carico.</p>
+        </div>
+        <div class="faq-item">
+            <strong>È più rischioso rispetto al calcolo mensile?</strong>
+            <p>No, il rischio dipende dall'asset sottostante (azioni, crypto, depositi), non dalla frequenza del calcolo degli interessi.</p>
+        </div>
+        <div class="faq-item">
+            <strong>Come influisce sugli interessi passivi?</strong>
+            <p>Attenzione: se si tratta di un debito (come una carta di credito), la capitalizzazione giornaliera gioca a sfavore del debitore, facendo crescere il debito più velocemente.</p>
+        </div>
+        <div class="faq-item">
+            <strong>Posso calcolare l'interesse composto giornaliero manualmente?</strong>
+            <p>È complesso a causa dell'elevato numero di esponenti. L'uso del nostro calcolatore dedicato è raccomandato per evitare errori di arrotondamento.</p>
+        </div>
+    </section>
+</div>
 </div>
   
 <script>
