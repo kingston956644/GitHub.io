@@ -62,6 +62,15 @@ tr.total-row{background:#f8fafc;font-weight:700}
 .btn-primary:active{transform:scale(.98)}
 .seo-footer{padding:20px;max-width:700px;margin:0 auto}
 canvas{max-width:100%;height:auto}
+      .step-box { background: #fff; padding: 25px; border-radius: 15px; margin: 20px 0; border: 1px solid #e2e8f0; }
+        .table-wrap { overflow-x: auto; margin: 25px 0; }
+        table { width: 100%; border-collapse: collapse; background: white; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #edf2f7; }
+        th { background: #f8fafc; font-weight: 700; color: var(--primary); }
+
+        .internal-nav { background: #e0f2fe; padding: 20px; border-radius: 15px; margin-top: 30px; }
+        .nav-link { color: var(--secondary); font-weight: 600; text-decoration: none; }
+
     </style>
 </head>
 <body>
@@ -88,11 +97,9 @@ Lumpsum
 
 <div class="container">
  
-<h1>Calcolatore Interesse Composto Mensile</h1>
-
-<p style="text-align:center; color:var(--text-muted)">
-Scopri come la capitalizzazione mensile accelera la crescita dei tuoi risparmi nel tempo.</p>
-
+   <h1>Calcolatore di Interesse Composto Mensile</h1>
+        <p>Progetta il tuo futuro finanziario con precisione. Questo strumento è ottimizzato per calcolare la crescita di piani di accumulo (PAC), investimenti in ETF e risparmi ricorrenti con capitalizzazione mensile degli interessi.</p>
+        
 <div class="input-card">
 <div class="label-group">
 <label>Capitale Iniziale (€)</label>
@@ -167,35 +174,103 @@ Scopri come la capitalizzazione mensile accelera la crescita dei tuoi risparmi n
 
 <div class="seo-footer">
 
-<section>
-  <h2>Perché monitorare l'interesse composto mensile?</h2>
-  <p>
-    Il <strong>calcolatore interesse composto mensile</strong> è essenziale per chi gestisce un piano di risparmio attivo. La maggior parte degli investimenti moderni e dei conti deposito accredita o calcola i rendimenti con frequenza mensile, rendendo questo strumento il più accurato per proiezioni realistiche.
-  </p>
-  
-  <h2>Come funziona il calcolo mensile?</h2>
-  <p>
-    A differenza del calcolo annuale, il <strong>calcolo interesse composto mensile</strong> divide il tasso annuo per 12 e lo applica ogni mese. Questo significa che gli interessi guadagnati nel primo mese iniziano a produrre nuovi interessi già dal secondo mese, generando un effetto valanga più rapido.
-  </p>
+  <section>
+        <h2>Interesse Composto Mensile: Come Funziona?</h2>
+        <p>La capitalizzazione mensile è la modalità più fedele alla realtà per chi investe regolarmente. In questo scenario, l'interesse viene calcolato e aggiunto al montante ogni 30 giorni. Questo processo crea un effetto valanga più rapido rispetto alla capitalizzazione annuale, poiché ogni mese i nuovi interessi generano a loro volta ulteriori rendimenti.</p>
+        
+        <p>Per chi investe in <strong>ETF</strong> o fondi comuni attraverso un <strong>Piano di Accumulo (PAC)</strong>, il calcolo mensile è lo standard di riferimento per valutare la crescita del portafoglio nel lungo periodo.</p>
+    </section>
 
-  <h3>Formula della capitalizzazione mensile</h3>
-  <p>
-    <code>M = P * (1 + i/12)^(12*n)</code>
-  </p>
-  <ul>
-    <li><strong>M:</strong> Montante finale</li>
-    <li><strong>P:</strong> Capitale iniziale</li>
-    <li><strong>i:</strong> Tasso nominale annuo</li>
-    <li><strong>n:</strong> Numero di anni</li>
-  </ul>
-</section>
+    
 
-<section>
-  <h2>Vantaggi di un Piano di Accumulo (PAC) Mensile</h2>
-  <p>
-    Utilizzare versamenti costanti ogni mese permette di mediare il prezzo di acquisto (nel caso di ETF) e di massimizzare l'efficacia dell'interesse composto. Anche piccole cifre, se capitalizzate mensilmente per lunghi periodi, possono trasformarsi in patrimoni consistenti.
-  </p>
-</section>
+    <section class="step-box">
+        <h2>La Formula del Rendimento Mensile</h2>
+        <p>Matematicamente, il calcolo si basa sulla scomposizione del tasso annuo nominale:</p>
+        <ul>
+            <li><strong>Tasso Periodico:</strong> Il tasso annuo viene diviso per 12 mesi ($r / 12$).</li>
+            <li><strong>Esponente:</strong> Il tempo viene convertito in mesi ($anni \times 12$).</li>
+            <li><strong>Accumulo:</strong> Ogni versamento mensile si somma al capitale già rivalutato, accelerando la crescita composta.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Esempio Reale: Investimento in ETF</h2>
+        <p>Immaginiamo un risparmiatore che decide di avviare un piano di accumulo con queste caratteristiche:</p>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parametro</th>
+                        <th>Valore</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Capitale Iniziale</td>
+                        <td>2.000 €</td>
+                    </tr>
+                    <tr>
+                        <td>Contributo Mensile</td>
+                        <td>250 €</td>
+                    </tr>
+                    <tr>
+                        <td>Rendimento Annuo (S&P 500 media)</td>
+                        <td>8%</td>
+                    </tr>
+                    <tr>
+                        <td>Orizzonte Temporale</td>
+                        <td>25 anni</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risultato Finale</strong></td>
+                        <td><strong>250.485 €</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>In questo esempio, a fronte di versamenti totali per 77.000 €, l'interesse composto ha generato oltre <strong>173.000 € di soli guadagni</strong>.</p>
+    </section>
+
+    <section>
+        <h2>Casi d'Uso Principali</h2>
+        <ul>
+            <li><strong>ETF Sparplan:</strong> Calcola quanto varrà il tuo piano di accumulo su indici azionari globali.</li>
+            <li><strong>Fondi Pensione:</strong> Valuta la crescita del tuo fondo integrativo con versamenti ricorrenti.</li>
+            <li><strong>Risparmio Programmato:</strong> Perfetto per chi accantona una somma fissa dello stipendio ogni mese.</li>
+        </ul>
+    </section>
+
+    <section class="internal-nav">
+        <strong>Esplora altri calcolatori:</strong><br>
+        • Hai un capitale unico? Usa il <a href="/calcolatore-interesse-composto" class="nav-link">Calcolatore Generico</a>.<br>
+        • Per investimenti speculativi, prova il <a href="/calcolatore-interesse-composto-giornaliero" class="nav-link">Calcolatore Giornaliero</a>.<br>
+        • Vuoi analizzare un piano specifico? <a href="/etf-sparplan-rechner" class="nav-link">ETF Sparplan Rechner (Analisi Profonda)</a>.
+    </section>
+
+    <section>
+        <h2>Domande Frequenti (FAQ)</h2>
+        <div class="step-box">
+            <strong>È meglio la capitalizzazione mensile o annuale?</strong>
+            <p>La capitalizzazione mensile è matematicamente più vantaggiosa perché gli interessi iniziano a produrre altri interessi molto prima rispetto al calcolo annuale.</p>
+        </div>
+        <div class="step-box">
+            <strong>Come influiscono i versamenti mensili?</strong>
+            <p>I versamenti costanti riducono la volatilità e sfruttano l'interesse composto su una base di capitale che cresce ogni mese, massimizzando il rendimento finale.</p>
+        </div>
+        <div class="step-box">
+            <strong>Questo calcolatore è adatto per gli ETF?</strong>
+            <p>Sì, è lo strumento ideale per simulare un PAC su ETF, poiché la maggior parte degli investitori acquista quote su base mensile.</p>
+        </div>
+        <div class="step-box">
+            <strong>Cosa succede se salto un mese di versamento?</strong>
+            <p>L'effetto della capitalizzazione rallenta. Anche piccole interruzioni nel lungo periodo possono costare migliaia di euro in mancati interessi composti.</p>
+        </div>
+        <div class="step-box">
+            <strong>Il tasso di interesse deve essere fisso?</strong>
+            <p>Per il calcolo si usa solitamente un tasso medio annuo stimato. Nella realtà i mercati oscillano, ma la media storica aiuta a proiettare scenari realistici.</p>
+        </div>
+    </section>
+</div>
 </div>
   
 <script>
