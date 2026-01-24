@@ -62,15 +62,165 @@ tr.total-row{background:#f8fafc;font-weight:700}
 .btn-primary:active{transform:scale(.98)}
 .seo-footer{padding:20px;max-width:700px;margin:0 auto}
 canvas{max-width:100%;height:auto}
-      .step-box { background: #fff; padding: 25px; border-radius: 15px; margin: 20px 0; border: 1px solid #e2e8f0; }
-        .table-wrap { overflow-x: auto; margin: 25px 0; }
-        table { width: 100%; border-collapse: collapse; background: white; }
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #edf2f7; }
-        th { background: #f8fafc; font-weight: 700; color: var(--primary); }
-
-        .internal-nav { background: #e0f2fe; padding: 20px; border-radius: 15px; margin-top: 30px; }
-        .nav-link { color: var(--secondary); font-weight: 600; text-decoration: none; }
-
+     .intro-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        
+        .intro-box strong {
+            color: #1565C0;
+            font-size: 1.1em;
+        }
+     .content-section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+        
+        h3 {
+            color: #333;
+            margin: 20px 0 10px;
+            font-size: 1.3em;
+        }
+        
+        .formula-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
+        }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2em;
+            color: #764ba2;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .highlight {
+            background: #e8f5e9;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+        
+        .use-cases {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .use-cases li {
+            padding: 12px;
+            margin: 10px 0;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .use-cases li strong {
+            color: #667eea;
+        }
+        
+        .faq {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .internal-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .link-card {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .link-card h3 {
+            color: white;
+            margin: 0 0 8px 0;
+            font-size: 1.1em;
+        }
+        
+        .link-card p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            .result-value {
+                font-size: 1.8em;
+            }
+            
+            .comparison-table {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,9 +247,13 @@ Lumpsum
 
 <div class="container">
  
-   <h1>Calcolatore di Interesse Composto Mensile</h1>
-        <p>Progetta il tuo futuro finanziario con precisione. Questo strumento è ottimizzato per calcolare la crescita di piani di accumulo (PAC), investimenti in ETF e risparmi ricorrenti con capitalizzazione mensile degli interessi.</p>
-        
+   <h1>💰 Calcolatore Interesse Composto Mensile</h1>
+            <p class="subtitle">Capitalizzazione mensile: 12 volte all'anno</p>
+   <div class="intro-box">
+            <strong>⚠️ Attenzione:</strong> Questo calcolatore usa la <strong>capitalizzazione mensile</strong>. Gli interessi vengono aggiunti al capitale 12 volte all'anno, alla fine di ogni mese.
+            <p style="margin-top: 12px;"><strong>Ideale per:</strong> PAC, fondi comuni, conti deposito con accredito mensile e investimenti con versamenti regolari.</p>
+            <p style="margin-top: 8px;"><strong>La differenza chiave:</strong> Rispetto alla capitalizzazione annuale, quella mensile reinveste gli interessi ogni mese invece di aspettare un anno intero. Questo significa più interesse sugli interessi e un rendimento finale più alto.</p>
+        </div>        
 <div class="input-card">
 <div class="label-group">
 <label>Capitale Iniziale (€)</label>
@@ -173,31 +327,51 @@ Lumpsum
 </div>
 
 <div class="seo-footer">
+        <div class="content-section">
+            <h2>Cos'è la capitalizzazione mensile?</h2>
+            <p>Con la capitalizzazione mensile, gli interessi vengono aggiunti al tuo capitale <strong>12 volte all'anno</strong>, alla fine di ogni mese. Questo significa che ogni mese gli interessi maturati vengono reinvestiti e iniziano a loro volta a produrre interessi.</p>
+            
+            <p style="margin-top: 15px;">È diverso dalla capitalizzazione annuale dove aspetti un anno intero prima che gli interessi vengano aggiunti. Con il mensile, il tuo denaro cresce più velocemente perché <strong>l'effetto composto agisce più frequentemente</strong>.</p>
 
-  <section>
-        <h2>Interesse Composto Mensile: Come Funziona?</h2>
-        <p>La capitalizzazione mensile è la modalità più fedele alla realtà per chi investe regolarmente. In questo scenario, l'interesse viene calcolato e aggiunto al montante ogni 30 giorni. Questo processo crea un effetto valanga più rapido rispetto alla capitalizzazione annuale, poiché ogni mese i nuovi interessi generano a loro volta ulteriori rendimenti.</p>
-        
-        <p>Per chi investe in <strong>ETF</strong> o fondi comuni attraverso un <strong>Piano di Accumulo (PAC)</strong>, il calcolo mensile è lo standard di riferimento per valutare la crescita del portafoglio nel lungo periodo.</p>
-    </section>
+            <h3>Perché cresce di più?</h3>
+            <p>Immagina di avere €1.000 al 12% annuo:</p>
+            <ul style="margin: 15px 0; padding-left: 20px;">
+                <li style="margin: 8px 0;"><strong>Con capitalizzazione annuale:</strong> dopo 1 anno hai €1.120</li>
+                <li style="margin: 8px 0;"><strong>Con capitalizzazione mensile:</strong> dopo 1 anno hai €1.126,83</li>
+            </ul>
+            <p>Sono solo €6,83 in più, ma moltiplicato per anni e capitali più grandi, la differenza diventa significativa.</p>
+        </div>
 
-    
+        <div class="content-section">
+            <h2>La formula della capitalizzazione mensile</h2>
+            
+            <div class="formula-box">
+                <p><strong>Formula matematica:</strong></p>
+                <div class="formula">Capitale finale = C × (1 + r/12)^(12×t)</div>
+                
+                <p style="margin-top: 20px;"><strong>Come funziona in pratica:</strong></p>
+                <ol style="margin-top: 10px; padding-left: 20px; line-height: 1.8;">
+                    <li><strong>Il tasso annuo viene diviso per 12</strong> – Se hai il 6% annuo, ogni mese guadagni lo 0,5%</li>
+                    <li><strong>Il tempo viene moltiplicato per 12</strong> – 10 anni diventano 120 mesi di capitalizzazione</li>
+                    <li><strong>Più capitalizzazioni = più interessi sugli interessi</strong> – Ogni mese gli interessi maturati iniziano a loro volta a produrre interessi</li>
+                </ol>
+                
+                <p style="margin-top: 15px;"><strong>Variabili:</strong></p>
+                <ul style="margin-top: 10px; padding-left: 20px;">
+                    <li><strong>C</strong> = capitale iniziale</li>
+                    <li><strong>r</strong> = tasso annuo (in decimale, quindi 5% = 0,05)</li>
+                    <li><strong>t</strong> = anni</li>
+                    <li><strong>12</strong> = numero di capitalizzazioni all'anno</li>
+                </ul>
+            </div>
+        </div>
 
-    <section class="step-box">
-        <h2>La Formula del Rendimento Mensile</h2>
-        <p>Matematicamente, il calcolo si basa sulla scomposizione del tasso annuo nominale:</p>
-        <ul>
-            <li><strong>Tasso Periodico:</strong> Il tasso annuo viene diviso per 12 mesi ($r / 12$).</li>
-            <li><strong>Esponente:</strong> Il tempo viene convertito in mesi ($anni \times 12$).</li>
-            <li><strong>Accumulo:</strong> Ogni versamento mensile si somma al capitale già rivalutato, accelerando la crescita composta.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Esempio Reale: Investimento in ETF</h2>
-        <p>Immaginiamo un risparmiatore che decide di avviare un piano di accumulo con queste caratteristiche:</p>
-        <div class="table-wrap">
-            <table>
+        <div class="content-section">
+            <h2>Capitalizzazione mensile vs annuale: confronto diretto</h2>
+            
+            <p>Vediamo la differenza concreta tra capitalizzazione mensile e annuale con lo stesso investimento:</p>
+<div class="table-container">
+            <table class="comparison-table" style="margin-top: 20px;">
                 <thead>
                     <tr>
                         <th>Parametro</th>
@@ -206,71 +380,191 @@ Lumpsum
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Capitale Iniziale</td>
-                        <td>2.000 €</td>
+                        <td>Capitale iniziale</td>
+                        <td><strong>€5.000</strong></td>
                     </tr>
                     <tr>
-                        <td>Contributo Mensile</td>
-                        <td>250 €</td>
+                        <td>Tasso di interesse annuo</td>
+                        <td><strong>5%</strong></td>
                     </tr>
                     <tr>
-                        <td>Rendimento Annuo (S&P 500 media)</td>
-                        <td>8%</td>
-                    </tr>
-                    <tr>
-                        <td>Orizzonte Temporale</td>
-                        <td>25 anni</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Risultato Finale</strong></td>
-                        <td><strong>250.485 €</strong></td>
+                        <td>Durata investimento</td>
+                        <td><strong>10 anni</strong></td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <p>In questo esempio, a fronte di versamenti totali per 77.000 €, l'interesse composto ha generato oltre <strong>173.000 € di soli guadagni</strong>.</p>
-    </section>
-
-    <section>
-        <h2>Casi d'Uso Principali</h2>
-        <ul>
-            <li><strong>ETF Sparplan:</strong> Calcola quanto varrà il tuo piano di accumulo su indici azionari globali.</li>
-            <li><strong>Fondi Pensione:</strong> Valuta la crescita del tuo fondo integrativo con versamenti ricorrenti.</li>
-            <li><strong>Risparmio Programmato:</strong> Perfetto per chi accantona una somma fissa dello stipendio ogni mese.</li>
-        </ul>
-    </section>
-
-    <section class="internal-nav">
-        <strong>Esplora altri calcolatori:</strong><br>
-        • Hai un capitale unico? Usa il <a href="/calcolatore-interesse-composto" class="nav-link">Calcolatore Generico</a>.<br>
-        • Per investimenti speculativi, prova il <a href="/calcolatore-interesse-composto-giornaliero" class="nav-link">Calcolatore Giornaliero</a>.<br>
-        • Vuoi analizzare un piano specifico? <a href="/etf-sparplan-rechner" class="nav-link">ETF Sparplan Rechner (Analisi Profonda)</a>.
-    </section>
-
-    <section>
-        <h2>Domande Frequenti (FAQ)</h2>
-        <div class="step-box">
-            <strong>È meglio la capitalizzazione mensile o annuale?</strong>
-            <p>La capitalizzazione mensile è matematicamente più vantaggiosa perché gli interessi iniziano a produrre altri interessi molto prima rispetto al calcolo annuale.</p>
-        </div>
-        <div class="step-box">
-            <strong>Come influiscono i versamenti mensili?</strong>
-            <p>I versamenti costanti riducono la volatilità e sfruttano l'interesse composto su una base di capitale che cresce ogni mese, massimizzando il rendimento finale.</p>
-        </div>
-        <div class="step-box">
-            <strong>Questo calcolatore è adatto per gli ETF?</strong>
-            <p>Sì, è lo strumento ideale per simulare un PAC su ETF, poiché la maggior parte degli investitori acquista quote su base mensile.</p>
-        </div>
-        <div class="step-box">
-            <strong>Cosa succede se salto un mese di versamento?</strong>
-            <p>L'effetto della capitalizzazione rallenta. Anche piccole interruzioni nel lungo periodo possono costare migliaia di euro in mancati interessi composti.</p>
-        </div>
-        <div class="step-box">
-            <strong>Il tasso di interesse deve essere fisso?</strong>
-            <p>Per il calcolo si usa solitamente un tasso medio annuo stimato. Nella realtà i mercati oscillano, ma la media storica aiuta a proiettare scenari realistici.</p>
-        </div>
-    </section>
 </div>
+<div class="table-container">
+
+            <table class="comparison-table" style="margin-top: 25px;">
+                <thead>
+                    <tr>
+                        <th>Tipo di capitalizzazione</th>
+                        <th>Capitale finale</th>
+                        <th>Interessi totali</th>
+                        <th>Differenza</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Annuale (1 volta/anno)</td>
+                        <td>€8.144,47</td>
+                        <td>€3.144,47</td>
+                        <td>—</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Mensile (12 volte/anno)</strong></td>
+                        <td><strong>€8.235,05</strong></td>
+                        <td><strong>€3.235,05</strong></td>
+                        <td><strong>+€90,58</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+</div>
+
+            <p style="margin-top: 20px;"><strong>Conclusione:</strong> Con la capitalizzazione mensile guadagni €90,58 in più (circa il 2,9% di interessi in più) senza fare assolutamente nulla. È denaro gratis che ottieni solo scegliendo una capitalizzazione più frequente.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Esempio pratico dettagliato</h2>
+            
+            <p>Vediamo quanto rendono €5.000 investiti al 5% annuo per 10 anni con diverse capitalizzazioni:</p>
+<div class="table-container">
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Tipo di capitalizzazione</th>
+                        <th>Capitale finale</th>
+                        <th>Interessi totali</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Annuale (1 volta/anno)</td>
+                        <td>€8.144,47</td>
+                        <td>€3.144,47</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Mensile (12 volte/anno)</strong></td>
+                        <td><strong>€8.235,05</strong></td>
+                        <td><strong>€3.235,05</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Giornaliera (365 volte/anno)</td>
+                        <td>€8.243,32</td>
+                        <td>€3.243,32</td>
+                    </tr>
+                </tbody>
+            </table>
+</div>
+
+            <p style="margin-top: 20px;"><strong>Nota importante:</strong> La differenza tra mensile e giornaliera è minima (€8,27), mentre tra annuale e mensile è significativa (€90,58). Per questo la capitalizzazione mensile è il miglior compromesso tra semplicità e rendimento.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Quando si usa la capitalizzazione mensile?</h2>
+            
+            <ul class="use-cases">
+                <li>
+                    <strong>PAC (Piani di Accumulo del Capitale):</strong> Molti fondi comuni prevedono versamenti mensili con capitalizzazione mensile degli interessi.
+                </li>
+                <li>
+                    <strong>Conti deposito:</strong> Alcune banche offrono conti con accredito mensile degli interessi, soprattutto su prodotti vincolati.
+                </li>
+                <li>
+                    <strong>Fondi comuni di investimento:</strong> Diversi fondi calcolano e reinvestono i rendimenti su base mensile.
+                </li>
+                <li>
+                    <strong>Prestiti e mutui:</strong> Molti finanziamenti italiani usano capitalizzazione mensile (in questo caso lavora contro di te!).
+                </li>
+                <li>
+                    <strong>Obbligazioni con cedola mensile:</strong> Alcune obbligazioni pagano interessi ogni mese che possono essere reinvestiti.
+                </li>
+            </ul>
+
+            <p style="margin-top: 20px;"><strong>Consiglio:</strong> Quando confronti prodotti finanziari, controlla sempre la frequenza di capitalizzazione. A parità di tasso nominale, una capitalizzazione più frequente ti fa guadagnare di più.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Domande frequenti sulla capitalizzazione mensile</h2>
+            
+            <div class="faq">
+                <div class="faq-item">
+                    <div class="faq-question">È meglio la capitalizzazione mensile o annuale?</div>
+                    <div class="faq-answer">
+                        La capitalizzazione mensile è sempre migliore per chi investe, perché gli interessi vengono reinvestiti più spesso. A parità di tasso, guadagni di più. Per chi prende in prestito denaro (mutui, prestiti), invece, la mensile costa di più.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quanto rende in più rispetto alla capitalizzazione annuale?</div>
+                    <div class="faq-answer">
+                        Dipende dal tasso e dalla durata. Con un tasso del 5% e 10 anni, la differenza è circa 1,1%. Più alto è il tasso e più lunga è la durata, maggiore è il vantaggio della capitalizzazione mensile.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Le banche italiane usano davvero la capitalizzazione mensile?</div>
+                    <div class="faq-answer">
+                        Dipende dal prodotto. I conti deposito tradizionali spesso hanno capitalizzazione annuale. I PAC, molti fondi comuni e alcuni conti deposito vincolati usano la mensile. Prodotti come Moneyfarm, Fineco e altri broker online spesso offrono capitalizzazione mensile o giornaliera. Controlla sempre le condizioni contrattuali alla voce "regime di capitalizzazione".
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Conviene davvero o è solo marketing?</div>
+                    <div class="faq-answer">
+                        Conviene davvero, ma l'impatto dipende dalle cifre. Su €5.000 per 10 anni al 5%, guadagni €90 in più rispetto all'annuale. Sembra poco, ma su €50.000 sarebbero €900. Su capitali grandi o con tassi più alti, la differenza diventa significativa. Non è marketing: è matematica.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Quanto incide rispetto alle commissioni?</div>
+                    <div class="faq-answer">
+                        Questo è il punto chiave. Se un fondo con capitalizzazione mensile ti costa l'1,5% di commissioni annue e uno con capitalizzazione annuale costa lo 0,5%, il risparmio sulle commissioni supera di gran lunga il vantaggio della capitalizzazione più frequente. Guarda sempre prima i costi, poi la capitalizzazione.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Posso ritirare gli interessi ogni mese?</div>
+                    <div class="faq-answer">
+                        Dipende dal contratto. Se ritiri gli interessi ogni mese invece di reinvestirli, perdi il vantaggio dell'interesse composto e guadagni molto meno. La capitalizzazione funziona solo se lasci gli interessi sul conto.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Altri calcolatori di interesse composto</h2>
+            
+            <p style="margin-bottom: 20px;">Se vuoi confrontare altri metodi di capitalizzazione o esplorare scenari diversi, prova anche questi calcolatori:</p>
+            
+            <div class="internal-links">
+                <a href="calcolatore-interesse-composto.html" class="link-card">
+                    <h3>📊 Calcolatore Base</h3>
+                    <p>Tutti i tipi di capitalizzazione in un'unica pagina</p>
+                </a>
+                
+                <a href="calcolatore-interesse-composto-giornaliero.html" class="link-card">
+                    <h3>🌅 Capitalizzazione Giornaliera</h3>
+                    <p>Interesse calcolato 365 volte all'anno</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="content-section" style="background: #f8f9fa; border-left: 4px solid #ff9800;">
+            <h2 style="color: #333;">⚠️ Avviso importante</h2>
+            <p><strong>Questo calcolatore fornisce risultati puramente informativi e orientativi.</strong></p>
+            <p style="margin-top: 10px;">I calcoli si basano su formule matematiche standard, ma i rendimenti reali possono variare in base a:</p>
+            <ul style="margin: 15px 0; padding-left: 20px;">
+                <li>Commissioni e costi di gestione del prodotto finanziario</li>
+                <li>Tassazione sugli interessi maturati</li>
+                <li>Modalità di accredito e vincoli contrattuali</li>
+                <li>Condizioni specifiche dell'istituto bancario o finanziario</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Questo strumento non costituisce consulenza finanziaria.</strong> Per decisioni di investimento, consulta sempre un professionista abilitato che possa valutare la tua situazione specifica.</p>
+        </div>
+    </div>
 </div>
   
 <script>
