@@ -63,167 +63,132 @@ tr.total-row{background:#f8fafc;font-weight:700}
 .btn-primary:active{transform:scale(.98)}
 .seo-footer{padding:20px;max-width:700px;margin:0 auto}
 canvas{max-width:100%;height:auto}
-       h2 {
-            color: #2d3748;
-            font-size: 2em;
-            margin-bottom: 20px;
-            border-left: 5px solid #667eea;
-            padding-left: 20px;
+       .intro {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+        }
+        h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.6em;
         }
         
         h3 {
-            color: #4a5568;
-            font-size: 1.5em;
-            margin: 30px 0 15px;
-        }
-        
-        p {
-            margin-bottom: 18px;
-            font-size: 1.08em;
-            color: #4a5568;
+            color: #333;
+            margin: 20px 0 10px;
+            font-size: 1.3em;
         }
         
         .formula-box {
-            background: #f7fafc;
-            border-left: 4px solid #667eea;
-            padding: 25px;
-            margin: 25px 0;
+            background: #f8f9fa;
+            padding: 20px;
             border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #667eea;
         }
         
         .formula {
             font-family: 'Courier New', monospace;
             font-size: 1.2em;
-            color: #2d3748;
+            color: #764ba2;
             margin: 15px 0;
-            padding: 15px;
-            background: white;
-            border-radius: 6px;
-        }
-        
-        .example-box {
-            background: #edf2f7;
-            padding: 30px;
-            border-radius: 12px;
-            margin: 25px 0;
+            text-align: center;
+            font-weight: bold;
         }
         
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            margin: 20px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
         }
         
         .comparison-table th {
             background: #667eea;
             color: white;
-            padding: 18px;
-            text-align: left;
             font-weight: 600;
-        }
-        
-        .comparison-table td {
-            padding: 18px;
-            border-bottom: 1px solid #e2e8f0;
         }
         
         .comparison-table tr:hover {
-            background: #f7fafc;
+            background: #f5f5f5;
         }
         
-        .internal-links {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 30px 0;
-        }
-        
-        .internal-links h3 {
-            margin-top: 0;
-        }
-        
-        .link-card {
-            background: white;
+        .example-box {
+            background: #e3f2fd;
             padding: 20px;
             border-radius: 8px;
-            margin: 15px 0;
-            border-left: 4px solid #667eea;
-            transition: transform 0.2s;
+            margin: 20px 0;
+            border-left: 4px solid #2196F3;
         }
         
-        .link-card:hover {
-            transform: translateX(5px);
-        }
-        
-        .link-card a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-        
-        .faq-section {
-            margin-top: 50px;
+        .faq {
+            margin-top: 20px;
         }
         
         .faq-item {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
             margin-bottom: 20px;
-            border: 2px solid #e2e8f0;
-            transition: border-color 0.3s;
-        }
-        
-        .faq-item:hover {
-            border-color: #667eea;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
         }
         
         .faq-question {
-            font-size: 1.3em;
             font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 12px;
+            color: #667eea;
+            font-size: 1.1em;
+            margin-bottom: 10px;
         }
         
-        .faq-answer {
-            color: #4a5568;
-            line-height: 1.8;
+        .calculator-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 25px;
         }
         
-        .highlight {
-            background: linear-gradient(120deg, #667eea20 0%, #764ba220 100%);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
+        .calc-card {
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: transform 0.2s;
+            display: block;
         }
         
-        ul {
-            margin: 20px 0;
-            padding-left: 25px;
+        .calc-card:hover {
+            transform: translateY(-3px);
         }
         
-        li {
-            margin-bottom: 12px;
-            font-size: 1.08em;
-            color: #4a5568;
+        .calc-card h3 {
+            color: white;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
         }
         
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-            
-            .calculator-section, .content-section {
-                padding: 25px;
-            }
-            
-            .comparison-table {
-                font-size: 0.9em;
-            }
+        .calc-card p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.95em;
+            line-height: 1.5;
         }
-
+        
+        .trust-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+        }
     </style>
 </head>
 <body>
@@ -242,21 +207,31 @@ Lumpsum
 <div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
 <div class="side-menu" id="sideMenu">
 <div class="menu-close" onclick="toggleMenu()">✕</div>
-<a href="#" class="menu-link">Home</a>
-<a href="#" class="menu-link">Contattaci</a>
-<a href="#" class="menu-link">Chi Siamo</a>
-<a href="#" class="menu-link">Privacy Policy</a>
-<a href="#" class="menu-link">Note Legali</a>
-<a href="#" class="menu-link">Interesse Composto Annuo</a>
-<a href="#" class="menu-link">Interesse Composto Mensile</a>
+<a href="https://www.lumpsumcalculators.in/" class="menu-link">Home</a>
+<a href="https://www.lumpsumcalculators.in/it/termini-e-condizioni/" class="menu-link">Termini e Condizioni</a>
+<a href="https://www.lumpsumcalculators.in/it/informativa-sulla-privacy/" class="menu-link">Privacy Policy</a>
+<a href="https://www.lumpsumcalculators.in/it/disclaimer/" class="menu-link">disclaimer</a>
+<a href="https://www.lumpsumcalculators.in/it/chi-siamo/" class="menu-link">chi siamo</a>
+<a href="https://www.lumpsumcalculators.in/it/Contatti/" class="menu-link">Contatti</a>
 <a href="https://www.lumpsumcalculators.in/it/calcolatore-interesse-composto-giornaliero/" class="menu-link">Interesse Composto Giornaliero</a>
+<a href="https://www.lumpsumcalculators.in/it/calcolatore-interesse-composto-mensile/" class="menu-link">Interesse Composto Mensile</a>
+<a href="https://www.lumpsumcalculators.in/it/calcolatore-interesse-composto/" class="menu-link">calcolatore interesse composto</a>
+     
 </div>
 
 <div class="container">
-   <h1>💰 Calcolatore di Interesse Composto Online – Simula Investimenti e Risparmi</h1>
-            <p class="intro-strong">Il <strong>calcolatore di interesse composto</strong> ti permette di calcolare la crescita del capitale nel tempo con precisione. Inserisci capitale iniziale, tasso di interesse e durata per ottenere risultati immediati e realistici.</p>
-            <p class="intro">Confronta capitalizzazione annuale, mensile e giornaliera. Formula completa, esempi pratici e simulazioni per investimenti a lungo termine.</p>
+   <header>
+            <h1>💰 Calcolatore Interesse Composto</h1>
+            <p class="subtitle">Scopri quanto rendono i tuoi investimenti e risparmi nel lungo periodo</p>
+        </header>
 
+        <div class="intro">
+            <p><strong>Quanto valgono €10.000 investiti oggi tra 10, 20 o 30 anni?</strong> L'interesse composto è il meccanismo che fa crescere il tuo capitale in modo esponenziale nel tempo—non lineare. Funziona per investimenti (PAC, ETF, fondi comuni), risparmi (conti deposito, BTP) e qualsiasi strumento dove i rendimenti vengono reinvestiti invece di essere prelevati.</p>
+            
+            <p style="margin-top: 15px;">In Italia, la maggior parte dei prodotti finanziari usa capitalizzazione annuale o mensile. Questo calcolatore ti permette di confrontare tutte e tre le frequenze (annuale, mensile, giornaliera) e capire quale impatto ha sul rendimento finale. Più frequente è la capitalizzazione, maggiore è il risultato—ma la differenza non è sempre significativa come sembra.</p>
+            
+            <p style="margin-top: 15px;"><strong>Usa questo strumento se:</strong> stai pianificando un PAC, vuoi confrontare conti deposito, stai valutando un investimento di lungo periodo (5+ anni), o semplicemente vuoi capire quanto può crescere il tuo capitale con la pazienza e il tempo.</p>
+       
 <div class="input-card">
 <div class="label-group">
 <label>Capitale Iniziale (€)</label>
@@ -333,163 +308,198 @@ Lumpsum
 </div>
 
 <div class="seo-footer">
-            <div class="content-section">
-            <h2>Cos'è l'interesse composto e come funziona</h2>
+               <div class="content-section">
+            <h2>Cos'è l'interesse composto e perché è importante</h2>
             
-            <p>L'<strong>interesse composto</strong> è un meccanismo finanziario in cui gli interessi maturati vengono reinvestiti e producono a loro volta nuovi interessi. A differenza dell'<strong>interesse semplice</strong>, dove i rendimenti si calcolano sempre sul capitale iniziale, l'interesse composto crea una crescita esponenziale perché ogni periodo la base di calcolo aumenta.</p>
-
-            <p>Questo sistema è utilizzato nella maggior parte dei prodotti finanziari italiani: <strong>conti deposito</strong>, <strong>fondi comuni</strong>, <strong>ETF ad accumulazione</strong>, <strong>piani pensionistici</strong>. Il vantaggio principale è che più tempo passa, più l'effetto diventa significativo.</p>
-
-            <p><strong>Perché cresce più velocemente:</strong> Se investi €1.000 al 10% con interesse semplice, guadagni €100 ogni anno. Con interesse composto, il primo anno guadagni €100, il secondo €110 (perché ora hai €1.100), il terzo €121, e così via. Dopo 10 anni la differenza è di circa €594.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Esempio pratico: interesse composto vs interesse semplice</h2>
-            
-            <p>Confrontiamo €1.000 investiti al 10% per 3 anni con le due modalità di calcolo interesse:</p>
+            <p>L'interesse composto è il principio per cui gli interessi maturati vengono reinvestiti, generando a loro volta nuovi interessi. È diverso dall'<strong>interesse semplice</strong>, dove gli interessi si calcolano sempre e solo sul capitale iniziale.</p>
 
             <div class="example-box">
-                <p><strong>Interesse semplice:</strong><br>
-                Anno 1: €1.000 + €100 = €1.100<br>
-                Anno 2: €1.000 + €100 = €1.200<br>
-                Anno 3: €1.000 + €100 = €1.300<br>
-                → <strong>Totale: €1.300</strong></p>
+                <h3 style="margin-top: 0; color: #1565C0;">Esempio: €1.000 al 10% per 3 anni</h3>
                 
-                <p style="margin-top: 15px;"><strong>Interesse composto:</strong><br>
-                Anno 1: €1.000 + €100 = €1.100<br>
-                Anno 2: €1.100 + €110 = €1.210<br>
-                Anno 3: €1.210 + €121 = €1.331<br>
-                → <strong>Totale: €1.331</strong></p>
+                <p style="margin-top: 10px;"><strong>Interesse semplice:</strong></p>
+                <p>Anno 1: €1.000 + €100 = €1.100<br>
+                Anno 2: €1.000 + €100 = €1.200 (sempre calcolato su €1.000)<br>
+                Anno 3: €1.000 + €100 = €1.300</p>
                 
-                <p style="margin-top: 15px;">Differenza: +€31 in 3 anni. Su 20 anni diventa +€1.727. Questo dimostra come il tempo amplifica l'effetto composto negli <strong>investimenti a lungo termine</strong>.</p>
+                <p style="margin-top: 15px;"><strong>Interesse composto:</strong></p>
+                <p>Anno 1: €1.000 + €100 = €1.100<br>
+                Anno 2: €1.100 + €110 = €1.210 (calcolato su €1.100)<br>
+                Anno 3: €1.210 + €121 = €1.331 (calcolato su €1.210)</p>
+                
+                <p style="margin-top: 15px;"><strong>Differenza:</strong> +€31 in 3 anni. Su 30 anni diventa +€1.444. Questo è il potere della capitalizzazione.</p>
             </div>
+
+            <p style="margin-top: 20px;">L'interesse composto è il motore della crescita patrimoniale nel lungo periodo. Einstein lo definì "l'ottava meraviglia del mondo"—chi lo capisce lo guadagna, chi non lo capisce lo paga (ad esempio sui mutui e prestiti).</p>
         </div>
 
         <div class="content-section">
-            <h2>Formula dell'interesse composto: calcolo matematico</h2>
+            <h2>Formula dell'interesse composto</h2>
             
             <div class="formula-box">
-                <div class="formula">M = C × (1 + r/n)^(n×t)</div>
+                <p><strong>Formula generale:</strong></p>
+                <div class="formula">Valore finale = C × (1 + r/n)^(n×t)</div>
                 
-                <p style="margin-top: 18px;"><strong>Variabili della formula:</strong></p>
-                <ul style="line-height: 1.8;">
-                    <li><strong>M</strong> = Montante finale (valore futuro)</li>
-                    <li><strong>C</strong> = Capitale iniziale investito</li>
-                    <li><strong>r</strong> = Tasso di interesse annuo (5% = 0,05)</li>
-                    <li><strong>n</strong> = Numero di capitalizzazioni annue (1 annuale, 12 mensile, 365 giornaliera)</li>
-                    <li><strong>t</strong> = Durata investimento in anni</li>
+                <p style="margin-top: 20px;"><strong>Variabili:</strong></p>
+                <ul style="margin-top: 10px; padding-left: 20px; line-height: 1.8;">
+                    <li><strong>C</strong> = Capitale iniziale</li>
+                    <li><strong>r</strong> = Tasso annuo in decimale (5% = 0,05)</li>
+                    <li><strong>n</strong> = Capitalizzazioni all'anno (1 annuale, 12 mensile, 365 giornaliera)</li>
+                    <li><strong>t</strong> = Durata in anni</li>
                 </ul>
                 
-                <p style="margin-top: 15px;"><strong>Esempio di calcolo interesse composto:</strong> €10.000 al 5% per 10 anni con capitalizzazione mensile:<br>
-                <span style="font-family: monospace; color: #764ba2;">10.000 × (1 + 0,05/12)^(12×10) = €16.470</span></p>
+                <p style="margin-top: 15px;">Il valore di <strong>n</strong> determina la frequenza. Più alto è n, maggiore è il rendimento—ma l'effetto è più significativo passando da annuale (n=1) a mensile (n=12) che da mensile a giornaliera (n=365).</p>
             </div>
         </div>
 
         <div class="content-section">
-            <h2>Confronto capitalizzazione: annuale, mensile, giornaliera</h2>
+            <h2>Interesse composto e investimenti in Italia</h2>
             
-            <p>La <strong>frequenza di capitalizzazione</strong> influisce sul rendimento finale. Ecco come €10.000 investiti al 5% per 10 anni rendono con diverse frequenze:</p>
+            <p>In Italia, l'interesse composto è fondamentale per contrastare l'inflazione e far crescere il capitale nel tempo. Ecco dove lo incontri:</p>
+
+            <h3>Strumenti che usano interesse composto:</h3>
+            <ul style="margin: 15px 0; padding-left: 20px; line-height: 1.8;">
+                <li><strong>PAC (Piani di Accumulo Capitale):</strong> Versamenti mensili con capitalizzazione mensile o annuale—ideali per orizzonti 10-20 anni</li>
+                <li><strong>ETF ad accumulazione:</strong> Dividendi reinvestiti automaticamente, capitalizzazione continua</li>
+                <li><strong>Fondi comuni:</strong> Rendimenti reinvestiti nel fondo, capitalizzazione annuale o semestrale</li>
+                <li><strong>Conti deposito vincolati:</strong> Interessi capitalizzati annualmente o a scadenza</li>
+                <li><strong>BTP (Buoni del Tesoro Poliennali):</strong> Se reinvesti le cedole, crei interesse composto manualmente</li>
+                <li><strong>Libretti postali:</strong> Capitalizzazione annuale degli interessi</li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">Considerazioni per il mercato italiano:</h3>
+            <ul style="margin: 15px 0; padding-left: 20px; line-height: 1.8;">
+                <li><strong>Tassazione:</strong> Gli interessi e i capital gain sono tassati al 26% (12,5% per titoli di Stato)—il calcolatore mostra il lordo</li>
+                <li><strong>Inflazione:</strong> Con inflazione al 2-3%, un rendimento del 5% diventa 2-3% reale. L'interesse composto aiuta a superare l'inflazione</li>
+                <li><strong>Orizzonte temporale:</strong> L'effetto composto è evidente dopo 10+ anni. Su 3-5 anni la differenza è minima</li>
+                <li><strong>Commissioni:</strong> Fondi con TER alto (1,5-2%) annullano parte dell'effetto composto. Preferisci ETF a basso costo (0,2-0,5%)</li>
+            </ul>
+
+            <p style="margin-top: 20px;"><strong>Esempio Italia:</strong> €10.000 investiti in un ETF al 7% annuo per 20 anni diventano €38.697 (lordo, senza considerare tassazione e costi). Con versamenti mensili di €200, arrivi a oltre €100.000. Questo è l'interesse composto applicato al risparmio italiano di lungo periodo.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Confronto tra le capitalizzazioni</h2>
+            
+            <p>La frequenza di capitalizzazione influisce sul rendimento finale. Ecco quanto rendono €10.000 al 5% per 10 anni:</p>
 <div class="table-container">
             <table class="comparison-table">
                 <thead>
                     <tr>
                         <th>Capitalizzazione</th>
                         <th>Valore finale</th>
-                        <th>Interesse totale</th>
+                        <th>Interessi totali</th>
                         <th>Differenza</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Annuale</td>
-                        <td>€16.289</td>
-                        <td>€6.289</td>
+                        <td>€16.288,95</td>
+                        <td>€6.288,95</td>
                         <td>—</td>
                     </tr>
                     <tr>
                         <td>Mensile</td>
-                        <td>€16.470</td>
-                        <td>€6.470</td>
-                        <td>+€181</td>
+                        <td>€16.470,09</td>
+                        <td>€6.470,09</td>
+                        <td>+€181,14</td>
                     </tr>
                     <tr>
                         <td>Giornaliera</td>
-                        <td>€16.487</td>
-                        <td>€6.487</td>
-                        <td>+€198</td>
+                        <td>€16.486,65</td>
+                        <td>€6.486,65</td>
+                        <td>+€197,70 vs annuale</td>
                     </tr>
                 </tbody>
             </table>
 </div>
-            <p>Il salto maggiore è tra capitalizzazione annuale e mensile (+€181). La giornaliera aggiunge solo €17 rispetto alla mensile, quindi la differenza diventa meno rilevante per piccoli capitali.</p>
+            <p style="margin-top: 20px;"><strong>Conclusione:</strong> Il salto più grande è tra annuale e mensile (+€181). Tra mensile e giornaliera la differenza è solo €16,56—spesso irrilevante rispetto a commissioni e costi.</p>
+
+            <p style="margin-top: 20px;">Per approfondire quando conviene ciascuna frequenza:</p>
+            
+            <div class="calculator-cards">
+                <a href="https://www.lumpsumcalculators.in/it/calcolatore-interesse-composto-mensile/" class="calc-card">
+                    <h3>📅 Calcolatore interesse composto mensile</h3>
+                    <p>Capitalizzazione mensile: 12 volte all'anno. La più comune per PAC e fondi italiani.</p>
+                </a>
+                
+                <a href="https://www.lumpsumcalculators.in/it/calcolatore-interesse-composto-giornaliero/" class="calc-card">
+                    <h3>📈 Calcolatore interesse composto giornaliero</h3>
+                    <p>Capitalizzazione giornaliera: 365 volte all'anno. Usata in conti ad alto rendimento.</p>
+                </a>
+            </div>
         </div>
 
         <div class="content-section">
-            <h2>Quando conviene l'interesse composto (e quando no)</h2>
+            <h2>Domande frequenti sull'interesse composto</h2>
             
-            <h3>Quando l'interesse composto funziona bene:</h3>
-            <ul>
-                <li><strong>Investimenti a lungo termine (10+ anni):</strong> L'effetto composto diventa significativo con il tempo, ideale per pensione e risparmi</li>
-                <li><strong>Piani di accumulo (PAC):</strong> Versamenti periodici combinati con capitalizzazione mensile massimizzano i rendimenti</li>
-                <li><strong>Pensione integrativa:</strong> Orizzonti di 20-30 anni massimizzano il rendimento del capitale</li>
-                <li><strong>Reinvestimento automatico:</strong> ETF ad accumulazione, conti deposito con capitalizzazione</li>
-            </ul>
+            <div class="faq">
+                <div class="faq-item">
+                    <div class="faq-question">Quanto rendono €10.000 in 10 anni con interesse composto?</div>
+                    <div class="faq-answer">
+                        Dipende dal tasso. Al 5% annuo con capitalizzazione mensile: €16.470. Al 7%: €20.097. Al 3%: €13.483. L'interesse composto amplifica sia i guadagni (con tassi alti) che le perdite dell'inflazione (con tassi bassi). Usa il calcolatore qui sopra per simulare il tuo caso specifico.
+                    </div>
+                </div>
 
-            <h3>Quando NON è rilevante:</h3>
-            <ul>
-                <li><strong>Breve termine (1-3 anni):</strong> L'effetto è minimo, spesso inferiore ai costi di gestione</li>
-                <li><strong>Prelievi periodici:</strong> Se ritiri gli interessi, annulli la capitalizzazione</li>
-                <li><strong>Tassi molto bassi (sotto 1%):</strong> Il guadagno è trascurabile rispetto all'inflazione</li>
-                <li><strong>Costi elevati:</strong> Commissioni di gestione sopra l'1-2% annullano parte del beneficio</li>
-            </ul>
+                <div class="faq-item">
+                    <div class="faq-question">È meglio capitalizzazione mensile o annuale?</div>
+                    <div class="faq-answer">
+                        La mensile è sempre migliore matematicamente. Su €10.000 al 5% per 10 anni, rende €181 in più rispetto all'annuale. Scegli la mensile quando disponibile, a parità di costi. La differenza diventa significativa su capitali grandi (€50.000+) o periodi lunghi (20+ anni).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Meglio interesse composto mensile o giornaliero?</div>
+                    <div class="faq-answer">
+                        La giornaliera rende solo €16,56 in più della mensile su €10.000 in 10 anni (0,1% extra). A meno che il prodotto non costi uguale o meno, non vale la pena cercarlo specificamente. La mensile è più che sufficiente per la maggior parte degli investitori. Approfondisci nella <a href="calcolatore-interesse-composto-giornaliero.html" style="color: #667eea;">guida alla capitalizzazione giornaliera</a>.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">L'interesse composto conviene con piccoli importi?</div>
+                    <div class="faq-answer">
+                        Sì, ma l'effetto è lento. €1.000 al 5% annuo diventano €1.629 in 10 anni (+€629). Piccolo, ma è comunque meglio di tenerli fermi. Il vero vantaggio arriva con versamenti costanti: €100 al mese per 10 anni al 5% diventano €15.528 (hai versato €12.000, guadagnato €3.528 di interessi). Questo è il potere del PAC combinato con l'interesse composto.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Cos'è l'interesse composto in parole semplici?</div>
+                    <div class="faq-answer">
+                        Gli interessi che guadagni vengono aggiunti al capitale e iniziano anche loro a produrre interessi. Esempio: hai €100, guadagni €10 di interessi. Quei €10 vengono reinvestiti. L'anno dopo guadagni interessi su €110, non su €100. Anno dopo anno, questo effetto si moltiplica. Più tempo passa, più l'effetto è potente.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Le banche italiane usano interesse composto?</div>
+                    <div class="faq-answer">
+                        Sì. Conti deposito, PAC, fondi comuni e libretti postali usano capitalizzazione annuale o mensile. I conti correnti tradizionali no (interessi troppo bassi o inesistenti). Alcuni conti online come Trade Republic offrono capitalizzazione giornaliera. Controlla sempre il prospetto alla voce "regime di capitalizzazione".
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="content-section">
-            <h2>Domande frequenti sul calcolatore interesse composto</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question">Come funziona il calcolatore di interesse composto?</div>
-                <div class="faq-answer">Il calcolatore di interesse composto utilizza la formula M = C × (1 + r/n)^(n×t) per calcolare quanto cresce un capitale nel tempo. Inserisci capitale iniziale, tasso di interesse annuo, durata in anni e frequenza di capitalizzazione per ottenere il valore finale del tuo investimento con calcoli precisi e immediati.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Qual è la differenza tra interesse composto e interesse semplice?</div>
-                <div class="faq-answer">L'interesse semplice calcola i rendimenti sempre sul capitale iniziale. L'interesse composto li calcola sul capitale più gli interessi già maturati. Su €10.000 al 5% per 10 anni, il semplice produce €5.000, il composto circa €6.470. La differenza aumenta esponenzialmente con il tempo.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Capitalizzazione mensile o annuale: quale conviene?</div>
-                <div class="faq-answer">La capitalizzazione mensile è sempre migliore matematicamente perché reinveste più frequentemente. Su €10.000 al 5% per 10 anni rende €181 in più dell'annuale. La differenza aumenta con capitali maggiori e periodi più lunghi. Per investimenti a lungo termine la mensile è la scelta ottimale.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">L'interesse composto funziona con piccoli risparmi?</div>
-                <div class="faq-answer">Sì. Con €1.000 al 5% per 10 anni ottieni €1.647. L'effetto migliora combinando capitale iniziale con versamenti periodici: €100 al mese per 10 anni al 5% diventano circa €15.500 contro €12.000 versati. Il tempo e la costanza sono fondamentali.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Come influisce il tempo sul rendimento composto?</div>
-                <div class="faq-answer">Il tempo è il fattore più importante nell'interesse composto. €10.000 al 5% diventano €16.470 in 10 anni, €27.126 in 20 anni, €43.219 in 30 anni. Ogni decennio aggiuntivo moltiplica i benefici in modo esponenziale grazie alla capitalizzazione continua.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Quali prodotti finanziari usano l'interesse composto?</div>
-                <div class="faq-answer">Conti deposito, ETF ad accumulazione, fondi comuni di investimento, piani pensionistici, libretti postali e polizze vita. Questi prodotti reinvestono automaticamente i rendimenti creando capitalizzazione composta. Verifica sempre le condizioni contrattuali e i costi applicati.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">L'interesse composto è garantito?</div>
-                <div class="faq-answer">Il meccanismo matematico è garantito, ma il rendimento dipende dal tasso applicato. Su prodotti a tasso fisso come conti deposito è contrattuale. Su investimenti variabili come azioni ed ETF il tasso oscilla ma il principio della capitalizzazione rimane sempre valido.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Quali sono gli errori comuni nel calcolo interesse composto?</div>
-                <div class="faq-answer">Aspettarsi rendimenti alti in pochi anni (serve tempo), prelevare gli interessi invece di reinvestirli, non considerare costi e tassazione, confrontare tassi lordi invece che netti, sottovalutare l'inflazione. Il calcolatore mostra valori lordi: considera sempre fiscalità e costi reali.</div>
+            <div class="trust-section">
+                <h3 style="margin-top: 0; color: #2e7d32;">📊 Informazioni sul calcolatore</h3>
+                <p><strong>Metodo di calcolo:</strong> Questo strumento usa la formula standard dell'interesse composto: C × (1 + r/n)^(n×t). I risultati sono matematicamente accurati ma rappresentano valori lordi.</p>
+                
+                <p style="margin-top: 12px;"><strong>Aggiornamento:</strong> Il calcolatore è sempre disponibile e non richiede aggiornamenti. Le formule matematiche sono universali e valide nel tempo.</p>
+                
+                <p style="margin-top: 12px;"><strong>Uso educativo:</strong> Questo strumento ha scopo puramente informativo per comprendere il funzionamento dell'interesse composto. I rendimenti reali dipendono da tassazione (26% in Italia su interessi e capital gain), inflazione, commissioni e costi dei prodotti finanziari. Non costituisce consulenza finanziaria o raccomandazione di investimento.</p>
             </div>
         </div>
 
-        <div class="disclaimer">
-            <p><strong>Disclaimer:</strong> Questo calcolatore di interesse composto utilizza formule matematiche standard per simulare la crescita del capitale. I risultati sono teorici e non considerano tassazione, inflazione, commissioni o variazioni di tasso. Non costituisce consulenza finanziaria. Per decisioni di investimento, consulta sempre un professionista abilitato. I rendimenti passati non garantiscono risultati futuri.</p>
+        <div class="content-section" style="background: #f8f9fa; border-left: 4px solid #ff9800;">
+            <h2 style="color: #333;">⚠️ Avviso importante</h2>
+            <p>I risultati mostrano valori lordi e teorici basati su tassi costanti. Nella realtà:</p>
+            <ul style="margin: 15px 0; padding-left: 20px;">
+                <li>Gli interessi sono tassati al 26% (12,5% per titoli di Stato italiani)</li>
+                <li>L'inflazione riduce il potere d'acquisto reale</li>
+                <li>Commissioni e costi di gestione riducono il rendimento netto</li>
+                <li>I tassi possono variare nel tempo</li>
+                <li>Ogni prodotto ha condizioni specifiche</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Non costituisce consulenza finanziaria.</strong> Per decisioni di investimento, consulta un professionista abilitato.</p>
         </div>
     </div>
 
@@ -546,38 +556,7 @@ for(let i=1;i<ys.length;i++){
 const x=(i-1)*(bw/(ys.length-1))+bwid*.15,dh=(ih[i]/bmx)*(bh-40),ih2=(inh[i]/bmx)*(bh-40);
 bctx.fillStyle='#2563eb';bctx.fillRect(x,bh-20-dh,bwid,dh);
 bctx.fillStyle='#fb923c';bctx.fillRect(x,bh-20-dh-ih2,bwid,ih2)}}
-</script>
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Cos'è un calcolatore interesse composto?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un calcolatore interesse composto calcola come si sviluppa il capitale quando gli interessi vengono aggiunti regolarmente al saldo e producono a loro volta altri interessi."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qual è la differenza tra interesse semplice e composto?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Nell'interesse semplice, l'interesse viene calcolato solo sul capitale iniziale. Nell'interesse composto, anche gli interessi già ricevuti vengono nuovamente remunerati."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Il calcolatore è adatto per gli ETF?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sì. Soprattutto per gli ETF con reinvestimento dei proventi (accumulazione), il calcolatore dell'interesse composto è uno strumento realistico per le previsioni a lungo termine."
-      }
-    }
-  ]
-}
+
 </script>
 </body>
 </html>
