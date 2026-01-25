@@ -62,36 +62,159 @@ tr.total-row{background:#f8fafc;font-weight:700}
 .btn-primary:active{transform:scale(.98)}
 .seo-footer{padding:20px;max-width:700px;margin:0 auto}
 canvas{max-width:100%;height:auto}
-         .card { 
-            background: #ffffff; 
-            padding: 30px; 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04); 
-            margin-bottom: 30px;
+             h2 {
+            color: #11998e;
+            margin-bottom: 15px;
+            font-size: 1.6em;
         }
-
-        h1 { font-size: 2rem; color: var(--primary-dark); margin-bottom: 1rem; line-height: 1.2; }
-        h2 { font-size: 1.5rem; color: var(--primary-dark); margin-top: 2rem; }
-             .internal-nav { 
-            display: flex; 
-            gap: 10px; 
-            flex-wrap: wrap; 
-            margin-top: 15px;
+        
+        h3 {
+            color: #333;
+            margin: 20px 0 10px;
+            font-size: 1.3em;
         }
-
-        .nav-link { 
-            text-decoration: none; 
-            color: var(--accent); 
-            font-weight: 500; 
-            font-size: 0.9rem;
-            border: 1px solid var(--accent);
-            padding: 5px 15px;
-            border-radius: 5px;
+        
+        .formula-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #11998e;
         }
-
-        @media (min-width: 600px) {
-            .grid-inputs { grid-template-columns: 1fr 1fr; }
-            h1 { font-size: 2.5rem; }
+        
+        .formula {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2em;
+            color: #11998e;
+            margin: 15px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table th {
+            background: #11998e;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .highlight {
+            background: #e8f5e9;
+            font-weight: 600;
+        }
+        
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .pros, .cons {
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .pros {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+        }
+        
+        .cons {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+        }
+        
+        .pros h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+        
+        .cons h3 {
+            color: #c62828;
+            margin-top: 0;
+        }
+        
+        .faq {
+            margin-top: 20px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #11998e;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+        
+        .internal-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .link-card {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        
+        .link-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .link-card h3 {
+            color: white;
+            margin: 0 0 8px 0;
+            font-size: 1.1em;
+        }
+        
+        .link-card p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            
+            .result-value {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
@@ -119,9 +242,19 @@ Lumpsum
 
 <div class="container">
  
-    <h1>Calcolatore di Interesse Composto Giornaliero</h1>
-        <p>Strumento avanzato per determinare la crescita del capitale con capitalizzazione a frequenza giornaliera (365 giorni l'anno). Ottimizza il rendimento analizzando l'effetto cumulativo immediato.</p>
+   <header>
+            <h1>📈 Calcolatore Capitalizzazione Giornaliera: Scopri Se Conviene Davvero</h1>
+            <p class="subtitle">Interesse composto quotidiano: 365 capitalizzazioni all'anno</p>
+        </header>
 
+        <div class="warning-box">
+            <p><strong>La capitalizzazione giornaliera ti fa guadagnare €16,56 in più su €10.000 in 10 anni rispetto alla mensile.</strong> Vale la pena? Dipende. Se il prodotto costa anche solo 0,1% in più di commissioni, hai perso il vantaggio. Usato principalmente in: conti ad alto rendimento (Trade Republic, Revolut), crypto lending, broker online. <strong>Per chi:</strong> trader attivi, grandi capitali, tassi alti. <strong>Non per:</strong> PAC tradizionali—la <a href="calcolatore-interesse-composto-mensile.html" style="color: #f57c00; text-decoration: underline;">differenza con la mensile</a> è minima per investitori passivi. Calcola qui sotto se nel tuo caso ha senso.</p>
+        </div>
+
+        
+            <h2>Calcola il rendimento giornaliero</h2>
+            <p style="margin-bottom: 20px; color: #666; font-size: 0.95em;">Questo calcolatore è per scopi educativi. Perfetto per capire come funziona la crescita quotidiana del capitale in conti ad alto rendimento, crypto staking o trading accounts.</p>
+       
 <div class="input-card">
 <div class="label-group">
 <label>Capitale Iniziale (€)</label>
@@ -196,110 +329,272 @@ Lumpsum
 
 <div class="seo-footer">
 
-    <section class="card">
-        <h2>Cos'è l'interesse composto giornaliero?</h2>
-        <p>
-            L'interesse composto giornaliero è la forma più accelerata di capitalizzazione finanziaria. In questo regime, il rendimento maturato viene calcolato e aggiunto al capitale ogni <strong>24 ore</strong>. 
-        </p>
-        <p>
-            Questo significa che il capitale su cui si calcola il profitto aumenta 365 volte l'anno (o 366 negli anni bisestili). Sebbene la differenza su brevi periodi possa sembrare minima, su capitali significativi o orizzonti temporali estesi, il calcolo giornaliero offre un vantaggio matematico rispetto alla capitalizzazione mensile o annuale.
-        </p>
-        
-        <div class="highlight-box">
-            <strong>Applicazioni comuni:</strong>
-            <ul>
-                <li>Conti di deposito ad alta resa.</li>
-                <li>Mercati delle criptovalute e protocolli DeFi.</li>
-                <li>Gestione di debiti rotativi (es. carte di credito).</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="card">
-        <h2>La Logica Matematica (Formula Giornaliera)</h2>
-        <p>A differenza della formula standard, qui il tasso nominale annuo viene frazionato per il numero di giorni dell'anno civile.</p>
-        <p>In termini concettuali, il montante finale si ottiene applicando:</p>
-        <ul>
-            <li><strong>Divisione del Tasso:</strong> Il tasso percentuale annuo viene diviso per 365.</li>
-            <li><strong>Frequenza Esponenziale:</strong> Il numero di periodi diventa pari al numero di anni moltiplicato per 365.</li>
-        </ul>
-        <p>Questo processo crea una curva di crescita estremamente fluida e costante giorno dopo giorno.</p>
-    </section>
-
-    <section class="card">
-        <h2>Esempio Pratico: L'effetto dei 365 Giorni</h2>
-        <p>Supponiamo di investire <strong>20.000 €</strong> a un tasso del <strong>6%</strong> per <strong>5 anni</strong>.</p>
-        <div class="step-item">
-            <p><strong>Capitalizzazione Annuale:</strong> Al termine dei 5 anni avrai circa 26.764 €.</p>
-            <p><strong>Capitalizzazione Giornaliera:</strong> Con il calcolo ogni 24 ore, il montante finale sale a circa <strong>26.996 €</strong>.</p>
-            <p>L'uso della frequenza giornaliera ha generato un surplus di <strong>232 €</strong> semplicemente modificando la modalità di calcolo degli interessi.</p>
-        </div>
-    </section>
-
-    
-
-    <section class="card">
-        <h2>Confronto Frequenze: Giornaliero vs Altri Periodi</h2>
-        <div class="table-container">
-            <table>
+     <div class="content-section">
+            <h2>Esempio reale giorno per giorno: come cresce il capitale</h2>
+            
+            <p>Vediamo esattamente cosa succede nei primi 10 giorni con capitalizzazione quotidiana. Questo esempio mostra perché l'effetto sembra piccolo all'inizio ma diventa potente nel tempo.</p>
+            
+            <p style="margin-top: 15px;"><strong>Scenario:</strong> €10.000 investiti al 5% annuo (0,0137% al giorno)</p>
+<div class="table-container">
+            <table class="comparison-table" style="margin-top: 20px;">
                 <thead>
                     <tr>
-                        <th>Frequenza</th>
-                        <th>Calcoli/Anno</th>
-                        <th>Efficacia Rendimento</th>
+                        <th>Giorno</th>
+                        <th>Capitale a inizio giornata</th>
+                        <th>Interesse del giorno</th>
+                        <th>Capitale a fine giornata</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Giornaliera</strong></td>
-                        <td>365</td>
-                        <td>Massima (Accelerata)</td>
-                    </tr>
-                    <tr>
-                        <td>Mensile</td>
-                        <td>12</td>
-                        <td>Media</td>
-                    </tr>
-                    <tr>
-                        <td>Annuale</td>
                         <td>1</td>
-                        <td>Standard (Lineare)</td>
+                        <td>€10.000,00</td>
+                        <td>€1,37</td>
+                        <td>€10.001,37</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>€10.001,37</td>
+                        <td>€1,37</td>
+                        <td>€10.002,74</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>€10.002,74</td>
+                        <td>€1,37</td>
+                        <td>€10.004,11</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>€10.005,48</td>
+                        <td>€1,37</td>
+                        <td>€10.006,85</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>€10.012,33</td>
+                        <td>€1,37</td>
+                        <td>€10.013,70</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>30 (1 mese)</strong></td>
+                        <td>€10.040,55</td>
+                        <td>€1,38</td>
+                        <td><strong>€10.041,93</strong></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>365 (1 anno)</strong></td>
+                        <td>€10.511,27</td>
+                        <td>€1,44</td>
+                        <td><strong>€10.512,71</strong></td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="internal-nav">
-            <span>Passa ad altri strumenti:</span>
-            <a href="/calcolatore-interesse-composto-mensile" class="nav-link">Versione Mensile</a>
-            <a href="/calcolatore-interesse-composto" class="nav-link">Calcolatore Generico</a>
-        </div>
-    </section>
+</div>
+            <h3 style="margin-top: 25px;">Cosa ci insegna questo esempio?</h3>
+            <ul style="margin: 15px 0; padding-left: 20px; line-height: 1.8;">
+                <li><strong>Il primo giorno guadagni €1,37</strong> — sembra nulla, ma è già tuo e viene reinvestito</li>
+                <li><strong>Il secondo giorno l'interesse è ancora €1,37</strong> ma viene calcolato su €10.001,37, non su €10.000</li>
+                <li><strong>Dopo 10 giorni hai €13,70 di interessi</strong> — ancora piccolo, ma nota che l'interesse giornaliero è passato da €1,37 a €1,37 (il cambio è nei centesimi)</li>
+                <li><strong>Dopo 30 giorni</strong> l'interesse giornaliero è salito a €1,38 — piccolo incremento, ma è interesse sull'interesse</li>
+                <li><strong>Dopo 1 anno l'interesse giornaliero è €1,44</strong> — 7 centesimi in più al giorno, che moltiplicato per 365 giorni fa la differenza</li>
+            </ul>
 
-    <section class="card">
-        <h2>Domande Frequenti (FAQ)</h2>
-        <div class="faq-item">
-            <strong>L'interesse giornaliero rende davvero di più?</strong>
-            <p>Sì. Matematicamente, maggiore è la frequenza di capitalizzazione, maggiore è il montante finale a parità di tasso nominale.</p>
+            <p style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-left: 4px solid #2196F3; border-radius: 4px;"><strong>💡 Il punto chiave:</strong> La capitalizzazione giornaliera non fa miracoli nel breve periodo. La vedi davvero all'opera dopo anni, quando l'interesse giornaliero di €1,37 è diventato €2, poi €3, poi €5 al giorno grazie all'effetto composto che agisce quotidianamente.</p>
         </div>
-        <div class="faq-item">
-            <strong>Perché non tutti usano il calcolo giornaliero?</strong>
-            <p>Perché dipende dalle condizioni contrattuali dell'istituto finanziario. Molte banche tradizionali preferiscono la capitalizzazione trimestrale o annuale per ridurre gli oneri finanziari a loro carico.</p>
+
+        <div class="content-section" style="background: #fff3cd; border-left: 4px solid #ff6b6b;">
+            <h2 style="color: #c62828;">⚠️ Attenzione: 3 errori comuni sulla capitalizzazione giornaliera</h2>
+            
+            <h3 style="color: #c62828;">1. Capitalizzazione giornaliera ≠ versamenti giornalieri</h3>
+            <p>Molti confondono le due cose. La capitalizzazione giornaliera significa che l'interesse viene calcolato ogni giorno, NON che devi depositare soldi ogni giorno. Puoi fare un versamento unico e lasciarlo crescere con capitalizzazione quotidiana.</p>
+
+            <h3 style="color: #c62828; margin-top: 20px;">2. "Quotidiano" non significa rendimenti garantiti più alti</h3>
+            <p>Alcune banche pubblicizzano "capitalizzazione giornaliera" come se fosse automaticamente meglio. La verità: se hai lo stesso tasso e le stesse commissioni, la giornaliera rende solo lo 0,26% in più della mensile. Non è magia—è matematica con effetti minimi per il risparmiatore medio.</p>
+
+            <h3 style="color: #c62828; margin-top: 20px;">3. Le banche spesso calcolano giornalmente ma accreditano mensilmente</h3>
+            <p><strong>Questo è cruciale:</strong> Molti conti deposito "con capitalizzazione giornaliera" in realtà calcolano l'interesse ogni giorno ma lo accreditano sul conto solo a fine mese. Matematicamente è quasi identico alla capitalizzazione giornaliera vera, ma tecnicamente non lo è. Leggi sempre il prospetto informativo alla voce "modalità di capitalizzazione" e "modalità di accredito".</p>
         </div>
-        <div class="faq-item">
-            <strong>È più rischioso rispetto al calcolo mensile?</strong>
-            <p>No, il rischio dipende dall'asset sottostante (azioni, crypto, depositi), non dalla frequenza del calcolo degli interessi.</p>
+
+        <div class="content-section">
+            <h2>Formula della capitalizzazione giornaliera: perché 365 e cosa cambia davvero</h2>
+            
+            <div class="formula-box">
+                <p><strong>Formula per interesse composto quotidiano:</strong></p>
+                <div class="formula">Valore finale = C × (1 + r/365)^(365×t)</div>
+                
+                <p style="margin-top: 20px;"><strong>Perché 365 e non 360?</strong></p>
+                <p style="margin: 10px 0;">La maggior parte dei prodotti finanziari moderni usa 365 giorni (anno civile). Alcuni prodotti bancari tradizionali usano 360 giorni (anno commerciale). La differenza è minima ma esiste:</p>
+                <ul style="margin: 15px 0; padding-left: 20px; line-height: 1.8;">
+                    <li><strong>365 giorni:</strong> Usato da banche online, broker, crypto platforms (più preciso)</li>
+                    <li><strong>360 giorni:</strong> Usato da alcune banche tradizionali per mutui e prestiti (semplifica i calcoli)</li>
+                    <li><strong>Su €10.000 al 5% per 1 anno:</strong> 365 giorni = €512,67 | 360 giorni = €511,62 (differenza: €1,05)</li>
+                </ul>
+                
+                <p style="margin-top: 15px;"><strong>Tasso nominale vs tasso effettivo:</strong></p>
+                <p style="margin: 10px 0;">Se una banca dichiara "5% annuo con capitalizzazione giornaliera", quel 5% è il <strong>tasso nominale</strong>. Il <strong>tasso effettivo</strong> (quello che guadagni davvero) è leggermente più alto: 5,127% in questo caso. La capitalizzazione quotidiana trasforma il tasso nominale in uno effettivo più alto.</p>
+                
+                <p style="margin-top: 15px;"><strong>Excel vs banche:</strong></p>
+                <p style="margin: 10px 0;">In Excel, la funzione FV() calcola l'interesse composto ma devi specificare il numero di periodi. Per la capitalizzazione giornaliera: periodi = 365 × anni, tasso = tasso_annuo / 365. Alcune banche arrotondano diversamente—controlla sempre il prospetto informativo.</p>
+            </div>
         </div>
-        <div class="faq-item">
-            <strong>Come influisce sugli interessi passivi?</strong>
-            <p>Attenzione: se si tratta di un debito (come una carta di credito), la capitalizzazione giornaliera gioca a sfavore del debitore, facendo crescere il debito più velocemente.</p>
-        </div>
-        <div class="faq-item">
-            <strong>Posso calcolare l'interesse composto giornaliero manualmente?</strong>
-            <p>È complesso a causa dell'elevato numero di esponenti. L'uso del nostro calcolatore dedicato è raccomandato per evitare errori di arrotondamento.</p>
-        </div>
-    </section>
+
+        <div class="content-section">
+            <h2>Confronto numeri reali: quanto guadagni davvero con la capitalizzazione quotidiana?</h2>
+            
+            <p>Esempio concreto: €10.000 investiti al 5% annuo per 10 anni</p>
+<div class="table-container">
+            <table class="comparison-table" style="margin-top: 20px;">
+                <thead>
+                    <tr>
+                        <th>Capitalizzazione</th>
+                        <th>Valore finale</th>
+                        <th>Guadagno totale</th>
+                        <th>Differenza vs giornaliera</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Annuale (1 volta/anno)</td>
+                        <td>€16.288,95</td>
+                        <td>€6.288,95</td>
+                        <td>-€197,70</td>
+                    </tr>
+                    <tr>
+                        <td>Mensile (12 volte/anno)</td>
+                        <td>€16.470,09</td>
+                        <td>€6.470,09</td>
+                        <td>-€16,56</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>Giornaliera (365 volte/anno)</strong></td>
+                        <td><strong>€16.486,65</strong></td>
+                        <td><strong>€6.486,65</strong></td>
+                        <td><strong>—</strong></td>
+                    </tr>
+                </tbody>
+            </table>
 </div>
-</div>
+            <h3 style="margin-top: 30px;">Cosa ci dicono questi numeri?</h3>
+            <ul style="margin: 15px 0; padding-left: 20px; line-height: 1.8;">
+                <li><strong>Il salto più grande è da annuale a mensile</strong> (+€181,14). Passare da mensile a giornaliera aggiunge solo €16,56.</li>
+                <li><strong>Su 10 anni, guadagni €1,66 all'anno in più</strong> con la giornaliera rispetto alla mensile. È irrilevante per piccoli capitali.</li>
+                <li><strong>Su €100.000 però</strong>, quella differenza diventa €165,60 in 10 anni—ancora piccola ma inizia a contare.</li>
+                <li><strong>Se il prodotto con capitalizzazione giornaliera costa anche solo lo 0,1% in più</strong> di commissioni annue, hai perso il vantaggio.</li>
+            </ul>
+
+            <p style="margin-top: 20px; padding: 15px; background: #fff3cd; border-left: 4px solid #ff9800; border-radius: 4px;"><strong>⚠️ Attenzione:</strong> Questi calcoli assumono un tasso fisso. I prodotti reali con capitalizzazione giornaliera (crypto lending, conti ad alto rendimento) hanno spesso tassi variabili che cambiano settimanalmente. Il rendimento effettivo può essere molto diverso.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Quando scegliere la capitalizzazione giornaliera (e quando evitarla)</h2>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h3>✅ Quando conviene</h3>
+                    <ul style="padding-left: 20px; line-height: 1.8;">
+                        <li><strong>Tassi alti:</strong> Con il 10-15% (tipico di crypto staking), la differenza giornaliera diventa significativa</li>
+                        <li><strong>Grandi capitali:</strong> Su €100.000+ anche lo 0,1% conta</li>
+                        <li><strong>Lunghi periodi:</strong> 20-30 anni amplificano l'effetto quotidiano</li>
+                        <li><strong>Zero commissioni extra:</strong> Se costa uguale alla mensile, prendi la giornaliera</li>
+                        <li><strong>Trading attivo:</strong> Liquidità che si muove spesso beneficia della crescita quotidiana</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h3>❌ Quando NON conviene</h3>
+                    <ul style="padding-left: 20px; line-height: 1.8;">
+                        <li><strong>Commissioni più alte:</strong> Anche 0,2% annuo in più annulla il vantaggio</li>
+                        <li><strong>Piccoli capitali:</strong> Su €5.000 la differenza è €8 in 10 anni—irrilevante</li>
+                        <li><strong>Tassi bassi:</strong> Al 2-3% la differenza tra mensile e giornaliera è quasi zero</li>
+                        <li><strong>Prodotti rischiosi:</strong> Molti crypto lenders con capitalizzazione giornaliera sono falliti (Celsius, BlockFi)</li>
+                        <li><strong>Investimenti passivi:</strong> PAC tradizionali con <a href="calcolatore-interesse-composto-mensile.html" style="color: #c62828; text-decoration: underline;">capitalizzazione mensile</a> sono più che sufficienti</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>Regola pratica:</strong> Se stai scegliendo tra due prodotti identici (stesso rischio, stesse commissioni) e uno ha capitalizzazione giornaliera, scegli quello. Ma se devi accettare più rischio o pagare di più per avere la capitalizzazione giornaliera, quasi sempre non vale la pena.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Domande frequenti sulla crescita quotidiana del capitale</h2>
+            
+            <div class="faq">
+                <div class="faq-item">
+                    <div class="faq-question">La capitalizzazione giornaliera è davvero migliore o è solo marketing?</div>
+                    <div class="faq-answer">
+                        <strong>Risposta onesta: è meglio, ma di pochissimo.</strong> Su €10.000 al 5% per 10 anni, guadagni €16,56 in più rispetto alla capitalizzazione mensile (0,26% extra). È matematicamente superiore, ma se il prodotto costa 0,1% in più di commissioni, hai perso il vantaggio. Molte banche pubblicizzano "giornaliera" ma accreditano mensilmente—leggi le condizioni alla voce "modalità di accredito". È marketing quando lo usano per vendere prodotti più costosi o rischiosi.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Dove trovo davvero prodotti con capitalizzazione giornaliera in Italia?</div>
+                    <div class="faq-answer">
+                        Opzioni concrete: <strong>Trade Republic</strong> (4% su liquidità), <strong>Interactive Brokers</strong> (interessi su cash), <strong>Revolut Premium/Metal</strong> (interessi su saldo), <strong>Crypto platforms</strong> (Nexo, Crypto.com—rischio elevato), alcuni conti deposito vincolati. Attenzione: controlla sempre se è capitalizzazione vera o solo calcolo giornaliero con accredito mensile.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Perché vedo interessi diversi tra il calcolatore e la mia banca?</div>
+                    <div class="faq-answer">
+                        5 motivi comuni: (1) <strong>360 giorni vs 365</strong> (anno commerciale vs civile); (2) <strong>Calcolo giornaliero ma accredito mensile</strong>; (3) <strong>Arrotondamenti</strong> diversi; (4) <strong>Tasse</strong> (26% ritenuta in Italia)—il calcolatore mostra il lordo; (5) <strong>Commissioni nascoste</strong>. Controlla il prospetto informativo.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Vale la pena cambiare banca solo per avere capitalizzazione giornaliera?</div>
+                    <div class="faq-answer">
+                        <strong>Quasi mai.</strong> Cambia solo se: (1) tasso netto uguale o superiore, (2) stesse commissioni o minori, (3) stessa garanzia depositi, (4) stessi servizi. Se devi accettare più rischio o pagare di più, non ne vale la pena. La differenza di €16 in 10 anni su €10.000 non compensa perdite di servizi o sicurezza.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">È meglio capitalizzazione giornaliera o mensile per un PAC?</div>
+                    <div class="faq-answer">
+                        Per un PAC, la <a href="calcolatore-interesse-composto-mensile.html" style="color: #11998e; text-decoration: underline;">capitalizzazione mensile è più che sufficiente</a>. La differenza è €10-20 su €10.000 in 10 anni. Concentrati su commissioni basse, diversificazione e costanza—contano 100 volte di più.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Come si calcola l'interesse giornaliero in Excel?</div>
+                    <div class="faq-answer">
+                        Formula: <code>=FV(tasso/365; anni*365; 0; -capitale)</code>. Esempio €10.000 al 5% per 10 anni: <code>=FV(5%/365; 10*365; 0; -10000)</code> = €16.486,65. Dividi tasso per 365, moltiplica anni per 365. Se la banca usa 360 giorni, usa 360 nella formula.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Approfondimenti sulla capitalizzazione composta</h2>
+            
+            <p style="margin-bottom: 20px;">Per comprendere le basi dell'<a href="calcolatore-interesse-composto.html" style="color: #667eea; text-decoration: underline;">interesse composto e confrontare annuale, mensile e giornaliera</a>, oppure per scoprire <a href="calcolatore-interesse-composto-mensile.html" style="color: #667eea; text-decoration: underline;">perché la capitalizzazione mensile è sufficiente per la maggior parte degli investitori</a>, consulta queste guide:</p>
+            
+            <div class="internal-links">
+                <a href="calcolatore-interesse-composto.html" class="link-card">
+                    <h3>📊 Guida completa interesse composto</h3>
+                    <p>Confronta annuale, mensile e giornaliera in un solo strumento</p>
+                </a>
+                
+                <a href="calcolatore-interesse-composto-mensile.html" class="link-card">
+                    <h3>📅 Capitalizzazione mensile</h3>
+                    <p>La frequenza più comune per PAC e fondi comuni italiani</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="content-section" style="background: #f8f9fa; border-left: 4px solid #ff9800;">
+            <h2 style="color: #333;">⚠️ Scopo educativo</h2>
+            <p><strong>Questo calcolatore è uno strumento educativo per capire come funziona la capitalizzazione giornaliera.</strong> I rendimenti reali dipendono da:</p>
+            <ul style="margin: 15px 0; padding-left: 20px;">
+                <li>Commissioni di gestione e performance</li>
+                <li>Tassazione (26% su interessi da depositi in Italia)</li>
+                <li>Variabilità dei tassi (pochi prodotti garantiscono tassi fissi con capitalizzazione giornaliera)</li>
+                <li>Rischio di controparte (molte piattaforme crypto con capitalizzazione giornaliera sono fallite)</li>
+                <li>Costi di transazione e spread</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Non costituisce consulenza finanziaria.</strong> Prima di investire, consulta un professionista abilitato e leggi sempre il prospetto informativo del prodotto.</p>
+        </div>
+    </div>
   
 <script>
 function toggleMenu(){document.getElementById('sideMenu').classList.toggle('active');document.getElementById('overlay').classList.toggle('active')}
